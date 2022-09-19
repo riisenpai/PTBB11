@@ -49,10 +49,10 @@
         android:id="@+id/button"
         android:layout_width="372dp"
         android:layout_height="59dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="40dp"
         android:text="Masuk"
         app:layout_constraintTop_toBottomOf="@+id/textInputLayout2"
-        tools:layout_editor_absoluteX="30dp" />
+        tools:layout_editor_absoluteX="16dp" />
 
     <TextView
         android:id="@+id/textView3"
