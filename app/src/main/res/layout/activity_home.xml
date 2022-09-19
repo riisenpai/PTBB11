@@ -163,6 +163,7 @@
         app:layout_constraintTop_toBottomOf="@+id/cardView2" />
 
     <LinearLayout
+        android:id="@+id/linearLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
@@ -186,8 +187,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="28dp"
-                    android:layout_marginTop="15dp"
                     android:layout_marginLeft="19dp"
+                    android:layout_marginTop="15dp"
                     android:fontFamily="sans-serif-black"
                     android:text="Sat"
                     android:textSize="16sp" />
@@ -197,8 +198,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="28dp"
-                    android:layout_marginTop="40dp"
                     android:layout_marginLeft="17dp"
+                    android:layout_marginTop="40dp"
                     android:text="8 Apr" />
             </androidx.cardview.widget.CardView>
         </LinearLayout>
@@ -215,6 +216,7 @@
         tools:layout_editor_absoluteY="632dp" />
 
     <LinearLayout
+        android:id="@+id/linearLayout2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
@@ -254,6 +256,15 @@
                     android:text="8 Apr" />
             </androidx.cardview.widget.CardView>
         </LinearLayout>
+
     </LinearLayout>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:labelVisibilityMode="labeled"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:menu="@menu/navbar_bottom"
+        tools:layout_editor_absoluteX="29dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
