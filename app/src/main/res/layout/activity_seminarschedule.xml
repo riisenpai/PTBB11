@@ -7,6 +7,7 @@
     android:background="@drawable/bg_schedule"
     tools:context=".SeminarscheduleActivity">
 
+
     <ImageView
         android:id="@+id/imageView4"
         android:layout_width="34dp"
