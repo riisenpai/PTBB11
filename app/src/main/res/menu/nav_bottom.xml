@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/home"
+        android:title="Home"
+        android:icon="@drawable/home"/>
+
+    <item
+        android:id="@+id/tugasakhir"
+        android:title="Tugas Akhir"
+        android:icon="@drawable/tugasakhir"/>
+
+    <item
+        android:id="@+id/seminarsidang"
+        android:title="Seminar"
+        android:icon="@drawable/seminar"/>
+
+    <item
+        android:id="@+id/mahasiswa"
+        android:title="Mahasiswa"
+        android:icon="@drawable/people"/>
+
+    <item
+        android:id="@+id/profile"
+        android:title="Profile"
+        android:icon="@drawable/profile"/>
+</menu>

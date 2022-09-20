@@ -1,3 +1,7 @@
 <resources>
+
     <string name="app_name">Escom</string>
+    <string name="title_bold"><b>Permintaan TA</b></string>
+    <string name="search">Search</string>
 </resources>
+
