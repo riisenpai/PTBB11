@@ -30,6 +30,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView2" />
 
+
     <ImageView
         android:id="@+id/imageView5"
         android:layout_width="30dp"
@@ -38,7 +39,8 @@
         android:layout_marginTop="16dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/arrow_left" />
+        app:srcCompat="@drawable/arrow_left"
+        android:onClick="back"/>
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView"

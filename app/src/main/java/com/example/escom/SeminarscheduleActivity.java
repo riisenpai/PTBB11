@@ -1,7 +1,9 @@
 package com.example.escom;
 
+import android.content.Intent;
 import android.content.res.TypedArray;
 import android.os.Bundle;
+import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -45,4 +47,10 @@ public class SeminarscheduleActivity extends AppCompatActivity {
         ListSeminarAdapter listSeminarAdapter = new ListSeminarAdapter(list);
         rvHeroes.setAdapter(listSeminarAdapter);
     }
+
+    public void back(View view) {
+        Intent intent = new Intent(SeminarscheduleActivity.this,HomeActivity.class);
+        startActivity(intent);
+    }
+
 }
