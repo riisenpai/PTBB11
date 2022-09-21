@@ -11,40 +11,41 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 
-public class ListSidangAdapter extends RecyclerView.Adapter<ListSidangAdapter.ListViewHolder> {
-    private ArrayList<Sidang> listSidang;
-    public ListSidangAdapter(ArrayList<Sidang> list) {
-        this.listSidang = list;
+public class ListSeminarAdapter extends RecyclerView.Adapter<ListSeminarAdapter.ListViewHolder> {
+    private ArrayList<Seminar> listSeminar;
+    public ListSeminarAdapter(ArrayList<Seminar> list) {
+        this.listSeminar = list;
     }
+
     @NonNull
     @Override
     public ListViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_row_sidang, parent, false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_row_seminar, parent, false);
         return new ListViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(@NonNull ListViewHolder holder, int position) {
-        Sidang sidang = listSidang.get(position);
-        holder.imgPhoto.setImageResource(sidang.getPhoto());
-        holder.sidangName.setText(sidang.getName());
-        holder.sidangDescription.setText(sidang.getDescription());
+        Seminar seminar = listSeminar.get(position);
+        holder.imgPhoto.setImageResource(seminar.getPhoto());
+        holder.seminarName.setText(seminar.getName());
+        holder.seminarDescription.setText(seminar.getDescription());
     }
 
     @Override
     public int getItemCount() {
-        return listSidang.size();
+        return listSeminar.size();
     }
 
     class ListViewHolder extends RecyclerView.ViewHolder {
         ImageView imgPhoto;
-        TextView sidangName, sidangDescription;
+        TextView seminarName, seminarDescription;
 
         public ListViewHolder(@NonNull View itemView) {
             super(itemView);
             imgPhoto = itemView.findViewById(R.id.img_item_photo);
-            sidangName = itemView.findViewById(R.id.tv_item_name);
-            sidangDescription = itemView.findViewById(R.id.tv_item_description);
+            seminarName = itemView.findViewById(R.id.tv_item_name);
+            seminarDescription = itemView.findViewById(R.id.tv_item_description);
         }
     }
 }
