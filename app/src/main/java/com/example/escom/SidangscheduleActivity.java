@@ -1,8 +1,13 @@
 package com.example.escom;
 
+import android.content.res.TypedArray;
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
+import java.util.ArrayList;
 
 public class SidangscheduleActivity extends AppCompatActivity {
     private RecyclerView rvHeroes;
@@ -13,14 +18,14 @@ public class SidangscheduleActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sidangschedule);
 
-        rvHeroes = findViewById(R.id.rv_heroes);
+        rvHeroes = findViewById(R.id.rv_sidang);
         rvHeroes.setHasFixedSize(true);
 
-        list.addAll(getListSidang());
+        list.addAll(getlistSidang());
         showRecyclerList();
     }
 
-    public ArrayList<SIdang> getListHeroes() {
+    public ArrayList<Sidang> getlistSidang() {
         String[] dataName = getResources().getStringArray(R.array.data_name);
         String[] dataDescription = getResources().getStringArray(R.array.data_description);
         TypedArray dataPhoto = getResources().obtainTypedArray(R.array.data_photo);
