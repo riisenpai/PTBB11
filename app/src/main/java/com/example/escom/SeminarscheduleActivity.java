@@ -52,4 +52,5 @@ public class SeminarscheduleActivity extends AppCompatActivity {
         Intent intent = new Intent(SeminarscheduleActivity.this,HomeActivity.class);
         startActivity(intent);
     }
+
 }

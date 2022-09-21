@@ -52,4 +52,5 @@ public class SidangscheduleActivity extends AppCompatActivity {
         Intent intent = new Intent(SidangscheduleActivity.this,HomeActivity.class);
         startActivity(intent);
     }
+
 }
