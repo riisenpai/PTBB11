@@ -356,4 +356,13 @@
         tools:ignore="MissingConstraints" />
 
 
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:labelVisibilityMode="labeled"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:menu="@menu/nav_bottom"
+        tools:layout_editor_absoluteX="29dp" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

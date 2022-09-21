@@ -3,10 +3,14 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/acer/AndroidStudioProjects/PTBB11/app/src/main/res/drawable/home.xml" value="0.1" />
+        <entry key="..\:/Users/acer/AndroidStudioProjects/PTBB11/app/src/main/res/drawable/mahasiwa.xml" value="0.1" />
+        <entry key="..\:/Users/acer/AndroidStudioProjects/PTBB11/app/src/main/res/drawable/seminar.xml" value="0.1" />
+        <entry key="..\:/Users/acer/AndroidStudioProjects/PTBB11/app/src/main/res/drawable/tugas_akhir.xml" value="0.1" />
         <entry key="..\:/Users/acer/AndroidStudioProjects/PTBB11/app/src/main/res/layout/activity_detail.xml" value="0.1" />
         <entry key="..\:/Users/acer/AndroidStudioProjects/PTBB11/app/src/main/res/layout/activity_detailta.xml" value="0.11" />
         <entry key="..\:/Users/acer/AndroidStudioProjects/PTBB11/app/src/main/res/layout/activity_formpembimbing.xml" value="0.2" />
-        <entry key="..\:/Users/acer/AndroidStudioProjects/PTBB11/app/src/main/res/layout/activity_listpermintaan.xml" value="0.18" />
+        <entry key="..\:/Users/acer/AndroidStudioProjects/PTBB11/app/src/main/res/layout/activity_listpermintaan.xml" value="0.22" />
         <entry key="..\:/Users/acer/AndroidStudioProjects/PTBB11/app/src/main/res/layout/activity_mahasiswata.xml" value="0.18" />
         <entry key="..\:/Users/acer/AndroidStudioProjects/PTBB11/app/src/main/res/layout/activity_main.xml" value="0.22" />
         <entry key="..\:/Users/acer/AndroidStudioProjects/PTBB11/app/src/main/res/layout/activity_permintaanta.xml" value="0.22" />

@@ -71,6 +71,8 @@
             android:textColorHint="#FFEB3B" />
     </com.google.android.material.textfield.TextInputLayout>
 
+
+
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="73dp"
@@ -118,6 +120,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         tools:ignore="MissingConstraints,SpeakableTextPresentCheck,SpeakableTextPresentCheck,SpeakableTextPresentCheck"
         tools:layout_editor_absoluteY="251dp" />
+
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:layout_width="match_parent"

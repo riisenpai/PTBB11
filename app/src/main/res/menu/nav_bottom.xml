@@ -10,7 +10,7 @@
     <item
         android:id="@+id/tugasakhir"
         android:title="Tugas Akhir"
-        android:icon="@drawable/tugasakhir"/>
+        android:icon="@drawable/tugas_akhir"/>
 
     <item
         android:id="@+id/seminarsidang"
@@ -20,7 +20,7 @@
     <item
         android:id="@+id/mahasiswa"
         android:title="Mahasiswa"
-        android:icon="@drawable/people"/>
+        android:icon="@drawable/mahasiswa"/>
 
     <item
         android:id="@+id/profile"
