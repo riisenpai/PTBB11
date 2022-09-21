@@ -77,7 +77,6 @@
             android:layout_marginLeft="290dp"
             android:layout_marginTop="24dp"
             android:text="Get"
-            android:onClick="sidang"
             android:textSize="12sp" />
 
         <androidx.cardview.widget.CardView
@@ -133,7 +132,6 @@
             android:layout_marginLeft="290dp"
             android:layout_marginTop="24dp"
             android:text="Get"
-            android:onClick="seminar"
             android:textSize="12sp" />
 
         <androidx.cardview.widget.CardView
@@ -176,29 +174,30 @@
         app:layout_constraintTop_toBottomOf="@+id/textView17">
 
         <LinearLayout
-            android:layout_width="80dp"
+            android:layout_width="180dp"
             android:layout_height="match_parent"
             android:orientation="horizontal">
 
             <androidx.cardview.widget.CardView
-                android:layout_width="60dp"
+                android:layout_width="109dp"
                 android:layout_height="80dp"
-                android:layout_marginLeft="10dp"
-                app:cardBackgroundColor="#B6B6B6">
+                android:layout_marginLeft="30dp"
+                app:cardBackgroundColor="#B6B6B6"
+                android:onClick="seminar">
 
                 <TextView
                     android:id="@+id/textView19"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="April"
+                    android:layout_marginLeft="38dp"
                     android:layout_marginTop="15dp"
-                    android:layout_marginLeft="15dp"/>
+                    android:text="April" />
 
                 <TextView
                     android:id="@+id/textView20"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="18dp"
+                    android:layout_marginLeft="40dp"
                     android:layout_marginTop="35dp"
                     android:text="20"
                     android:textSize="20sp" />
@@ -228,29 +227,30 @@
         app:layout_constraintTop_toBottomOf="@+id/textView18">
 
         <LinearLayout
-            android:layout_width="80dp"
+            android:layout_width="180dp"
             android:layout_height="match_parent"
             android:orientation="horizontal">
 
             <androidx.cardview.widget.CardView
-                android:layout_width="60dp"
+                android:layout_width="105dp"
                 android:layout_height="80dp"
-                android:layout_marginLeft="10dp"
-                app:cardBackgroundColor="#B6B6B6">
+                android:layout_marginLeft="30dp"
+                app:cardBackgroundColor="#B6B6B6"
+                android:onClick="sidang">
 
                 <TextView
                     android:id="@+id/textView21"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="April"
+                    android:layout_marginLeft="38dp"
                     android:layout_marginTop="15dp"
-                    android:layout_marginLeft="15dp"/>
+                    android:text="April" />
 
                 <TextView
                     android:id="@+id/textView22"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="18dp"
+                    android:layout_marginLeft="40dp"
                     android:layout_marginTop="35dp"
                     android:text="20"
                     android:textSize="20sp" />
@@ -261,6 +261,7 @@
     </LinearLayout>
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_nav"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:labelVisibilityMode="labeled"

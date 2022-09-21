@@ -1,26 +1,37 @@
 package com.example.escom;
 
 import android.content.Intent;
+import android.content.res.TypedArray;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
-public class HomeActivity extends AppCompatActivity {
+import java.util.ArrayList;
+
+public class MahasiswaActivity extends AppCompatActivity{
     BottomNavigationView bottomNavigationView;
+    private RecyclerView rvHeroes;
+    private ArrayList<Mahasiswa> list = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_home);
+        setContentView(R.layout.activity_mahasiswa);
 
+        rvHeroes = findViewById(R.id.rv_mahasiswa);
+        rvHeroes.setHasFixedSize(true);
+
+        list.addAll(getlistMahasiswa());
+        showRecyclerList();
         bottomNavigationView = findViewById(R.id.bottom_nav);
-        bottomNavigationView.setSelectedItemId(R.id.home);
+        bottomNavigationView.setSelectedItemId(R.id.mahasiswa);
 
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
@@ -33,8 +44,8 @@ public class HomeActivity extends AppCompatActivity {
                         overridePendingTransition(0,0);
                         return true;
 
-                    case R.id.mahasiswa:
-                        startActivity(new Intent(getApplicationContext(),MahasiswaActivity.class));
+                    case R.id.home:
+                        startActivity(new Intent(getApplicationContext(),HomeActivity.class));
                         overridePendingTransition(0,0);
                         return true;
 
@@ -48,7 +59,7 @@ public class HomeActivity extends AppCompatActivity {
                         overridePendingTransition(0,0);
                         return true;
 
-                    case R.id.home:
+                    case R.id.mahasiswa:
                         return true;
 
                 }
@@ -57,18 +68,30 @@ public class HomeActivity extends AppCompatActivity {
         });
     }
 
-    public void sidang(View view) {
-        Intent intent = new Intent(HomeActivity.this,SidangscheduleActivity.class);
-        startActivity(intent);
+    public ArrayList<Mahasiswa> getlistMahasiswa() {
+        String[] dataName = getResources().getStringArray(R.array.data_name);
+        String[] dataDescription = getResources().getStringArray(R.array.data_nim);
+        TypedArray dataPhoto = getResources().obtainTypedArray(R.array.data_photo);
+        ArrayList<Mahasiswa> listMahasiswa = new ArrayList<>();
+        for (int i = 0; i < dataName.length; i++) {
+            Mahasiswa mahasiswa = new Mahasiswa();
+            mahasiswa.setName(dataName[i]);
+            mahasiswa.setDescription(dataDescription[i]);
+            mahasiswa.setPhoto(dataPhoto.getResourceId(i, -1));
+            listMahasiswa.add(mahasiswa);
+        }
+        return listMahasiswa;
     }
 
-    public void seminar(View view) {
-        Intent intent = new Intent(HomeActivity.this,SeminarscheduleActivity.class);
-        startActivity(intent);
+    private void showRecyclerList(){
+        rvHeroes.setLayoutManager(new LinearLayoutManager(this));
+        ListMahasiswaAdapter listMahasiswaAdapter = new ListMahasiswaAdapter(list);
+        rvHeroes.setAdapter(listMahasiswaAdapter);
     }
 
     public void back(View view) {
-        Intent intent = new Intent(HomeActivity.this,LoginActivity.class);
+        Intent intent = new Intent(MahasiswaActivity.this,HomeActivity.class);
         startActivity(intent);
     }
 }
+
