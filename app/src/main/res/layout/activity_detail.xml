@@ -11,7 +11,7 @@
         android:layout_width="wrap_content"
         android:layout_height="0dp"
         android:src="@drawable/latarkuning2"
-        tools:ignore="MissingConstraints" />
+        tools:ignore="ContentDescription,MissingConstraints" />
 
     <ImageView
         android:layout_width="wrap_content"
@@ -21,7 +21,8 @@
         android:src="@drawable/ic_baseline_arrow_back_24"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="MissingConstraints" />
+        tools:ignore="MissingConstraints"
+         />
 
     <TextView
         android:id="@+id/pembimbingTA"
@@ -46,8 +47,8 @@
         app:layout_constraintStart_toStartOf="parent"
         tools:layout_editor_absoluteY="178dp"
         tools:srcCompat="@tools:sample/avatars"
-        tools:ignore="MissingConstraints" />
-
+        tools:ignore="MissingConstraints"
+/>
     <TextView
         android:id="@+id/namamhsa"
         android:layout_width="wrap_content"
@@ -76,7 +77,8 @@
         android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/namamhsa"
-        tools:ignore="MissingConstraints" />
+        tools:ignore="LabelFor,MissingConstraints"
+        android:importantForAutofill="no" />
 
     <TextView
         android:id="@+id/nimmhs"
@@ -105,7 +107,8 @@
         android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/nimmhs"
-        tools:ignore="MissingConstraints" />
+        tools:ignore="LabelFor,MissingConstraints"
+        android:autofillHints="" />
 
     <TextView
         android:id="@+id/judulta"
@@ -119,7 +122,7 @@
         android:textSize="16sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName2"
-        tools:ignore="MissingConstraints" />
+        tools:ignore="HardcodedText,MissingConstraints" />
 
     <EditText
         android:id="@+id/editTextTextPersonName3"
@@ -134,7 +137,9 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.4"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/judulta" />
+        app:layout_constraintTop_toBottomOf="@+id/judulta"
+        android:autofillHints=""
+        tools:ignore="LabelFor" />
 
     <TextView
         android:id="@+id/dospem"
