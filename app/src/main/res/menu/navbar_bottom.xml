@@ -13,9 +13,9 @@
         android:icon="@drawable/tugas_akhir"/>
 
     <item
-        android:id="@+id/seminarsidang"
+        android:id="@+id/semdang"
         android:title="Seminar"
-        android:icon="@drawable/seminar"/>
+        android:icon="@drawable/peserta"/>
 
     <item
         android:id="@+id/mahasiswa"
