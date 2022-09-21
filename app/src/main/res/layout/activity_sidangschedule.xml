@@ -15,7 +15,8 @@
         android:layout_marginTop="28dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView8"
-        app:srcCompat="@drawable/arrow_left" />
+        app:srcCompat="@drawable/arrow_left"
+        android:onClick="back"/>
 
     <TextView
         android:id="@+id/textView8"
