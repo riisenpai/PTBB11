@@ -56,4 +56,3 @@ public class PermintaanActivity extends AppCompatActivity{
         startActivity(intent);
     }
 }
-
