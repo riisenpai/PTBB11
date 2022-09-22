@@ -28,7 +28,6 @@ public class ListMahasiswaAdapter extends RecyclerView.Adapter<ListMahasiswaAdap
         Mahasiswa mahasiswa = listMahasiswa.get(position);
         holder.imgPhoto.setImageResource(mahasiswa.getPhoto());
         holder.mahasiswaName.setText(mahasiswa.getName());
-        holder.mahasiswaDescription.setText(mahasiswa.getDescription());
     }
 
     @Override
@@ -38,13 +37,12 @@ public class ListMahasiswaAdapter extends RecyclerView.Adapter<ListMahasiswaAdap
 
     class ListViewHolder extends RecyclerView.ViewHolder {
         ImageView imgPhoto;
-        TextView mahasiswaName, mahasiswaDescription;
+        TextView mahasiswaName;
 
         public ListViewHolder(@NonNull View itemView) {
             super(itemView);
             imgPhoto = itemView.findViewById(R.id.img_item_photo);
             mahasiswaName = itemView.findViewById(R.id.tv_item_name);
-            mahasiswaDescription = itemView.findViewById(R.id.tv_item_description);
         }
     }
 }

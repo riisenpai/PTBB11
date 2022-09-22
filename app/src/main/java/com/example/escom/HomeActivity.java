@@ -38,13 +38,13 @@ public class HomeActivity extends AppCompatActivity {
                         overridePendingTransition(0,0);
                         return true;
 
-                    case R.id.tugasakhir:
-                        startActivity(new Intent(getApplicationContext(),PermintaanActivity.class));
+                    case R.id.semdang:
+                        startActivity(new Intent(getApplicationContext(),SemdangActivity.class));
                         overridePendingTransition(0,0);
                         return true;
 
-                    case R.id.semdang:
-                        startActivity(new Intent(getApplicationContext(),SemdangActivity.class));
+                    case R.id.tugasakhir:
+                        startActivity(new Intent(getApplicationContext(),PermintaanActivity.class));
                         overridePendingTransition(0,0);
                         return true;
 

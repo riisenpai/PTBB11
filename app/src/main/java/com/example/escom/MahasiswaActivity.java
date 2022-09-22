@@ -30,53 +30,15 @@ public class MahasiswaActivity extends AppCompatActivity{
 
         list.addAll(getlistMahasiswa());
         showRecyclerList();
-        bottomNavigationView = findViewById(R.id.bottom_nav);
-        bottomNavigationView.setSelectedItemId(R.id.mahasiswa);
-
-        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
-            @Override
-            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-
-                switch (item.getItemId())
-                {
-                    case R.id.profile:
-                        startActivity(new Intent(getApplicationContext(),ProfileActivity.class));
-                        overridePendingTransition(0,0);
-                        return true;
-
-                    case R.id.home:
-                        startActivity(new Intent(getApplicationContext(),HomeActivity.class));
-                        overridePendingTransition(0,0);
-                        return true;
-
-                    case R.id.tugasakhir:
-                        startActivity(new Intent(getApplicationContext(),PermintaanActivity.class));
-                        overridePendingTransition(0,0);
-                        return true;
-
-                    case R.id.semdang:
-                        startActivity(new Intent(getApplicationContext(),SemdangActivity.class));
-                        overridePendingTransition(0,0);
-                        return true;
-
-                    case R.id.mahasiswa:
-                        return true;
-
-                }
-                return false;
-            }
-        });
     }
 
     public ArrayList<Mahasiswa> getlistMahasiswa() {
         String[] dataName = getResources().getStringArray(R.array.data_name);
-        String[] dataDescription = getResources().getStringArray(R.array.data_nim);
         TypedArray dataPhoto = getResources().obtainTypedArray(R.array.data_photo);
         ArrayList<Mahasiswa> listMahasiswa = new ArrayList<>();
         for (int i = 0; i < dataName.length; i++) {
             Mahasiswa mahasiswa = new Mahasiswa();
             mahasiswa.setName(dataName[i]);
-            mahasiswa.setDescription(dataDescription[i]);
             mahasiswa.setPhoto(dataPhoto.getResourceId(i, -1));
             listMahasiswa.add(mahasiswa);
         }
@@ -91,6 +53,11 @@ public class MahasiswaActivity extends AppCompatActivity{
 
     public void back(View view) {
         Intent intent = new Intent(MahasiswaActivity.this,HomeActivity.class);
+        startActivity(intent);
+    }
+
+    public void detail(View view) {
+        Intent intent = new Intent(MahasiswaActivity.this,DetailActivity.class);
         startActivity(intent);
     }
 }
