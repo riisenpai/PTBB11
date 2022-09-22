@@ -23,11 +23,13 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="50dp"
+        android:minWidth="48dp"
+        android:minHeight="48dp"
+        android:onClick="back"
         android:src="@drawable/arrow_left"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="MissingConstraints"
-        android:onClick="back"/>
+        tools:ignore="MissingConstraints" />
 
     <TextView
         android:id="@+id/pembimbingTA"

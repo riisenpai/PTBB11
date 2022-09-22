@@ -15,7 +15,7 @@ public class DetailActivity extends AppCompatActivity {
     }
 
     public void back(View view) {
-        Intent intent = new Intent(DetailActivity.this,MahasiswaActivity.class);
+        Intent intent = new Intent(DetailActivity.this,HomeActivity.class);
         startActivity(intent);
     }
 
