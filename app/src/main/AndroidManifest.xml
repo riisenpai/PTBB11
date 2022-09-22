@@ -104,6 +104,18 @@
             >
         </activity>
 
+        <activity
+            android:name=".SeminarpengujiActivity"
+            android:exported="true"
+            >
+        </activity>
+
+        <activity
+            android:name=".SidangpengujiActivity"
+            android:exported="true"
+            >
+        </activity>
+
     </application>
 
 </manifest>

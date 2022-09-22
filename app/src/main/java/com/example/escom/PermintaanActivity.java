@@ -30,54 +30,15 @@ public class PermintaanActivity extends AppCompatActivity{
 
         list.addAll(getlistPermintaan());
         showRecyclerList();
-
-        bottomNavigationView = findViewById(R.id.bottom_nav);
-        bottomNavigationView.setSelectedItemId(R.id.tugasakhir);
-
-        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
-            @Override
-            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-
-                switch (item.getItemId())
-                {
-                    case R.id.profile:
-                        startActivity(new Intent(getApplicationContext(),ProfileActivity.class));
-                        overridePendingTransition(0,0);
-                        return true;
-
-                    case R.id.mahasiswa:
-                        startActivity(new Intent(getApplicationContext(),MahasiswaActivity.class));
-                        overridePendingTransition(0,0);
-                        return true;
-
-                    case R.id.home:
-                        startActivity(new Intent(getApplicationContext(),HomeActivity.class));
-                        overridePendingTransition(0,0);
-                        return true;
-
-                    case R.id.semdang:
-                        startActivity(new Intent(getApplicationContext(),SemdangActivity.class));
-                        overridePendingTransition(0,0);
-                        return true;
-
-                    case R.id.tugasakhir:
-                        return true;
-
-                }
-                return false;
-            }
-        });
     }
 
     public ArrayList<Permintaan> getlistPermintaan() {
         String[] dataName = getResources().getStringArray(R.array.data_name);
-        String[] dataDescription = getResources().getStringArray(R.array.data_nim);
         TypedArray dataPhoto = getResources().obtainTypedArray(R.array.data_photo);
         ArrayList<Permintaan> listPermintaan = new ArrayList<>();
         for (int i = 0; i < dataName.length; i++) {
             Permintaan permintaan = new Permintaan();
             permintaan.setName(dataName[i]);
-            permintaan.setDescription(dataDescription[i]);
             permintaan.setPhoto(dataPhoto.getResourceId(i, -1));
             listPermintaan.add(permintaan);
         }

@@ -71,13 +71,11 @@ public class SemdangActivity extends AppCompatActivity{
 
     public ArrayList<Semdang> getlistSemdang() {
         String[] dataName = getResources().getStringArray(R.array.data_name);
-        String[] dataDescription = getResources().getStringArray(R.array.data_nim);
         TypedArray dataPhoto = getResources().obtainTypedArray(R.array.data_photo);
         ArrayList<Semdang> listSemdang = new ArrayList<>();
         for (int i = 0; i < dataName.length; i++) {
             Semdang semdang = new Semdang();
             semdang.setName(dataName[i]);
-            semdang.setDescription(dataDescription[i]);
             semdang.setPhoto(dataPhoto.getResourceId(i, -1));
             listSemdang.add(semdang);
         }

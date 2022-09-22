@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/bg_schedule"
-    tools:context=".SeminarActivity">
+    tools:context=".SeminarpengujiActivity">
 
     <ImageView
         android:id="@+id/imageView8"
@@ -27,7 +27,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="55dp"
         android:fontFamily="sans-serif"
-        android:text="Detail Seminar"
+        android:text="Penguji Seminar"
         android:textColor="#FFFFFF"
         android:textColorHint="#FFFFFF"
         android:textSize="20sp"
@@ -174,7 +174,7 @@
         android:layout_marginStart="20dp"
         android:layout_marginTop="10dp"
         android:fontFamily="sans-serif-medium"
-        android:text="Ruangan"
+        android:text="Dosen Penguji 1"
         android:textColor="#000000"
         android:textSize="16sp"
         app:layout_constraintStart_toStartOf="parent"
@@ -188,7 +188,7 @@
         android:layout_marginTop="10dp"
         android:ems="10"
         android:inputType="date"
-        android:text="Seminar SI"
+        android:text="Choose Penguji"
         android:textColor="#A3A1A1"
         android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -202,7 +202,7 @@
         android:layout_marginStart="20dp"
         android:layout_marginTop="10dp"
         android:fontFamily="sans-serif-medium"
-        android:text="Jadwal"
+        android:text="Dosen Penguji 2"
         android:textColor="#000000"
         android:textSize="16sp"
         app:layout_constraintStart_toStartOf="parent"
@@ -216,7 +216,7 @@
         android:layout_marginTop="10dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="14 September 2022"
+        android:text="Choose Penguji"
         android:textColor="#A3A1A1"
         android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -225,12 +225,13 @@
         app:layout_constraintTop_toBottomOf="@+id/status" />
 
     <TextView
-        android:id="@+id/status3"
+        android:id="@+id/status1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
         android:fontFamily="sans-serif-medium"
-        android:text="Dosen Penguji"
+        android:text="Dosen Penguji 3"
         android:textColor="#000000"
         android:textSize="16sp"
         app:layout_constraintStart_toStartOf="parent"
@@ -238,29 +239,28 @@
         tools:ignore="MissingConstraints" />
 
     <EditText
-        android:id="@+id/status4"
+        android:id="@+id/status2"
         android:layout_width="365dp"
         android:layout_height="48dp"
         android:layout_marginTop="10dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Choose Dosen Penguji"
+        android:text="Choose Penguji"
         android:textColor="#A3A1A1"
         android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.4"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/status3" />
+        app:layout_constraintTop_toBottomOf="@+id/status1" />
 
-    <ImageView
-        android:id="@+id/imageView12"
-        android:layout_width="27dp"
-        android:layout_height="24dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="10dp"
-        android:onClick="seminarpenguji"
-        app:layout_constraintEnd_toEndOf="@+id/status4"
-        app:layout_constraintTop_toTopOf="@+id/status4"
-        app:srcCompat="@android:drawable/checkbox_off_background" />
+    <Button
+        android:layout_width="364dp"
+        android:layout_height="54dp"
+        android:layout_marginTop="16dp"
+        android:text="Submit"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.509"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/status2" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

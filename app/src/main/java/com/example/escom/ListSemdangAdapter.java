@@ -28,7 +28,6 @@ public class ListSemdangAdapter extends RecyclerView.Adapter<ListSemdangAdapter.
         Semdang semdang = listSemdang.get(position);
         holder.imgPhoto.setImageResource(semdang .getPhoto());
         holder.semdangName.setText(semdang .getName());
-        holder.semdangDescription.setText(semdang .getDescription());
     }
 
     @Override
@@ -38,13 +37,12 @@ public class ListSemdangAdapter extends RecyclerView.Adapter<ListSemdangAdapter.
 
     class ListViewHolder extends RecyclerView.ViewHolder {
         ImageView imgPhoto;
-        TextView semdangName, semdangDescription;
+        TextView semdangName;
 
         public ListViewHolder(@NonNull View itemView) {
             super(itemView);
             imgPhoto = itemView.findViewById(R.id.img_item_photo);
             semdangName = itemView.findViewById(R.id.tv_item_name);
-            semdangDescription = itemView.findViewById(R.id.tv_item_description);
         }
     }
 }

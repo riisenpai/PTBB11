@@ -17,4 +17,9 @@ public class SeminarActivity extends AppCompatActivity {
         Intent intent = new Intent(SeminarActivity.this,SemdangActivity.class);
         startActivity(intent);
     }
+
+    public void seminarpenguji(View view) {
+        Intent intent = new Intent(SeminarActivity.this,SeminarpengujiActivity.class);
+        startActivity(intent);
+    }
 }

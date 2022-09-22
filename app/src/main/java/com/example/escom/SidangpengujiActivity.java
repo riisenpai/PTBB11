@@ -6,20 +6,15 @@ import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class SidangActivity extends AppCompatActivity {
+public class SidangpengujiActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_sidang);
+        setContentView(R.layout.activity_sidangpenguji);
     }
 
     public void back(View view) {
-        Intent intent = new Intent(SidangActivity.this,SemdangActivity.class);
-        startActivity(intent);
-    }
-
-    public void sidangpenguji(View view) {
-        Intent intent = new Intent(SidangActivity.this,SidangpengujiActivity.class);
+        Intent intent = new Intent(SidangpengujiActivity.this,SidangActivity.class);
         startActivity(intent);
     }
 }

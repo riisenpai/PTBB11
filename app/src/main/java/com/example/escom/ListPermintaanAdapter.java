@@ -28,7 +28,6 @@ public class ListPermintaanAdapter extends RecyclerView.Adapter<ListPermintaanAd
         Permintaan permintaan = listPermintaan.get(position);
         holder.imgPhoto.setImageResource(permintaan.getPhoto());
         holder.permintaanName.setText(permintaan.getName());
-        holder.permintaanDescription.setText(permintaan.getDescription());
     }
 
     @Override
@@ -38,13 +37,12 @@ public class ListPermintaanAdapter extends RecyclerView.Adapter<ListPermintaanAd
 
     class ListViewHolder extends RecyclerView.ViewHolder {
         ImageView imgPhoto;
-        TextView permintaanName, permintaanDescription;
+        TextView permintaanName;
 
         public ListViewHolder(@NonNull View itemView) {
             super(itemView);
             imgPhoto = itemView.findViewById(R.id.img_item_photo);
             permintaanName = itemView.findViewById(R.id.tv_item_name);
-            permintaanDescription = itemView.findViewById(R.id.tv_item_description);
         }
     }
 }
