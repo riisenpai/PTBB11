@@ -17,19 +17,19 @@ import java.util.ArrayList;
 
 public class SemdangActivity extends AppCompatActivity{
     BottomNavigationView bottomNavigationView;
-    private RecyclerView rvHeroes;
-    private ArrayList<Semdang> list = new ArrayList<>();
+//    private RecyclerView rvHeroes;
+//    private ArrayList<Semdang> list = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_semdang);
 
-        rvHeroes = findViewById(R.id.rv_semdang);
-        rvHeroes.setHasFixedSize(true);
-
-        list.addAll(getlistSemdang());
-        showRecyclerList();
+//        rvHeroes = findViewById(R.id.rv_semdang);
+//        rvHeroes.setHasFixedSize(true);
+//
+//        list.addAll(getlistSemdang());
+//        showRecyclerList();
 
         bottomNavigationView = findViewById(R.id.bottom_nav);
         bottomNavigationView.setSelectedItemId(R.id.semdang);
@@ -69,27 +69,37 @@ public class SemdangActivity extends AppCompatActivity{
         });
     }
 
-    public ArrayList<Semdang> getlistSemdang() {
-        String[] dataName = getResources().getStringArray(R.array.data_name);
-        TypedArray dataPhoto = getResources().obtainTypedArray(R.array.data_photo);
-        ArrayList<Semdang> listSemdang = new ArrayList<>();
-        for (int i = 0; i < dataName.length; i++) {
-            Semdang semdang = new Semdang();
-            semdang.setName(dataName[i]);
-            semdang.setPhoto(dataPhoto.getResourceId(i, -1));
-            listSemdang.add(semdang);
-        }
-        return listSemdang;
-    }
-
-    private void showRecyclerList(){
-        rvHeroes.setLayoutManager(new LinearLayoutManager(this));
-        ListSemdangAdapter listSemdangAdapter = new ListSemdangAdapter(list);
-        rvHeroes.setAdapter(listSemdangAdapter);
-    }
+//    public ArrayList<Semdang> getlistSemdang() {
+//        String[] dataName = getResources().getStringArray(R.array.data_name);
+//        TypedArray dataPhoto = getResources().obtainTypedArray(R.array.data_photo);
+//        ArrayList<Semdang> listSemdang = new ArrayList<>();
+//        for (int i = 0; i < dataName.length; i++) {
+//            Semdang semdang = new Semdang();
+//            semdang.setName(dataName[i]);
+//            semdang.setPhoto(dataPhoto.getResourceId(i, -1));
+//            listSemdang.add(semdang);
+//        }
+//        return listSemdang;
+//    }
+//
+//    private void showRecyclerList(){
+//        rvHeroes.setLayoutManager(new LinearLayoutManager(this));
+//        ListSemdangAdapter listSemdangAdapter = new ListSemdangAdapter(list);
+//        rvHeroes.setAdapter(listSemdangAdapter);
+//    }
 
     public void back(View view) {
         Intent intent = new Intent(SemdangActivity.this,HomeActivity.class);
+        startActivity(intent);
+    }
+
+    public void keseminar(View view) {
+        Intent intent = new Intent(SemdangActivity.this,SeminarActivity.class);
+        startActivity(intent);
+    }
+
+    public void kesidang(View view) {
+        Intent intent = new Intent(SemdangActivity.this,SidangActivity.class);
         startActivity(intent);
     }
 }

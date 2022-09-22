@@ -8,7 +8,7 @@
     tools:context=".SemdangActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/rv_heroes1"
+        android:id="@+id/kolom"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="15dp"
@@ -23,24 +23,25 @@
             android:id="@+id/img_item_photo"
             android:layout_width="100dp"
             android:layout_height="100dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginBottom="8dp"
-            tools:src="@tools:sample/avatars" />
+            android:layout_marginStart="4dp"
+            android:layout_marginTop="4dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/profile" />
 
         <TextView
-            android:id="@+id/tv_item_name"
+            android:id="@+id/tv_item_name1"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="18dp"
-            android:layout_marginTop="38dp"
-            android:layout_toEndOf="@id/img_item_photo"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="40dp"
             android:fontFamily="sans-serif-black"
+            android:textColor="#0C0C0C"
             android:textSize="16sp"
             android:textStyle="bold"
             app:layout_constraintStart_toEndOf="@+id/img_item_photo"
             app:layout_constraintTop_toTopOf="parent"
-            tools:text="Muhammad Hatta" />
+            tools:text="M Hatta" />
 
         <androidx.cardview.widget.CardView
             android:layout_width="47dp"
@@ -134,99 +135,45 @@
         app:layout_constraintTop_toBottomOf="@+id/textInputLayout4" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/rv_heroes1"
+        android:id="@+id/rv_heroes2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="20dp"
         android:layout_marginEnd="10dp"
         android:padding="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/rv_heroes1">
+        tools:layout_editor_absoluteY="436dp">
 
         <ImageView
-            android:id="@+id/img_item_photo"
-            card_view:layout_constraintBottom_toBottomOf="parent"
-            card_view:layout_constraintStart_toStartOf="parent"
-            card_view:layout_constraintTop_toTopOf="parent"
+            android:id="@+id/photo1"
             android:layout_width="100dp"
             android:layout_height="100dp"
-            android:layout_marginStart="8dp"
+            android:layout_marginStart="16dp"
             android:layout_marginTop="8dp"
-            android:layout_marginBottom="8dp"
-            tools:src="@tools:sample/avatars" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/profile" />
 
         <TextView
-            android:id="@+id/tv_item_name"
-            card_view:layout_constraintEnd_toEndOf="parent"
-            card_view:layout_constraintStart_toEndOf="@+id/img_item_photo"
-            card_view:layout_constraintTop_toTopOf="@+id/img_item_photo"
+            android:id="@+id/tv_item_name1"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="18dp"
+            android:layout_marginStart="20dp"
             android:layout_marginTop="38dp"
-            android:layout_toEndOf="@id/img_item_photo"
             android:fontFamily="sans-serif-black"
             android:textColor="#0C0C0C"
             android:textSize="16sp"
             android:textStyle="bold"
-            app:layout_constraintStart_toEndOf="@+id/img_item_photo"
+            app:layout_constraintStart_toEndOf="@+id/photo1"
             app:layout_constraintTop_toTopOf="parent"
             tools:text="Ahmad Yani" />
 
         <androidx.cardview.widget.CardView
-            card_view:cardBackgroundColor="#3F51B5"
-            card_view:layout_constraintEnd_toEndOf="parent"
-            card_view:layout_constraintTop_toTopOf="parent"
             android:layout_width="47dp"
             android:layout_height="44dp"
             android:layout_marginTop="30dp"
             android:layout_marginEnd="10dp"
-            app:cardBackgroundColor="#6C6868"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/rv_heroes1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="15dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="15dp"
-        android:padding="8dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button4">
-
-        <ImageView
-            android:id="@+id/img_item_photo"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginBottom="8dp"
-            tools:src="@tools:sample/avatars" />
-
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="18dp"
-            android:layout_marginTop="38dp"
-            android:layout_toEndOf="@id/img_item_photo"
-            android:fontFamily="sans-serif-black"
-            android:textSize="16sp"
-            android:textStyle="bold"
-            app:layout_constraintStart_toEndOf="@+id/img_item_photo"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:text="Muhammad Hatta" />
-
-        <androidx.cardview.widget.CardView
-            android:layout_width="47dp"
-            android:layout_height="44dp"
-            android:layout_marginTop="30dp"
-            android:layout_marginEnd="10dp"
+            android:onClick="kesidang"
             app:cardBackgroundColor="#6C6868"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />

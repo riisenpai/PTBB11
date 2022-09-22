@@ -71,4 +71,24 @@ public class HomeActivity extends AppCompatActivity {
         Intent intent = new Intent(HomeActivity.this,LoginActivity.class);
         startActivity(intent);
     }
+
+    public void semdang(View view) {
+        Intent intent = new Intent(HomeActivity.this,SemdangActivity.class);
+        startActivity(intent);
+    }
+
+    public void kesidang(View view) {
+        Intent intent = new Intent(HomeActivity.this,SidangActivity.class);
+        startActivity(intent);
+    }
+
+    public void keseminar(View view) {
+        Intent intent = new Intent(HomeActivity.this,SeminarActivity.class);
+        startActivity(intent);
+    }
+
+    public void detail(View view) {
+        Intent intent = new Intent(HomeActivity.this,DetailActivity.class);
+        startActivity(intent);
+    }
 }
