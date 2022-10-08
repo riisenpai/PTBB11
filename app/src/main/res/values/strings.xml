@@ -3,5 +3,11 @@
     <string name="app_name">Escom</string>
     <string name="title_bold"><b>Permintaan TA</b></string>
     <string name="search">Search</string>
+    <string name="detail_ta_mahasiswa">Detail TA Mahasiswa</string>
+    <string name="nama">Nama</string>
+    <string name="amanda">Amanda</string>
+    <string name="nim">NIM</string>
+    <string name="_2011521001">2011521001</string>
+    <string name="sistem_informasi_inventory_fti">Sistem Informasi Inventory FTI</string>
 </resources>
 
