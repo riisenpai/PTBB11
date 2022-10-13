@@ -13,6 +13,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 public class PembimbingActivity  extends AppCompatActivity {
     BottomNavigationView bottomNavigationView;
 
+    String name;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -22,5 +23,7 @@ public class PembimbingActivity  extends AppCompatActivity {
     public void back(View view) {
         Intent intent = new Intent(PembimbingActivity.this,PermintaanActivity.class);
         startActivity(intent);
+
+
     }
 }

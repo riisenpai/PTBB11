@@ -19,7 +19,7 @@ public class ListMahasiswaAdapter extends RecyclerView.Adapter<ListMahasiswaAdap
     @NonNull
     @Override
     public ListViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_row_mahasiswa, parent, false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_mahasiswata, parent, false);
         return new ListViewHolder(view);
     }
 
