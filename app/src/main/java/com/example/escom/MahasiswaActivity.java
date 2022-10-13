@@ -15,7 +15,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import java.util.ArrayList;
 
-public class MahasiswaActivity extends AppCompatActivity{
+public class MahasiswaActivity extends AppCompatActivity implements ListMahasiswaAdapter.ItemmahasiswaClick{
     BottomNavigationView bottomNavigationView;
     private RecyclerView rvHeroes;
     private ArrayList<Mahasiswa> list = new ArrayList<>();
@@ -27,6 +27,9 @@ public class MahasiswaActivity extends AppCompatActivity{
 
         rvHeroes = findViewById(R.id.rv_mhsTA);
         rvHeroes.setHasFixedSize(true);
+
+        ListMahasiswaAdapter adapter = new ListMahasiswaAdapter(getlistMahasiswa());
+        adapter.setListMahasiswa(this);
 
         list.addAll(getlistMahasiswa());
         showRecyclerList();
@@ -96,6 +99,12 @@ public class MahasiswaActivity extends AppCompatActivity{
     public void detail(View view) {
         Intent intent = new Intent(MahasiswaActivity.this,DetailActivity.class);
         startActivity(intent);
+    }
+
+    @Override
+    public void onItemMahasiswaClick(Mahasiswa mahasiswa) {
+        Intent mahasiswaIntent = new Intent(this, DetailActivity.class);
+        startActivity(mahasiswaIntent);
     }
 }
 

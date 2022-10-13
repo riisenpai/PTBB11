@@ -13,9 +13,17 @@ import java.util.ArrayList;
 
 public class ListMahasiswaAdapter extends RecyclerView.Adapter<ListMahasiswaAdapter.ListViewHolder> {
     private ArrayList<Mahasiswa> listMahasiswa;
+    ItemmahasiswaClick mahasiswata;
+
     public ListMahasiswaAdapter(ArrayList<Mahasiswa> list) {
+
         this.listMahasiswa = list;
     }
+
+    public void setListMahasiswa (ItemmahasiswaClick mahasiswata) {
+        this.mahasiswata = mahasiswata;
+    }
+
     @NonNull
     @Override
     public ListViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -35,7 +43,7 @@ public class ListMahasiswaAdapter extends RecyclerView.Adapter<ListMahasiswaAdap
         return listMahasiswa.size();
     }
 
-    class ListViewHolder extends RecyclerView.ViewHolder {
+    class ListViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
         ImageView imgPhoto;
         TextView mahasiswaName;
 
@@ -43,6 +51,19 @@ public class ListMahasiswaAdapter extends RecyclerView.Adapter<ListMahasiswaAdap
             super(itemView);
             imgPhoto = itemView.findViewById(R.id.img_item_photo);
             mahasiswaName = itemView.findViewById(R.id.tv_item_name);
+
+            itemView.setOnClickListener(this);
+        }
+
+        @Override
+        public void onClick(View view) {
+            Mahasiswa mahasiswa = listMahasiswa.get(getAdapterPosition());
+            mahasiswata.onItemMahasiswaClick(mahasiswa);
         }
     }
+    public interface ItemmahasiswaClick{
+        void onItemMahasiswaClick(Mahasiswa mahasiswa);
+
+    }
+
 }
