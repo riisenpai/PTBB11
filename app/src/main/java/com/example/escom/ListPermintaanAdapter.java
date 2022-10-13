@@ -13,13 +13,20 @@ import java.util.ArrayList;
 
 public class ListPermintaanAdapter extends RecyclerView.Adapter<ListPermintaanAdapter.ListViewHolder> {
     private ArrayList<Permintaan> listPermintaan;
+    ItempermintaanClick onclick ;
+
     public ListPermintaanAdapter(ArrayList<Permintaan> list) {
         this.listPermintaan = list;
     }
+
+    public void setOnclick(ItempermintaanClick onclick) {
+        this.onclick = onclick;
+    }
+
     @NonNull
     @Override
     public ListViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_row_permintaan, parent, false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_listpermintaan, parent, false);
         return new ListViewHolder(view);
     }
 
@@ -35,14 +42,28 @@ public class ListPermintaanAdapter extends RecyclerView.Adapter<ListPermintaanAd
         return listPermintaan.size();
     }
 
-    class ListViewHolder extends RecyclerView.ViewHolder {
+    class ListViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
         ImageView imgPhoto;
         TextView permintaanName;
-
         public ListViewHolder(@NonNull View itemView) {
             super(itemView);
             imgPhoto = itemView.findViewById(R.id.img_item_photo);
             permintaanName = itemView.findViewById(R.id.tv_item_name);
+
+            itemView.setOnClickListener(this);
+        }
+
+        @Override
+        public void onClick(View view) {
+            Permintaan permintaan = listPermintaan.get(getAdapterPosition());
+            onclick.onItemPermintaanClick(permintaan);
         }
     }
-}
+
+
+    public interface ItempermintaanClick{
+        void onItemPermintaanClick(Permintaan permintaan);
+
+    }
+
+    }
