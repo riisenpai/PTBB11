@@ -1,54 +1,54 @@
 <resources>
     <string name="app_name">Escom</string>
 
-        <string name="mhs_name">Nama Mahasiswa</string>
-        <string name="deskription">Deskripsi</string>
-        <string name="nim">NIM</string>
+    <string name="mhs_name">Nama Mahasiswa</string>
+    <string name="deskription">Deskripsi</string>
+    <string name="nim">NIM</string>
 
-        <string-array name="data_name">
-            <item>Ahmad Dahlan</item>
-            <item>Ahmad Yani</item>
-            <item>Sutomo</item>
-            <item>Gatot Soebroto</item>
-            <item>Ki Hadjar Dewantara</item>
-            <item>Mohammad Hatta</item>
-            <item>Soedirman</item>
-            <item>Soekarno</item>
-            <item>Soepomo</item>
-        </string-array>
+    <string-array name="data_name">
+        <item>Ahmad Dahlan</item>
+        <item>Ahmad Yani</item>
+        <item>Sutomo</item>
+        <item>Gatot Soebroto</item>
+        <item>Ki Hadjar Dewantara</item>
+        <item>Mohammad Hatta</item>
+        <item>Soedirman</item>
+        <item>Soekarno</item>
+        <item>Soepomo</item>
+    </string-array>
 
-        <string-array name="data_deskription">
-            <item>1811521001</item>
-            <item>1811521002</item>
-            <item>1811521003</item>
-            <item>1811521004</item>
-            <item>1811521005</item>
-            <item>1811521006</item>
-            <item>1811521007</item>
-            <item>1811521008</item>
-        </string-array>
+    <string-array name="data_deskription">
+        <item>1811521001</item>
+        <item>1811521002</item>
+        <item>1811521003</item>
+        <item>1811521004</item>
+        <item>1811521005</item>
+        <item>1811521006</item>
+        <item>1811521007</item>
+        <item>1811521008</item>
+    </string-array>
 
-        <string-array name="data_description">
-            <item>14.00 WIB di Seminar SI</item>
-            <item>14.00 WIB di Seminar SI</item>
-            <item>14.00 WIB di Seminar SI</item>
-            <item>14.00 WIB di Seminar SI</item>
-            <item>14.00 WIB di Seminar SI</item>
-            <item>14.00 WIB di Seminar SI</item>
-            <item>14.00 WIB di Seminar SI</item>
-            <item>14.00 WIB di Seminar SI</item>
-            <item>14.00 WIB di Seminar SI</item>
-        </string-array>
+    <string-array name="data_description">
+        <item>14.00 WIB di Seminar SI</item>
+        <item>14.00 WIB di Seminar SI</item>
+        <item>14.00 WIB di Seminar SI</item>
+        <item>14.00 WIB di Seminar SI</item>
+        <item>14.00 WIB di Seminar SI</item>
+        <item>14.00 WIB di Seminar SI</item>
+        <item>14.00 WIB di Seminar SI</item>
+        <item>14.00 WIB di Seminar SI</item>
+        <item>14.00 WIB di Seminar SI</item>
+    </string-array>
 
-        <integer-array name="data_photo">
-            <item>@drawable/person</item>
-            <item>@drawable/person</item>
-            <item>@drawable/person</item>
-            <item>@drawable/person</item>
-            <item>@drawable/person</item>
-            <item>@drawable/person</item>
-            <item>@drawable/person</item>
-            <item>@drawable/person</item>
-            <item>@drawable/person</item>
-        </integer-array>
+    <integer-array name="data_photo">
+        <item>@drawable/person</item>
+        <item>@drawable/person</item>
+        <item>@drawable/person</item>
+        <item>@drawable/person</item>
+        <item>@drawable/person</item>
+        <item>@drawable/person</item>
+        <item>@drawable/person</item>
+        <item>@drawable/person</item>
+        <item>@drawable/person</item>
+    </integer-array>
 </resources>
