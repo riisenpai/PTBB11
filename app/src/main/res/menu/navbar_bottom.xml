@@ -15,7 +15,7 @@
     <item
         android:id="@+id/semdang"
         android:title="Seminar"
-        android:icon="@drawable/peserta"/>
+        android:icon="@drawable/seminar"/>
 
     <item
         android:id="@+id/mahasiswa"

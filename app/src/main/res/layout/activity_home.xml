@@ -68,7 +68,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="87dp"
             android:layout_marginTop="48dp"
-            android:text="Daftar Permintaan Seminar" />
+            android:text="Daftar Permintaan Sidang" />
 
         <Button
             android:id="@+id/button2"
@@ -191,9 +191,9 @@
                     android:id="@+id/textView19"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="38dp"
+                    android:layout_marginLeft="40dp"
                     android:layout_marginTop="15dp"
-                    android:text="April" />
+                    android:text="Oct" />
 
                 <TextView
                     android:id="@+id/textView20"
@@ -201,7 +201,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="40dp"
                     android:layout_marginTop="35dp"
-                    android:text="20"
+                    android:text="13"
                     android:textSize="20sp" />
             </androidx.cardview.widget.CardView>
         </LinearLayout>
@@ -245,9 +245,9 @@
                     android:id="@+id/textView21"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="38dp"
+                    android:layout_marginLeft="40dp"
                     android:layout_marginTop="15dp"
-                    android:text="April" />
+                    android:text="Oct" />
 
                 <TextView
                     android:id="@+id/textView22"
@@ -255,7 +255,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="40dp"
                     android:layout_marginTop="35dp"
-                    android:text="20"
+                    android:text="13"
                     android:textSize="20sp" />
 
             </androidx.cardview.widget.CardView>
@@ -271,42 +271,5 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:menu="@menu/navbar_bottom"
         tools:layout_editor_absoluteX="29dp" />
-
-    <Button
-        android:id="@+id/button6"
-        android:layout_width="81dp"
-        android:layout_height="43dp"
-        android:layout_marginEnd="25dp"
-        android:text="Detail"
-        android:textSize="10sp"
-        android:onClick="detail"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/button7"
-        app:layout_constraintTop_toBottomOf="@+id/cardView2" />
-
-    <Button
-        android:id="@+id/button7"
-        android:layout_width="88dp"
-        android:layout_height="43dp"
-        android:layout_marginStart="5dp"
-        android:layout_marginEnd="5dp"
-        android:text="seminar"
-        android:textSize="10sp"
-        android:onClick="keseminar"
-        app:layout_constraintEnd_toStartOf="@+id/button6"
-        app:layout_constraintStart_toEndOf="@+id/button8"
-        app:layout_constraintTop_toBottomOf="@+id/cardView2" />
-
-    <Button
-        android:id="@+id/button8"
-        android:layout_width="90dp"
-        android:layout_height="41dp"
-        android:layout_marginStart="120dp"
-        android:text="Sidang"
-        android:textSize="10sp"
-        android:onClick="kesidang"
-        app:layout_constraintEnd_toStartOf="@+id/button7"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cardView2" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
