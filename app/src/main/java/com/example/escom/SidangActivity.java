@@ -14,7 +14,7 @@ public class SidangActivity extends AppCompatActivity {
     }
 
     public void back(View view) {
-        Intent intent = new Intent(SidangActivity.this,HomeActivity.class);
+        Intent intent = new Intent(SidangActivity.this,SemdangActivity.class);
         startActivity(intent);
     }
 

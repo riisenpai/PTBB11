@@ -12,10 +12,13 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 
 public class ListSemdangAdapter extends RecyclerView.Adapter<ListSemdangAdapter.ListViewHolder> {
-    private ArrayList<Semdang> listSemdang;
+    private ArrayList<Semdang> listHero;
+
     public ListSemdangAdapter(ArrayList<Semdang> list) {
-        this.listSemdang = list;
+
+        this.listHero = list;
     }
+
     @NonNull
     @Override
     public ListViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -25,24 +28,24 @@ public class ListSemdangAdapter extends RecyclerView.Adapter<ListSemdangAdapter.
 
     @Override
     public void onBindViewHolder(@NonNull ListViewHolder holder, int position) {
-        Semdang semdang = listSemdang.get(position);
-        holder.imgPhoto.setImageResource(semdang .getPhoto());
-        holder.semdangName.setText(semdang .getName());
+        Semdang hero = listHero.get(position);
+        holder.imgPhoto.setImageResource(hero.getPhoto());
+        holder.tvName.setText(hero.getName());
     }
 
     @Override
     public int getItemCount() {
-        return listSemdang.size();
+        return listHero.size();
     }
 
-    class ListViewHolder extends RecyclerView.ViewHolder {
+    public class ListViewHolder  extends RecyclerView.ViewHolder{
         ImageView imgPhoto;
-        TextView semdangName;
+        TextView tvName;
 
-        public ListViewHolder(@NonNull View itemView) {
+        ListViewHolder(View itemView) {
             super(itemView);
             imgPhoto = itemView.findViewById(R.id.img_item_photo);
-            semdangName = itemView.findViewById(R.id.tv_item_name);
+            tvName = itemView.findViewById(R.id.Semdangname);
         }
     }
 }

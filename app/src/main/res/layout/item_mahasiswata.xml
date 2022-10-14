@@ -8,10 +8,11 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:onClick="detail">
 
         <ImageView
-            android:id="@+id/imageView13"
+            android:id="@+id/imgPhoto"
             android:layout_width="59dp"
             android:layout_height="65dp"
             android:layout_marginStart="16dp"
@@ -23,15 +24,15 @@
             tools:srcCompat="@tools:sample/avatars" />
 
         <TextView
-            android:id="@+id/namamhsTA"
-            android:layout_width="63dp"
-            android:layout_height="22dp"
+            android:id="@+id/mahasiswaName"
+            android:layout_width="291dp"
+            android:layout_height="25dp"
             android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
             android:text="Angel"
             android:textColor="#000000"
             android:textStyle="bold"
-            app:layout_constraintStart_toEndOf="@+id/imageView13"
+            app:layout_constraintStart_toEndOf="@+id/imgPhoto"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
@@ -41,11 +42,12 @@
             android:layout_marginStart="16dp"
             android:layout_marginTop="24dp"
             android:text="1811521002"
-            app:layout_constraintStart_toEndOf="@+id/imageView13"
-            app:layout_constraintTop_toBottomOf="@+id/namamhsTA" />
+            app:layout_constraintStart_toEndOf="@+id/imgPhoto"
+            app:layout_constraintTop_toBottomOf="@+id/mahasiswaName" />
 
         <ImageView
             android:id="@+id/imageView14"
+            android:onClick="pembimbing"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="16dp"

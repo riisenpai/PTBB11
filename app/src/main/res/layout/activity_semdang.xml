@@ -7,63 +7,8 @@
     android:background="@drawable/bg_home"
     tools:context=".SemdangActivity">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/kolom"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="15dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="15dp"
-        android:padding="8dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button4">
-
-        <ImageView
-            android:id="@+id/img_item_photo"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:layout_marginStart="4dp"
-            android:layout_marginTop="4dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/profile" />
-
-        <TextView
-            android:id="@+id/tv_item_name1"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="40dp"
-            android:fontFamily="sans-serif-black"
-            android:textColor="#0C0C0C"
-            android:textSize="16sp"
-            android:textStyle="bold"
-            app:layout_constraintStart_toEndOf="@+id/img_item_photo"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:text="M Hatta" />
-
-        <androidx.cardview.widget.CardView
-            android:layout_width="47dp"
-            android:layout_height="44dp"
-            android:layout_marginTop="30dp"
-            android:layout_marginEnd="10dp"
-            app:cardBackgroundColor="#6C6868"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
-    <Button
-        android:id="@+id/button5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
-        android:text="Sidang"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/button4"
-        app:layout_constraintTop_toBottomOf="@+id/textInputLayout4" />
-
     <ImageView
+
         android:id="@+id/imageView5"
         android:layout_width="48dp"
         android:layout_height="48dp"
@@ -88,8 +33,8 @@
         android:id="@+id/textView11"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="90dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginStart="56dp"
+        android:layout_marginTop="36dp"
         android:fontFamily="sans-serif-black"
         android:text="Seminar dan Sidang"
         android:textColor="#F6F0F0"
@@ -114,69 +59,15 @@
             android:textColor="#E1D9D9" />
     </com.google.android.material.textfield.TextInputLayout>
 
-    <Button
-        android:id="@+id/button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
-        android:text="All"
-        app:layout_constraintEnd_toStartOf="@+id/button4"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textInputLayout4" />
+    <androidx.recyclerview.widget.RecyclerView
 
-    <Button
-        android:id="@+id/button4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:id="@+id/rv_semdang"
+        android:layout_width="431dp"
+        android:layout_height="581dp"
+        android:layout_marginStart="1dp"
         android:layout_marginTop="50dp"
-        android:text="Seminar"
-        app:layout_constraintEnd_toStartOf="@+id/button5"
-        app:layout_constraintStart_toEndOf="@+id/button"
-        app:layout_constraintTop_toBottomOf="@+id/textInputLayout4" />
-
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/rv_heroes2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="10dp"
-        android:padding="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="436dp">
-
-        <ImageView
-            android:id="@+id/photo1"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="8dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/profile" />
-
-        <TextView
-            android:id="@+id/tv_item_name1"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="38dp"
-            android:fontFamily="sans-serif-black"
-            android:textColor="#0C0C0C"
-            android:textSize="16sp"
-            android:textStyle="bold"
-            app:layout_constraintStart_toEndOf="@+id/photo1"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:text="Ahmad Yani" />
-
-        <androidx.cardview.widget.CardView
-            android:layout_width="47dp"
-            android:layout_height="44dp"
-            android:layout_marginTop="30dp"
-            android:layout_marginEnd="10dp"
-            android:onClick="kesidang"
-            app:cardBackgroundColor="#6C6868"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayout4" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

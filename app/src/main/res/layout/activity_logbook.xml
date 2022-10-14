@@ -9,8 +9,8 @@
 
     <ImageView
         android:id="@+id/imageView8"
-        android:layout_width="15dp"
-        android:layout_height="21dp"
+        android:layout_width="37dp"
+        android:layout_height="36dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="50dp"
         android:layout_marginEnd="82dp"
@@ -71,7 +71,7 @@
         android:ems="10"
         android:inputType="textPersonName"
         android:minHeight="48dp"
-        android:text="Amanda"
+        android:text="Ahmad Dahlan"
         android:textColor="#A3A1A1"
         android:textColorHint="#878686"
         android:textSize="14sp"

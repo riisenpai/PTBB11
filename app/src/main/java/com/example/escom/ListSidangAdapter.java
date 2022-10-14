@@ -5,6 +5,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -29,6 +30,10 @@ public class ListSidangAdapter extends RecyclerView.Adapter<ListSidangAdapter.Li
         holder.imgPhoto.setImageResource(sidang.getPhoto());
         holder.sidangName.setText(sidang.getName());
         holder.sidangDescription.setText(sidang.getDescription());
+
+        holder.itemView.setOnClickListener(v -> {
+            Toast.makeText(holder.itemView.getContext(), "Anda memilih " + listSidang.get(holder.getAdapterPosition()).getName(), Toast.LENGTH_SHORT).show();
+        });
     }
 
     @Override
@@ -42,9 +47,9 @@ public class ListSidangAdapter extends RecyclerView.Adapter<ListSidangAdapter.Li
 
         public ListViewHolder(@NonNull View itemView) {
             super(itemView);
-            imgPhoto = itemView.findViewById(R.id.img_item_photo);
-            sidangName = itemView.findViewById(R.id.tv_item_name);
-            sidangDescription = itemView.findViewById(R.id.tv_item_description);
+            imgPhoto = itemView.findViewById(R.id.imgPhoto);
+            sidangName = itemView.findViewById(R.id.mahasiswaName);
+            sidangDescription = itemView.findViewById(R.id.tv_item_nim);
         }
     }
 }

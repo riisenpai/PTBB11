@@ -16,9 +16,9 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 import java.util.ArrayList;
 
 public class PermintaanActivity extends AppCompatActivity implements ListPermintaanAdapter.ItempermintaanClick{
-    BottomNavigationView bottomNavigationView;
+       BottomNavigationView bottomNavigationView;
        private RecyclerView rvHeroes;
-       private ArrayList<Permintaan> list = new ArrayList<>();
+       private ArrayList<Mahasiswa> list = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,71 +28,36 @@ public class PermintaanActivity extends AppCompatActivity implements ListPermint
         rvHeroes = findViewById(R.id.rv_listpermintaan);
         rvHeroes.setHasFixedSize(true);
 
-        ListPermintaanAdapter adapter = new ListPermintaanAdapter(getlistPermintaan());
-        adapter.setOnclick(this);
-
         list.addAll(getlistPermintaan());
         showRecyclerList();
-
-        bottomNavigationView = findViewById(R.id.bottom_nav);
-        bottomNavigationView.setSelectedItemId(R.id.home);
-
-        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
-            @Override
-            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-
-                switch (item.getItemId())
-                {
-                    case R.id.profile:
-                        startActivity(new Intent(getApplicationContext(),ProfileActivity.class));
-                        overridePendingTransition(0,0);
-                        return true;
-
-                    case R.id.mahasiswa:
-                        startActivity(new Intent(getApplicationContext(),MahasiswaActivity.class));
-                        overridePendingTransition(0,0);
-                        return true;
-
-                    case R.id.semdang:
-                        startActivity(new Intent(getApplicationContext(),SemdangActivity.class));
-                        overridePendingTransition(0,0);
-                        return true;
-
-                    case R.id.home:
-                        startActivity(new Intent(getApplicationContext(),HomeActivity.class));
-                        overridePendingTransition(0,0);
-                        return true;
-
-                    case R.id.tugasakhir:
-                        return true;
-
-                }
-                return false;
-            }
-        });
     }
 
-    public ArrayList<Permintaan> getlistPermintaan() {
+    public ArrayList<Mahasiswa> getlistPermintaan() {
         String[] dataName = getResources().getStringArray(R.array.data_name);
         TypedArray dataPhoto = getResources().obtainTypedArray(R.array.data_photo);
-        ArrayList<Permintaan> listPermintaan = new ArrayList<>();
+        ArrayList<Mahasiswa> listMahasiswa = new ArrayList<>();
         for (int i = 0; i < dataName.length; i++) {
-            Permintaan permintaan = new Permintaan();
-            permintaan.setName(dataName[i]);
-            permintaan.setPhoto(dataPhoto.getResourceId(i, -1));
-            listPermintaan.add(permintaan);
+            Mahasiswa mahasiswa = new Mahasiswa();
+            mahasiswa.setName(dataName[i]);
+            mahasiswa.setPhoto(dataPhoto.getResourceId(i, -1));
+            listMahasiswa.add(mahasiswa);
         }
-        return listPermintaan;
+        return listMahasiswa;
     }
 
     private void showRecyclerList(){
         rvHeroes.setLayoutManager(new LinearLayoutManager(this));
-        ListPermintaanAdapter listPermintaanAdapter = new ListPermintaanAdapter(list);
-        rvHeroes.setAdapter(listPermintaanAdapter);
+        ListMahasiswaAdapter listMahasiswaAdapter = new ListMahasiswaAdapter(list);
+        rvHeroes.setAdapter(listMahasiswaAdapter);
     }
 
     public void back(View view) {
         Intent intent = new Intent(PermintaanActivity.this,HomeActivity.class);
+        startActivity(intent);
+    }
+
+    public void pembimbing(View view) {
+        Intent intent = new Intent(PermintaanActivity.this,PembimbingActivity.class);
         startActivity(intent);
     }
 

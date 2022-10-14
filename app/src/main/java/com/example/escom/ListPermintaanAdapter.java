@@ -47,8 +47,8 @@ public class ListPermintaanAdapter extends RecyclerView.Adapter<ListPermintaanAd
         TextView permintaanName;
         public ListViewHolder(@NonNull View itemView) {
             super(itemView);
-            imgPhoto = itemView.findViewById(R.id.img_item_photo);
-            permintaanName = itemView.findViewById(R.id.tv_item_name);
+            imgPhoto = itemView.findViewById(R.id.imgPhoto);
+            permintaanName = itemView.findViewById(R.id.mahasiswaNama);
 
             itemView.setOnClickListener(this);
         }

@@ -13,14 +13,14 @@
     card_view:cardCornerRadius="4dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/rv_heroes1"
+        android:id="@+id/card_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="8dp"
         android:onClick="detail">
 
         <ImageView
-            android:id="@+id/img_item_photo"
+            android:id="@+id/imgPhoto"
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:layout_marginStart="8dp"
@@ -32,17 +32,17 @@
             tools:src="@tools:sample/avatars" />
 
         <TextView
-            android:id="@+id/tv_item_name"
+            android:id="@+id/mahasiswaName"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:layout_marginEnd="8dp"
-            android:layout_toEndOf="@id/img_item_photo"
+            android:layout_toEndOf="@id/imgPhoto"
             android:textSize="16sp"
             android:textStyle="bold"
             card_view:layout_constraintEnd_toEndOf="parent"
-            card_view:layout_constraintStart_toEndOf="@+id/img_item_photo"
-            card_view:layout_constraintTop_toTopOf="@+id/img_item_photo"
+            card_view:layout_constraintStart_toEndOf="@+id/imgPhoto"
+            card_view:layout_constraintTop_toTopOf="@+id/imgPhoto"
             tools:text="@string/mhs_name" />
 
         <androidx.cardview.widget.CardView

@@ -17,89 +17,48 @@ import java.util.ArrayList;
 
 public class SemdangActivity extends AppCompatActivity{
     BottomNavigationView bottomNavigationView;
-//    private RecyclerView rvHeroes;
-//    private ArrayList<Semdang> list = new ArrayList<>();
+    private RecyclerView rvHeroes;
+    private ArrayList<Semdang> list = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_semdang);
 
-//        rvHeroes = findViewById(R.id.rv_semdang);
-//        rvHeroes.setHasFixedSize(true);
-//
-//        list.addAll(getlistSemdang());
-//        showRecyclerList();
+        rvHeroes = findViewById(R.id.rv_semdang);
+        rvHeroes.setHasFixedSize(true);
 
-        bottomNavigationView = findViewById(R.id.bottom_nav);
-        bottomNavigationView.setSelectedItemId(R.id.semdang);
-
-        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
-            @Override
-            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-
-                switch (item.getItemId())
-                {
-                    case R.id.profile:
-                        startActivity(new Intent(getApplicationContext(),ProfileActivity.class));
-                        overridePendingTransition(0,0);
-                        return true;
-
-                    case R.id.mahasiswa:
-                        startActivity(new Intent(getApplicationContext(),MahasiswaActivity.class));
-                        overridePendingTransition(0,0);
-                        return true;
-
-                    case R.id.tugasakhir:
-                        startActivity(new Intent(getApplicationContext(),PermintaanActivity.class));
-                        overridePendingTransition(0,0);
-                        return true;
-
-                    case R.id.home:
-                        startActivity(new Intent(getApplicationContext(),HomeActivity.class));
-                        overridePendingTransition(0,0);
-                        return true;
-
-                    case R.id.semdang:
-                        return true;
-
-                }
-                return false;
-            }
-        });
+        list.addAll(getlistSemdang());
+        showRecyclerList();
     }
 
-//    public ArrayList<Semdang> getlistSemdang() {
-//        String[] dataName = getResources().getStringArray(R.array.data_name);
-//        TypedArray dataPhoto = getResources().obtainTypedArray(R.array.data_photo);
-//        ArrayList<Semdang> listSemdang = new ArrayList<>();
-//        for (int i = 0; i < dataName.length; i++) {
-//            Semdang semdang = new Semdang();
-//            semdang.setName(dataName[i]);
-//            semdang.setPhoto(dataPhoto.getResourceId(i, -1));
-//            listSemdang.add(semdang);
-//        }
-//        return listSemdang;
-//    }
-//
-//    private void showRecyclerList(){
-//        rvHeroes.setLayoutManager(new LinearLayoutManager(this));
-//        ListSemdangAdapter listSemdangAdapter = new ListSemdangAdapter(list);
-//        rvHeroes.setAdapter(listSemdangAdapter);
-//    }
+    public ArrayList<Semdang> getlistSemdang() {
+        String[] dataName = getResources().getStringArray(R.array.data_name);
+        String[] dataNim = getResources().getStringArray(R.array.data_nim);
+        TypedArray dataPhoto = getResources().obtainTypedArray(R.array.data_photo);
+        ArrayList<Semdang> listHero = new ArrayList<>();
+        for (int i = 0; i < dataName.length; i++) {
+            Semdang hero = new Semdang();
+            hero.setName(dataName[i]);
+            hero.setPhoto(dataPhoto.getResourceId(i, -1));
+            listHero.add(hero);
+        }
+        return listHero;
+    }
+
+    private void showRecyclerList(){
+        rvHeroes.setLayoutManager(new LinearLayoutManager(this));
+        ListSemdangAdapter listSemdangAdapter = new ListSemdangAdapter(list);
+        rvHeroes.setAdapter(listSemdangAdapter);
+    }
 
     public void back(View view) {
         Intent intent = new Intent(SemdangActivity.this,HomeActivity.class);
         startActivity(intent);
     }
 
-    public void keseminar(View view) {
-        Intent intent = new Intent(SemdangActivity.this,SeminarActivity.class);
-        startActivity(intent);
-    }
-
-    public void kesidang(View view) {
-        Intent intent = new Intent(SemdangActivity.this,SidangActivity.class);
+    public void kepenguji(View view) {
+        Intent intent = new Intent(SemdangActivity.this,SidangpengujiActivity.class);
         startActivity(intent);
     }
 }

@@ -2,11 +2,13 @@ package com.example.escom;
 
 public class Semdang {
     private String name;
+
     private Integer photo;
 
     public String getName() {
         return name;
     }
+
 
     public Integer getPhoto() {
         return photo;

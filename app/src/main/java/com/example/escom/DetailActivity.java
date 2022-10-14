@@ -19,6 +19,11 @@ public class DetailActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void mahasiswa(View view) {
+        Intent intent = new Intent(DetailActivity.this,MahasiswaActivity.class);
+        startActivity(intent);
+    }
+
     public void peserta(View view) {
         Intent intent = new Intent(DetailActivity.this,PesertaActivity.class);
         startActivity(intent);

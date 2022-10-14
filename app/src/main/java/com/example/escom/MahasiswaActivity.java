@@ -33,43 +33,6 @@ public class MahasiswaActivity extends AppCompatActivity implements ListMahasisw
 
         list.addAll(getlistMahasiswa());
         showRecyclerList();
-
-        bottomNavigationView = findViewById(R.id.bottom_nav);
-        bottomNavigationView.setSelectedItemId(R.id.mahasiswa);
-
-        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
-            @Override
-            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-
-                switch (item.getItemId())
-                {
-                    case R.id.profile:
-                        startActivity(new Intent(getApplicationContext(),ProfileActivity.class));
-                        overridePendingTransition(0,0);
-                        return true;
-
-                    case R.id.home:
-                        startActivity(new Intent(getApplicationContext(),HomeActivity.class));
-                        overridePendingTransition(0,0);
-                        return true;
-
-                    case R.id.semdang:
-                        startActivity(new Intent(getApplicationContext(),SemdangActivity.class));
-                        overridePendingTransition(0,0);
-                        return true;
-
-                    case R.id.tugasakhir:
-                        startActivity(new Intent(getApplicationContext(),PermintaanActivity.class));
-                        overridePendingTransition(0,0);
-                        return true;
-
-                    case R.id.mahasiswa:
-                        return true;
-
-                }
-                return false;
-            }
-        });
     }
 
     public ArrayList<Mahasiswa> getlistMahasiswa() {

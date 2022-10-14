@@ -17,4 +17,9 @@ public class SidangpengujiActivity extends AppCompatActivity {
         Intent intent = new Intent(SidangpengujiActivity.this,SidangActivity.class);
         startActivity(intent);
     }
+
+    public void kesemdang(View view) {
+        Intent intent = new Intent(SidangpengujiActivity.this,SemdangActivity.class);
+        startActivity(intent);
+    }
 }

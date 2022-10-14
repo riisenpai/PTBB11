@@ -5,6 +5,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -30,6 +31,10 @@ public class ListSeminarAdapter extends RecyclerView.Adapter<ListSeminarAdapter.
         holder.imgPhoto.setImageResource(seminar.getPhoto());
         holder.seminarName.setText(seminar.getName());
         holder.seminarDescription.setText(seminar.getDescription());
+
+        holder.itemView.setOnClickListener(v -> {
+            Toast.makeText(holder.itemView.getContext(), "Anda memilih " + listSeminar.get(holder.getAdapterPosition()).getName(), Toast.LENGTH_SHORT).show();
+        });
     }
 
     @Override
@@ -43,9 +48,9 @@ public class ListSeminarAdapter extends RecyclerView.Adapter<ListSeminarAdapter.
 
         public ListViewHolder(@NonNull View itemView) {
             super(itemView);
-            imgPhoto = itemView.findViewById(R.id.img_item_photo);
-            seminarName = itemView.findViewById(R.id.tv_item_name);
-            seminarDescription = itemView.findViewById(R.id.tv_item_description);
+            imgPhoto = itemView.findViewById(R.id.imgPhoto);
+            seminarName = itemView.findViewById(R.id.mahasiswaName);
+            seminarDescription = itemView.findViewById(R.id.tv_item_nim);
         }
     }
 }

@@ -80,7 +80,7 @@
         android:ems="10"
         android:inputType="textPersonName"
         android:minHeight="48dp"
-        android:text="Amanda"
+        android:text="Ahmad Dahlan"
         android:textColor="#A3A1A1"
         android:textColorHint="#878686"
         android:textSize="14sp"

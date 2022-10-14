@@ -49,8 +49,8 @@ public class ListMahasiswaAdapter extends RecyclerView.Adapter<ListMahasiswaAdap
 
         public ListViewHolder(@NonNull View itemView) {
             super(itemView);
-            imgPhoto = itemView.findViewById(R.id.img_item_photo);
-            mahasiswaName = itemView.findViewById(R.id.tv_item_name);
+            imgPhoto = itemView.findViewById(R.id.imgPhoto);
+            mahasiswaName = itemView.findViewById(R.id.mahasiswaName);
 
             itemView.setOnClickListener(this);
         }
