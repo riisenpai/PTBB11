@@ -15,21 +15,24 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import java.util.ArrayList;
 
-public class PermintaanActivity extends AppCompatActivity{
+public class PermintaanActivity extends AppCompatActivity implements ListPermintaanAdapter.ItempermintaanClick{
     BottomNavigationView bottomNavigationView;
-//    private RecyclerView rvHeroes;
-//    private ArrayList<Permintaan> list = new ArrayList<>();
+       private RecyclerView rvHeroes;
+       private ArrayList<Permintaan> list = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_permintaan);
+        setContentView(R.layout.activity_listpermintaan);
 
-//        rvHeroes = findViewById(R.id.rv_permintaan);
-//        rvHeroes.setHasFixedSize(true);
-//
-//        list.addAll(getlistPermintaan());
-//        showRecyclerList();
+        rvHeroes = findViewById(R.id.rv_listpermintaan);
+        rvHeroes.setHasFixedSize(true);
+
+        ListPermintaanAdapter adapter = new ListPermintaanAdapter(getlistPermintaan());
+        adapter.setOnclick(this);
+
+        list.addAll(getlistPermintaan());
+        showRecyclerList();
 
         bottomNavigationView = findViewById(R.id.bottom_nav);
         bottomNavigationView.setSelectedItemId(R.id.home);
@@ -69,32 +72,39 @@ public class PermintaanActivity extends AppCompatActivity{
         });
     }
 
-//    public ArrayList<Permintaan> getlistPermintaan() {
-//        String[] dataName = getResources().getStringArray(R.array.data_name);
-//        TypedArray dataPhoto = getResources().obtainTypedArray(R.array.data_photo);
-//        ArrayList<Permintaan> listPermintaan = new ArrayList<>();
-//        for (int i = 0; i < dataName.length; i++) {
-//            Permintaan permintaan = new Permintaan();
-//            permintaan.setName(dataName[i]);
-//            permintaan.setPhoto(dataPhoto.getResourceId(i, -1));
-//            listPermintaan.add(permintaan);
-//        }
-//        return listPermintaan;
-//    }
-//
-//    private void showRecyclerList(){
-//        rvHeroes.setLayoutManager(new LinearLayoutManager(this));
-//        ListPermintaanAdapter listPermintaanAdapter = new ListPermintaanAdapter(list);
-//        rvHeroes.setAdapter(listPermintaanAdapter);
-//    }
+    public ArrayList<Permintaan> getlistPermintaan() {
+        String[] dataName = getResources().getStringArray(R.array.data_name);
+        TypedArray dataPhoto = getResources().obtainTypedArray(R.array.data_photo);
+        ArrayList<Permintaan> listPermintaan = new ArrayList<>();
+        for (int i = 0; i < dataName.length; i++) {
+            Permintaan permintaan = new Permintaan();
+            permintaan.setName(dataName[i]);
+            permintaan.setPhoto(dataPhoto.getResourceId(i, -1));
+            listPermintaan.add(permintaan);
+        }
+        return listPermintaan;
+    }
+
+    private void showRecyclerList(){
+        rvHeroes.setLayoutManager(new LinearLayoutManager(this));
+        ListPermintaanAdapter listPermintaanAdapter = new ListPermintaanAdapter(list);
+        rvHeroes.setAdapter(listPermintaanAdapter);
+    }
 
     public void back(View view) {
         Intent intent = new Intent(PermintaanActivity.this,HomeActivity.class);
         startActivity(intent);
     }
 
-    public void pembimbing(View view) {
-        Intent intent = new Intent(PermintaanActivity.this,PembimbingActivity.class);
-        startActivity(intent);
+//    public void pembimbing(View view) {
+//        Intent intent = new Intent(PermintaanActivity.this,PembimbingActivity.class);
+//        intent.putExtra("nama_mhs", view.getName());
+//        startActivity(intent);
+//    }
+
+    @Override
+    public void onItemPermintaanClick(Permintaan permintaan) {
+        Intent permintaanIntent = new Intent(this, PembimbingActivity.class);
+        startActivity(permintaanIntent);
     }
 }

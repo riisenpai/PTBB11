@@ -45,6 +45,20 @@
         <entry key="..\:/PTBB11/app/src/main/res/menu/navbar_bottom.xml" value="0.1597222222222222" />
         <entry key="..\:/PTBB11/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.12" />
         <entry key="..\:/PTBB11/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.12" />
+        <entry key="..\:/Users/acer/AndroidStudioProjects/PTBB11/app/src/main/res/layout/activity_detail.xml" value="0.12431693989071038" />
+        <entry key="..\:/Users/acer/AndroidStudioProjects/PTBB11/app/src/main/res/layout/activity_detailseminar.xml" value="0.12431693989071038" />
+        <entry key="..\:/Users/acer/AndroidStudioProjects/PTBB11/app/src/main/res/layout/activity_formpembimbing.xml" value="0.12431693989071038" />
+        <entry key="..\:/Users/acer/AndroidStudioProjects/PTBB11/app/src/main/res/layout/activity_listpermintaan.xml" value="0.12431693989071038" />
+        <entry key="..\:/Users/acer/AndroidStudioProjects/PTBB11/app/src/main/res/layout/activity_mahasiswata.xml" value="0.12431693989071038" />
+        <entry key="..\:/Users/acer/AndroidStudioProjects/PTBB11/app/src/main/res/layout/activity_pembimbing.xml" value="0.12431693989071038" />
+        <entry key="..\:/Users/acer/AndroidStudioProjects/PTBB11/app/src/main/res/layout/activity_permintaan.xml" value="0.1" />
+        <entry key="..\:/Users/acer/AndroidStudioProjects/PTBB11/app/src/main/res/layout/activity_search.xml" value="0.12431693989071038" />
+        <entry key="..\:/Users/acer/AndroidStudioProjects/PTBB11/app/src/main/res/layout/activity_splash.xml" value="0.16485507246376813" />
+        <entry key="..\:/Users/acer/AndroidStudioProjects/PTBB11/app/src/main/res/layout/item_listpermintaan.xml" value="0.25" />
+        <entry key="..\:/Users/acer/AndroidStudioProjects/PTBB11/app/src/main/res/layout/item_mahasiswata.xml" value="0.16" />
+        <entry key="..\:/Users/acer/AndroidStudioProjects/PTBB11/app/src/main/res/layout/item_row_mahasiswa.xml" value="0.12431693989071038" />
+        <entry key="..\:/Users/acer/AndroidStudioProjects/PTBB11/app/src/main/res/layout/item_row_permintaan.xml" value="0.16485507246376813" />
+        <entry key="..\:/Users/acer/AndroidStudioProjects/PTBB11/app/src/main/res/layout/item_row_semdang.xml" value="0.16485507246376813" />
       </map>
     </option>
   </component>
