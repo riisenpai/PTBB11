@@ -5,6 +5,7 @@ import android.content.res.TypedArray;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -17,7 +18,7 @@ import java.util.ArrayList;
 
 public class SemdangActivity extends AppCompatActivity{
     BottomNavigationView bottomNavigationView;
-    private RecyclerView rvHeroes;
+    private RecyclerView rvSemdang;
     private ArrayList<Semdang> list = new ArrayList<>();
 
     @Override
@@ -25,8 +26,8 @@ public class SemdangActivity extends AppCompatActivity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_semdang);
 
-        rvHeroes = findViewById(R.id.rv_semdang);
-        rvHeroes.setHasFixedSize(true);
+        rvSemdang = findViewById(R.id.rv_semdang);
+        rvSemdang.setHasFixedSize(true);
 
         list.addAll(getlistSemdang());
         showRecyclerList();
@@ -34,31 +35,50 @@ public class SemdangActivity extends AppCompatActivity{
 
     public ArrayList<Semdang> getlistSemdang() {
         String[] dataName = getResources().getStringArray(R.array.data_name);
-        String[] dataNim = getResources().getStringArray(R.array.data_nim);
+        String[] dataDescription = getResources().getStringArray(R.array.data_nim);
+        String[] dataJudul = getResources().getStringArray(R.array.judul);
+        String[] dataDosen = getResources().getStringArray(R.array.dosen);
+        String[] dataTempat = getResources().getStringArray(R.array.tempat);
+        String[] dataTanggal = getResources().getStringArray(R.array.tgluji);
         TypedArray dataPhoto = getResources().obtainTypedArray(R.array.data_photo);
-        ArrayList<Semdang> listHero = new ArrayList<>();
+        ArrayList<Semdang> listSemdang = new ArrayList<>();
         for (int i = 0; i < dataName.length; i++) {
-            Semdang hero = new Semdang();
-            hero.setName(dataName[i]);
-            hero.setPhoto(dataPhoto.getResourceId(i, -1));
-            listHero.add(hero);
+            Semdang semdang = new Semdang();
+            semdang.setName(dataName[i]);
+            semdang.setDescription(dataDescription[i]);
+            semdang.setJudul(dataJudul[i]);
+            semdang.setDosen(dataDosen[i]);
+            semdang.setTanggaluji(dataTanggal[i]);
+            semdang.setTempat(dataTempat[i]);
+            semdang.setPhoto(dataPhoto.getResourceId(i, -1));
+            listSemdang.add(semdang);
         }
-        return listHero;
+        return listSemdang;
     }
 
     private void showRecyclerList(){
-        rvHeroes.setLayoutManager(new LinearLayoutManager(this));
+        rvSemdang.setLayoutManager(new LinearLayoutManager(this));
         ListSemdangAdapter listSemdangAdapter = new ListSemdangAdapter(list);
-        rvHeroes.setAdapter(listSemdangAdapter);
+        rvSemdang.setAdapter(listSemdangAdapter);
+
+        listSemdangAdapter.setOnItemClickCallback(data -> showSelectedSemdang(data));
+    }
+
+    private void showSelectedSemdang(Semdang semdang) {
+        Intent detailIntent = new Intent(this, SidangActivity.class);
+        detailIntent.putExtra("NAMA_AGENDA", semdang.getName());
+        detailIntent.putExtra("NIM", semdang.getDescription());
+        detailIntent.putExtra("JUDUL", semdang.getJudul());
+        detailIntent.putExtra("DOSEN", semdang.getDosen());
+        detailIntent.putExtra("TEMPAT", semdang.getTempat());
+        detailIntent.putExtra("TANGGAL", semdang.getTanggaluji());
+        startActivity(detailIntent);
+
+        //Toast.makeText(this, "Kamu memilih " + semdang.getName(), Toast.LENGTH_SHORT).show();
     }
 
     public void back(View view) {
         Intent intent = new Intent(SemdangActivity.this,HomeActivity.class);
-        startActivity(intent);
-    }
-
-    public void kepenguji(View view) {
-        Intent intent = new Intent(SemdangActivity.this,SidangpengujiActivity.class);
         startActivity(intent);
     }
 }

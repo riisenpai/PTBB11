@@ -10,9 +10,6 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Escom">
         <activity
-            android:name=".SearchActivity"
-            android:exported="false" />
-        <activity
             android:name=".SplashActivity"
             android:exported="true">
             <intent-filter>
@@ -58,13 +55,7 @@
             android:name=".LogbookActivity"
             android:exported="true"></activity>
         <activity
-            android:name=".SeminarActivity"
-            android:exported="true"></activity>
-        <activity
             android:name=".SidangActivity"
-            android:exported="true"></activity>
-        <activity
-            android:name=".SeminarpengujiActivity"
             android:exported="true"></activity>
         <activity
             android:name=".SidangpengujiActivity"

@@ -5,6 +5,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -13,15 +14,15 @@ import java.util.ArrayList;
 
 public class ListMahasiswaAdapter extends RecyclerView.Adapter<ListMahasiswaAdapter.ListViewHolder> {
     private ArrayList<Mahasiswa> listMahasiswa;
-    ItemmahasiswaClick mahasiswata;
 
     public ListMahasiswaAdapter(ArrayList<Mahasiswa> list) {
-
         this.listMahasiswa = list;
     }
 
-    public void setListMahasiswa (ItemmahasiswaClick mahasiswata) {
-        this.mahasiswata = mahasiswata;
+    private OnItemClickCallback onItemClickCallback;
+
+    public void setOnItemClickCallback(OnItemClickCallback onItemClickCallback) {
+        this.onItemClickCallback = onItemClickCallback;
     }
 
     @NonNull
@@ -32,10 +33,13 @@ public class ListMahasiswaAdapter extends RecyclerView.Adapter<ListMahasiswaAdap
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ListViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull final ListViewHolder holder, int position) {
         Mahasiswa mahasiswa = listMahasiswa.get(position);
         holder.imgPhoto.setImageResource(mahasiswa.getPhoto());
         holder.mahasiswaName.setText(mahasiswa.getName());
+        holder.tvDescription.setText(mahasiswa.getDescription());
+
+        holder.itemView.setOnClickListener(v -> onItemClickCallback.onItemClicked(listMahasiswa.get(holder.getAdapterPosition())));
     }
 
     @Override
@@ -43,27 +47,20 @@ public class ListMahasiswaAdapter extends RecyclerView.Adapter<ListMahasiswaAdap
         return listMahasiswa.size();
     }
 
-    class ListViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
+    class ListViewHolder extends RecyclerView.ViewHolder{
         ImageView imgPhoto;
-        TextView mahasiswaName;
+        TextView mahasiswaName,tvDescription;
 
         public ListViewHolder(@NonNull View itemView) {
             super(itemView);
             imgPhoto = itemView.findViewById(R.id.imgPhoto);
-            mahasiswaName = itemView.findViewById(R.id.mahasiswaName);
-
-            itemView.setOnClickListener(this);
+            mahasiswaName = itemView.findViewById(R.id.MahasiswaName);
+            tvDescription = itemView.findViewById(R.id.tv_item_description);
         }
-
-        @Override
-        public void onClick(View view) {
-            Mahasiswa mahasiswa = listMahasiswa.get(getAdapterPosition());
-            mahasiswata.onItemMahasiswaClick(mahasiswa);
-        }
-    }
-    public interface ItemmahasiswaClick{
-        void onItemMahasiswaClick(Mahasiswa mahasiswa);
 
     }
 
+    public interface OnItemClickCallback {
+        void onItemClicked(Mahasiswa data);
+    }
 }

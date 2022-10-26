@@ -8,27 +8,20 @@
     tools:context=".PermintaanActivity">
 
 
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:labelVisibilityMode="labeled"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:menu="@menu/navbar_bottom"
-        tools:layout_editor_absoluteX="29dp" />
-
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_listpermintaan"
-        android:onClick="pembimbing"
-        android:layout_width="429dp"
-        android:layout_height="574dp"
-        android:layout_marginTop="144dp"
+        android:layout_width="426dp"
+        android:layout_height="642dp"
+        android:layout_marginTop="124dp"
         android:layout_marginBottom="16dp"
+        android:onClick="pembimbing"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.666"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView5"
         app:layout_constraintVertical_bias="0.0"
-        tools:listitem="@layout/item_listpermintaan" />
+        tools:listitem="@layout/item_row_permintaan" />
 
     <ImageView
         android:id="@+id/imageView5"

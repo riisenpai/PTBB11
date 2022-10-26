@@ -30,9 +30,11 @@ public class ListSidangAdapter extends RecyclerView.Adapter<ListSidangAdapter.Li
         holder.imgPhoto.setImageResource(sidang.getPhoto());
         holder.sidangName.setText(sidang.getName());
         holder.sidangDescription.setText(sidang.getDescription());
+        holder.sidangWaktu.setText(sidang.getWaktu());
+        holder.sidangTempat.setText(sidang.getTempat());
 
         holder.itemView.setOnClickListener(v -> {
-            Toast.makeText(holder.itemView.getContext(), "Anda memilih " + listSidang.get(holder.getAdapterPosition()).getName(), Toast.LENGTH_SHORT).show();
+            Toast.makeText(holder.itemView.getContext(), "Ini jadwal sidang " + listSidang.get(holder.getAdapterPosition()).getName(), Toast.LENGTH_SHORT).show();
         });
     }
 
@@ -43,13 +45,15 @@ public class ListSidangAdapter extends RecyclerView.Adapter<ListSidangAdapter.Li
 
     class ListViewHolder extends RecyclerView.ViewHolder {
         ImageView imgPhoto;
-        TextView sidangName, sidangDescription;
+        TextView sidangName, sidangDescription, sidangWaktu, sidangTempat;
 
         public ListViewHolder(@NonNull View itemView) {
             super(itemView);
             imgPhoto = itemView.findViewById(R.id.imgPhoto);
-            sidangName = itemView.findViewById(R.id.mahasiswaName);
+            sidangName = itemView.findViewById(R.id.MahasiswaName);
             sidangDescription = itemView.findViewById(R.id.tv_item_nim);
+            sidangWaktu = itemView.findViewById(R.id.tv_item_waktu);
+            sidangTempat = itemView.findViewById(R.id.tv_item_tempat);
         }
     }
 }

@@ -5,22 +5,41 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.escom.databinding.ActivityHomeBinding;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class HomeActivity extends AppCompatActivity {
     BottomNavigationView bottomNavigationView;
+//    TextView textGreeting;
+
+    private ActivityHomeBinding binding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_home);
+//        setContentView(R.layout.activity_home);
+        binding = ActivityHomeBinding.inflate(getLayoutInflater());
+        View view = binding.getRoot();
+        setContentView(view);
+
+        Intent intent = getIntent();
+//        String username = intent.getStringExtra("Username");
+        String username = "Husnil Kamil";
+
+//        textGreeting = (TextView) findViewById(R.id.textGreeting);
+//        textGreeting = binding.textGreeting;
+//        textGreeting.setText("Hello " + username);
+
+        binding.textGreeting.setText("Hello " + username);
 
         bottomNavigationView = findViewById(R.id.bottom_nav);
-        bottomNavigationView.setSelectedItemId(R.id.home);
+        bottomNavigationView.setSelectedItemId(R.id.hlmhome);
 
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
@@ -28,27 +47,27 @@ public class HomeActivity extends AppCompatActivity {
 
                 switch (item.getItemId())
                 {
-                    case R.id.profile:
+                    case R.id.hlmprofile:
                         startActivity(new Intent(getApplicationContext(),ProfileActivity.class));
                         overridePendingTransition(0,0);
                         return true;
 
-                    case R.id.mahasiswa:
+                    case R.id.hlmmahasiswa:
                         startActivity(new Intent(getApplicationContext(),MahasiswaActivity.class));
                         overridePendingTransition(0,0);
                         return true;
 
-                    case R.id.semdang:
+                    case R.id.hlmsemdang:
                         startActivity(new Intent(getApplicationContext(),SemdangActivity.class));
                         overridePendingTransition(0,0);
                         return true;
 
-                    case R.id.tugasakhir:
+                    case R.id.hlmtugasakhir:
                         startActivity(new Intent(getApplicationContext(),PermintaanActivity.class));
                         overridePendingTransition(0,0);
                         return true;
 
-                    case R.id.home:
+                    case R.id.hlmhome:
                         return true;
 
                 }

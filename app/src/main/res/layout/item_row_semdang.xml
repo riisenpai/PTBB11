@@ -13,7 +13,6 @@
     card_view:cardCornerRadius="4dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:onClick="kepenguji"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="8dp">
@@ -35,7 +34,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="8dp"
             android:layout_marginEnd="8dp"
             android:layout_toEndOf="@id/img_item_photo"
             android:textSize="16sp"
@@ -45,6 +44,16 @@
             card_view:layout_constraintStart_toEndOf="@+id/img_item_photo"
             card_view:layout_constraintTop_toTopOf="@+id/img_item_photo"
             tools:text="@string/heroes_name" />
+
+        <TextView
+            android:id="@+id/tv_item_description"
+            android:layout_width="285dp"
+            android:layout_height="22dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:text="NIM"
+            card_view:layout_constraintStart_toEndOf="@+id/img_item_photo"
+            card_view:layout_constraintTop_toBottomOf="@+id/Semdangname" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.cardview.widget.CardView>

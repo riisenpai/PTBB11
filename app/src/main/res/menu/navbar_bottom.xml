@@ -3,27 +3,27 @@
     xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/home"
+        android:id="@+id/hlmhome"
         android:title="Home"
         android:icon="@drawable/home"/>
 
     <item
-        android:id="@+id/tugasakhir"
+        android:id="@+id/hlmtugasakhir"
         android:title="Tugas Akhir"
         android:icon="@drawable/tugas_akhir"/>
 
     <item
-        android:id="@+id/semdang"
+        android:id="@+id/hlmsemdang"
         android:title="Seminar"
         android:icon="@drawable/seminar"/>
 
     <item
-        android:id="@+id/mahasiswa"
+        android:id="@+id/hlmmahasiswa"
         android:title="Mahasiswa"
         android:icon="@drawable/mahasiswa"/>
 
     <item
-        android:id="@+id/profile"
+        android:id="@+id/hlmprofile"
         android:title="Profile"
         android:icon="@drawable/profile"/>
 </menu>
