@@ -8,6 +8,7 @@ public class Semdang {
     private String dosen;
     private String tempat;
     private String tanggaluji;
+    private String pilihan;
 
     public String getName() {
         return name;
@@ -37,6 +38,10 @@ public class Semdang {
         return tanggaluji;
     }
 
+    public String getPilihan() {
+        return pilihan;
+    }
+
     public void setName(String name) {
         this.name = name;
     }
@@ -63,5 +68,9 @@ public class Semdang {
 
     public void setTanggaluji(String tanggaluji) {
         this.tanggaluji = tanggaluji;
+    }
+
+    public void setPilihan(String pilihan) {
+        this.pilihan = pilihan;
     }
 }

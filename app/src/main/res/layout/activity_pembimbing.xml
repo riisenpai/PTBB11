@@ -190,29 +190,29 @@
         app:layout_constraintTop_toBottomOf="@+id/textTanggalMulai"
         tools:ignore="MissingConstraints" />
 
-    <AutoCompleteTextView
-        android:id="@+id/textDosen"
-        android:layout_width="365dp"
-        android:layout_height="48dp"
-        android:layout_marginTop="10dp"
-        android:text="Choose Name"
-        android:textColor="#A3A1A1"
-        android:textSize="14sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/dospem" />
-
     <Button
         android:layout_width="359dp"
         android:layout_height="51dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="15dp"
         android:backgroundTint="#4535B7"
-        android:text="Submit"
         android:onClick="back"
+        android:text="Submit"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.438"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textDosen"
+        app:layout_constraintTop_toBottomOf="@+id/spinner4"
         tools:ignore="MissingConstraints" />
 
+    <Spinner
+        android:id="@+id/spinner4"
+        android:layout_width="371dp"
+        android:layout_height="37dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="16dp"
+        android:backgroundTint="#FFFFFF"
+        android:entries="@array/daftar_dosen"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/dospem"
+        tools:ignore="MissingConstraints" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

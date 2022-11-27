@@ -134,6 +134,14 @@
         <item>Hasdi Putra, MT</item>
     </string-array>
 
+    <string-array name="daftar_dosen">
+        <item>Husnil Kamil, MT</item>
+        <item>Ricky Akbar, M.Kom</item>
+        <item>Hasdi Putra, MT</item>
+        <item>Dwi Welly Sukma Nirad, MT</item>
+        <item>Adi Arga Arifnur, M.Kom</item>
+    </string-array>
+
     <string-array name="status">
         <item>Aktif</item>
         <item>Aktif</item>
@@ -168,6 +176,18 @@
         <item>07/08/2022</item>
         <item>08/08/2022</item>
         <item>09/08/2022</item>
+    </string-array>
+
+    <string-array name="pilihan">
+        <item>1</item>
+        <item>2</item>
+        <item>1</item>
+        <item>2</item>
+        <item>1</item>
+        <item>2</item>
+        <item>1</item>
+        <item>2</item>
+        <item>1</item>
     </string-array>
 
     <string name="heroes_name">Nama Mahasiswa</string>

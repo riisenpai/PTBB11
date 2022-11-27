@@ -50,7 +50,7 @@ public class ListSemdangAdapter extends RecyclerView.Adapter<ListSemdangAdapter.
 
     public class ListViewHolder  extends RecyclerView.ViewHolder{
         ImageView imgPhoto;
-        TextView tvName, tvDescription;
+        TextView tvName, tvDescription,tvPilihan;
 
         ListViewHolder(View itemView) {
             super(itemView);

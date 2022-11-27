@@ -8,31 +8,31 @@ import android.widget.Spinner;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class SidangpengujiActivity extends AppCompatActivity {
+public class SeminarpengujiActivity extends AppCompatActivity {
     private Spinner spinnerName1, spinnerName2, spinnerName3;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_sidangpenguji);
+        setContentView(R.layout.activity_seminarpenguji);
 
         spinnerName1 = (Spinner) findViewById(R.id.spinner1);
-        spinnerName1.setOnItemSelectedListener(new ItemSelectedListener1());
+        spinnerName1.setOnItemSelectedListener(new SeminarpengujiActivity.ItemSelectedListener1());
 
         spinnerName2 = (Spinner) findViewById(R.id.spinner2);
-        spinnerName2.setOnItemSelectedListener(new ItemSelectedListener2());
+        spinnerName2.setOnItemSelectedListener(new SeminarpengujiActivity.ItemSelectedListener2());
 
         spinnerName3 = (Spinner) findViewById(R.id.spinner3);
-        spinnerName3.setOnItemSelectedListener(new ItemSelectedListener3());
+        spinnerName3.setOnItemSelectedListener(new SeminarpengujiActivity.ItemSelectedListener3());
     }
 
     public void back(View view) {
-        Intent intent = new Intent(SidangpengujiActivity.this,SemdangActivity.class);
+        Intent intent = new Intent(SeminarpengujiActivity.this,SemdangActivity.class);
         startActivity(intent);
     }
 
     public void kesemdang(View view) {
-        Intent intent = new Intent(SidangpengujiActivity.this,SemdangActivity.class);
+        Intent intent = new Intent(SeminarpengujiActivity.this,SemdangActivity.class);
         startActivity(intent);
     }
 
