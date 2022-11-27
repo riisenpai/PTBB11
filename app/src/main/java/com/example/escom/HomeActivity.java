@@ -1,40 +1,66 @@
 package com.example.escom;
 
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
+import android.app.PendingIntent;
+import android.app.TaskStackBuilder;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
-import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.NotificationCompat;
+import androidx.core.app.NotificationManagerCompat;
 
 import com.example.escom.databinding.ActivityHomeBinding;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class HomeActivity extends AppCompatActivity {
+    private static final String CHANNEL_ID = "test_kanal";
     BottomNavigationView bottomNavigationView;
-//    TextView textGreeting;
-
     private ActivityHomeBinding binding;
-
+    private NotificationManagerCompat notificationManagerMhsTA;
+    private Button buttonShow;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-//        setContentView(R.layout.activity_home);
         binding = ActivityHomeBinding.inflate(getLayoutInflater());
         View view = binding.getRoot();
         setContentView(view);
 
-        Intent intent = getIntent();
-//        String username = intent.getStringExtra("Username");
-        String username = "Husnil Kamil";
+        notificationManagerMhsTA = NotificationManagerCompat.from(this);
+        createNotificationChannel();
 
-//        textGreeting = (TextView) findViewById(R.id.textGreeting);
-//        textGreeting = binding.textGreeting;
-//        textGreeting.setText("Hello " + username);
+        buttonShow = findViewById(R.id.tambah_mahasiswata);
+        buttonShow.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                Intent resultIntent = new Intent(HomeActivity.this, MahasiswaActivity.class);
+                TaskStackBuilder stackBuilder = TaskStackBuilder.create(HomeActivity.this);
+                stackBuilder.addNextIntentWithParentStack(resultIntent);
+                PendingIntent resultPendingIntent =
+                        stackBuilder.getPendingIntent(0,
+                                PendingIntent.FLAG_UPDATE_CURRENT | PendingIntent.FLAG_IMMUTABLE);
+
+                NotificationCompat.Builder builder = new NotificationCompat.Builder(HomeActivity.this, CHANNEL_ID)
+                        .setSmallIcon(R.drawable.mahasiswa)
+                        .setContentTitle("Info Mahasiswa")
+                        .setStyle(new NotificationCompat.BigTextStyle()
+                                .bigText("Terjadi penambahan mahasiswa yang melaksanakan Tugas Akhir (TA)"))
+                        .setContentIntent(resultPendingIntent)
+                        .addAction(R.drawable.mahasiswa,"Lihat",resultPendingIntent)
+                        .setPriority(NotificationCompat.PRIORITY_DEFAULT);
+
+                notificationManagerMhsTA.notify(111,builder.build());
+            }
+        });
+
+        Intent intent = getIntent();
+        String username = "Husnil Kamil";
 
         binding.textGreeting.setText("Hello " + username);
 
@@ -74,6 +100,17 @@ public class HomeActivity extends AppCompatActivity {
                 return false;
             }
         });
+    }
+
+    private void createNotificationChannel() {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            CharSequence name = "Notifikasi";
+            String description = "Notifikasi Mahasiswa TA Bertambah";
+            int importance = NotificationManager.IMPORTANCE_DEFAULT;
+            NotificationChannel channel = new NotificationChannel(CHANNEL_ID, name, importance);
+            channel.setDescription(description);
+            notificationManagerMhsTA.createNotificationChannel(channel);
+        }
     }
 
     public void sidang(View view) {
