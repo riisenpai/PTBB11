@@ -8,52 +8,27 @@ import android.view.View;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.escom.databinding.ActivityHomeBinding;
+import com.example.escom.databinding.ActivityProfileBinding;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class ProfileActivity extends AppCompatActivity{
     BottomNavigationView bottomNavigationView;
+    private ActivityProfileBinding binding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
 
-        bottomNavigationView = findViewById(R.id.bottom_nav);
-        bottomNavigationView.setSelectedItemId(R.id.profile);
+        binding = ActivityProfileBinding.inflate(getLayoutInflater());
+        View view = binding.getRoot();
+        setContentView(view);
 
-        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
-            @Override
-            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+        Intent intent = getIntent();
+        String username = "Husnil Kamil";
 
-                switch (item.getItemId())
-                {
-                    case R.id.home:
-                        startActivity(new Intent(getApplicationContext(),HomeActivity.class));
-                        overridePendingTransition(0,0);
-                        return true;
-
-                    case R.id.mahasiswa:
-                        startActivity(new Intent(getApplicationContext(),MahasiswaActivity.class));
-                        overridePendingTransition(0,0);
-                        return true;
-
-                    case R.id.tugasakhir:
-                        startActivity(new Intent(getApplicationContext(),PermintaanActivity.class));
-                        overridePendingTransition(0,0);
-                        return true;
-
-                    case R.id.semdang:
-                        startActivity(new Intent(getApplicationContext(),SemdangActivity.class));
-                        overridePendingTransition(0,0);
-                        return true;
-
-                    case R.id.profile:
-                        return true;
-
-                }
-                return false;
-            }
-        });
+        binding.textProfile.setText(username);
     }
 
     public void back(View view) {

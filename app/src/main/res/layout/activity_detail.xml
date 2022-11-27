@@ -14,7 +14,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="50dp"
         android:layout_marginEnd="82dp"
-        android:onClick="back"
+        android:onClick="mahasiswa"
         android:src="@drawable/arrow_left"
         app:layout_constraintEnd_toStartOf="@+id/pembimbingTA"
         app:layout_constraintStart_toStartOf="parent"
@@ -63,7 +63,7 @@
         tools:ignore="MissingConstraints" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName"
+        android:id="@+id/textNamaMahasiswaDetail"
         android:layout_width="265dp"
         android:layout_height="48dp"
         android:layout_marginTop="10dp"
@@ -71,7 +71,7 @@
         android:ems="10"
         android:inputType="textPersonName"
         android:minHeight="48dp"
-        android:text="Amanda"
+        android:text="Ahmad Dahlan"
         android:textColor="#A3A1A1"
         android:textColorHint="#878686"
         android:textSize="14sp"
@@ -90,18 +90,18 @@
         android:textColor="#000000"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName"
+        app:layout_constraintTop_toBottomOf="@+id/textNamaMahasiswaDetail"
         tools:ignore="MissingConstraints" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName2"
+        android:id="@+id/textNIM"
         android:layout_width="263dp"
         android:layout_height="48dp"
         android:layout_marginTop="10dp"
         android:layout_marginEnd="20dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="2011521001"
+        android:text="2011521002"
         android:textColor="#A3A1A1"
         android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -119,11 +119,11 @@
         android:textColor="#000000"
         android:textSize="16sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName2"
+        app:layout_constraintTop_toBottomOf="@+id/textNIM"
         tools:ignore="MissingConstraints" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName3"
+        android:id="@+id/textJudul"
         android:layout_width="365dp"
         android:layout_height="48dp"
         android:layout_marginTop="10dp"
@@ -148,11 +148,11 @@
         android:textColor="#000000"
         android:textSize="16sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName3"
+        app:layout_constraintTop_toBottomOf="@+id/textJudul"
         tools:ignore="MissingConstraints" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName4"
+        android:id="@+id/textDosen"
         android:layout_width="365dp"
         android:layout_height="48dp"
         android:layout_marginTop="10dp"
@@ -178,11 +178,11 @@
         android:textColor="#000000"
         android:textSize="16sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName4"
+        app:layout_constraintTop_toBottomOf="@+id/textDosen"
         tools:ignore="MissingConstraints" />
 
     <EditText
-        android:id="@+id/editTextDate"
+        android:id="@+id/textTanggalMulai"
         android:layout_width="365dp"
         android:layout_height="48dp"
         android:layout_marginTop="10dp"
@@ -206,11 +206,11 @@
         android:textColor="#000000"
         android:textSize="16sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextDate"
+        app:layout_constraintTop_toBottomOf="@+id/textTanggalMulai"
         tools:ignore="MissingConstraints" />
 
     <EditText
-        android:id="@+id/statuss"
+        android:id="@+id/textStatus"
         android:layout_width="365dp"
         android:layout_height="48dp"
         android:layout_marginTop="10dp"
@@ -236,7 +236,7 @@
         android:textColor="#000000"
         android:textSize="16sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/statuss"
+        app:layout_constraintTop_toBottomOf="@+id/textStatus"
         tools:ignore="MissingConstraints" />
 
 
@@ -264,7 +264,7 @@
         android:textColor="#000000"
         android:textSize="16sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/statuss"
+        app:layout_constraintTop_toBottomOf="@+id/textStatus"
         tools:ignore="MissingConstraints" />
 
     <Button

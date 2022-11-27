@@ -1,54 +1,195 @@
 <resources>
     <string name="app_name">Escom</string>
 
-    <string name="mhs_name">Nama Mahasiswa</string>
-    <string name="deskription">Deskripsi</string>
-    <string name="nim">NIM</string>
+        <string name="mhs_name">Nama Mahasiswa</string>
+        <string name="deskription">Deskripsi</string>
+        <string name="nim">NIM</string>
 
-    <string-array name="data_name">
-        <item>Ahmad Dahlan</item>
-        <item>Ahmad Yani</item>
-        <item>Sutomo</item>
-        <item>Gatot Soebroto</item>
-        <item>Ki Hadjar Dewantara</item>
-        <item>Mohammad Hatta</item>
-        <item>Soedirman</item>
-        <item>Soekarno</item>
-        <item>Soepomo</item>
+        <string-array name="data_name">
+            <item>Ahmad Dahlan</item>
+            <item>Ahmad Yani</item>
+            <item>Sutomo</item>
+            <item>Gatot Soebroto</item>
+            <item>Ki Hadjar Dewantara</item>
+            <item>Mohammad Hatta</item>
+            <item>Soedirman</item>
+            <item>Soekarno</item>
+            <item>Soepomo</item>
+        </string-array>
+
+        <string-array name="data_nim">
+            <item>1811521001</item>
+            <item>1811521002</item>
+            <item>1811521003</item>
+            <item>1811521004</item>
+            <item>1811521005</item>
+            <item>1811521006</item>
+            <item>1811521007</item>
+            <item>1811521008</item>
+            <item>1811521009</item>
+        </string-array>
+
+        <string-array name="data_description">
+            <item>21/10/2022</item>
+            <item>21/10/2022</item>
+            <item>21/10/2022</item>
+            <item>21/10/2022</item>
+            <item>21/10/2022</item>
+            <item>21/10/2022</item>
+            <item>21/10/2022</item>
+            <item>21/10/2022</item>
+            <item>21/10/2022</item>
+        </string-array>
+
+        <string-array name="waktu">
+            <item>08.00 WIB</item>
+            <item>09.00 WIB</item>
+            <item>10.00 WIB</item>
+            <item>11.00 WIB</item>
+            <item>12.00 WIB</item>
+            <item>14.00 WIB</item>
+            <item>15.00 WIB</item>
+            <item>16.00 WIB</item>
+            <item>17.00 WIB</item>
+        </string-array>
+
+        <string-array name="tempat">
+            <item>Seminar SI</item>
+            <item>Seminar TK</item>
+            <item>Seminar IF</item>
+            <item>Seminar SI</item>
+            <item>Seminar TK</item>
+            <item>Seminar IF</item>
+            <item>Seminar TK</item>
+            <item>Seminar SI</item>
+            <item>Seminar SI</item>
+        </string-array>
+
+        <integer-array name="data_photo">
+            <item>@drawable/person</item>
+            <item>@drawable/person</item>
+            <item>@drawable/person</item>
+            <item>@drawable/person</item>
+            <item>@drawable/person</item>
+            <item>@drawable/person</item>
+            <item>@drawable/person</item>
+            <item>@drawable/person</item>
+            <item>@drawable/person</item>
+        </integer-array>
+
+    <string-array name="peserta">
+        <item>Amanda</item>
+        <item>Boby</item>
+        <item>Clara</item>
+        <item>Dodo</item>
+        <item>Emil</item>
+        <item>Fathan</item>
+        <item>Gani</item>
+        <item>Hani</item>
     </string-array>
 
-    <string-array name="data_deskription">
-        <item>1811521001</item>
-        <item>1811521002</item>
-        <item>1811521003</item>
-        <item>1811521004</item>
-        <item>1811521005</item>
-        <item>1811521006</item>
-        <item>1811521007</item>
-        <item>1811521008</item>
+    <string-array name="tanggalLogbook">
+        <item>11/10/2022</item>
+        <item>12/10/2022</item>
+        <item>13/10/2022</item>
+        <item>14/10/2022</item>
+        <item>15/10/2022</item>
+        <item>16/10/2022</item>
+        <item>17/10/2022</item>
+        <item>18/10/2022</item>
     </string-array>
 
-    <string-array name="data_description">
-        <item>14.00 WIB di Seminar SI</item>
-        <item>14.00 WIB di Seminar SI</item>
-        <item>14.00 WIB di Seminar SI</item>
-        <item>14.00 WIB di Seminar SI</item>
-        <item>14.00 WIB di Seminar SI</item>
-        <item>14.00 WIB di Seminar SI</item>
-        <item>14.00 WIB di Seminar SI</item>
-        <item>14.00 WIB di Seminar SI</item>
-        <item>14.00 WIB di Seminar SI</item>
+    <string-array name="kegiatanLogbook">
+        <item>Analisis proses bisnis</item>
+        <item>Survey</item>
+        <item>Wawancara</item>
+        <item>Design ERD</item>
+        <item>Design DFD</item>
+        <item>Design Use Case Diagram</item>
+        <item>Design UI Step 1</item>
+        <item>Design UI Step 2</item>
     </string-array>
 
-    <integer-array name="data_photo">
-        <item>@drawable/person</item>
-        <item>@drawable/person</item>
-        <item>@drawable/person</item>
-        <item>@drawable/person</item>
-        <item>@drawable/person</item>
-        <item>@drawable/person</item>
-        <item>@drawable/person</item>
-        <item>@drawable/person</item>
-        <item>@drawable/person</item>
-    </integer-array>
+    <string-array name="judul">
+        <item>Sistem Informasi Inventory FTI</item>
+        <item>Sistem Informasi Inventory FT</item>
+        <item>Sistem Informasi Inventory FE</item>
+        <item>Sistem Informasi Inventory FIB</item>
+        <item>Sistem Informasi Inventory FISIP</item>
+        <item>Sistem Informasi Inventory FH</item>
+        <item>Sistem Informasi Inventory FKM</item>
+        <item>Sistem Informasi Inventory FK</item>
+        <item>Sistem Informasi Inventory FKG</item>
+    </string-array>
+
+    <string-array name="dosen">
+        <item>Husnil Kamil, MT</item>
+        <item>Ricky Akbar, M.Kom</item>
+        <item>Hasdi Putra, MT</item>
+        <item>Husnil Kamil, MT</item>
+        <item>Ricky Akbar, M.Kom</item>
+        <item>Hasdi Putra, MT</item>
+        <item>Husnil Kamil, MT</item>
+        <item>Ricky Akbar, M.Kom</item>
+        <item>Hasdi Putra, MT</item>
+    </string-array>
+
+    <string-array name="daftar_dosen">
+        <item>Husnil Kamil, MT</item>
+        <item>Ricky Akbar, M.Kom</item>
+        <item>Hasdi Putra, MT</item>
+        <item>Dwi Welly Sukma Nirad, MT</item>
+        <item>Adi Arga Arifnur, M.Kom</item>
+    </string-array>
+
+    <string-array name="status">
+        <item>Aktif</item>
+        <item>Aktif</item>
+        <item>Aktif</item>
+        <item>Aktif</item>
+        <item>Aktif</item>
+        <item>Aktif</item>
+        <item>Aktif</item>
+        <item>Aktif</item>
+        <item>Aktif</item>
+    </string-array>
+
+    <string-array name="tgluji">
+        <item>01/10/2022</item>
+        <item>02/10/2022</item>
+        <item>03/10/2022</item>
+        <item>04/10/2022</item>
+        <item>05/10/2022</item>
+        <item>06/10/2022</item>
+        <item>07/10/2022</item>
+        <item>08/10/2022</item>
+        <item>09/10/2022</item>
+    </string-array>
+
+    <string-array name="tglmulai">
+        <item>01/08/2022</item>
+        <item>02/08/2022</item>
+        <item>03/08/2022</item>
+        <item>04/08/2022</item>
+        <item>05/08/2022</item>
+        <item>06/08/2022</item>
+        <item>07/08/2022</item>
+        <item>08/08/2022</item>
+        <item>09/08/2022</item>
+    </string-array>
+
+    <string-array name="pilihan">
+        <item>1</item>
+        <item>2</item>
+        <item>1</item>
+        <item>2</item>
+        <item>1</item>
+        <item>2</item>
+        <item>1</item>
+        <item>2</item>
+        <item>1</item>
+    </string-array>
+
+    <string name="heroes_name">Nama Mahasiswa</string>
+    <string name="description">NIM</string>
 </resources>

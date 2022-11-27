@@ -13,49 +13,70 @@
     card_view:cardCornerRadius="4dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/rv_heroes1"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:id="@+id/card_view1"
+        android:layout_width="774dp"
+        android:layout_height="wrap_content"
         android:padding="8dp">
 
         <ImageView
-            android:id="@+id/img_item_photo"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginBottom="8dp"
+            android:id="@+id/imgPhoto"
+            android:layout_width="67dp"
+            android:layout_height="63dp"
+            android:layout_marginStart="4dp"
+            android:layout_marginBottom="2dp"
             card_view:layout_constraintBottom_toBottomOf="parent"
             card_view:layout_constraintStart_toStartOf="parent"
             card_view:layout_constraintTop_toTopOf="parent"
+            card_view:layout_constraintVertical_bias="0.519"
             tools:src="@tools:sample/avatars" />
 
         <TextView
-            android:id="@+id/tv_item_name"
+            android:id="@+id/MahasiswaName"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
             android:layout_marginEnd="8dp"
-            android:layout_toEndOf="@id/img_item_photo"
+            android:layout_toEndOf="@id/imgPhoto"
             android:textSize="16sp"
             android:textStyle="bold"
             card_view:layout_constraintEnd_toEndOf="parent"
-            card_view:layout_constraintStart_toEndOf="@+id/img_item_photo"
-            card_view:layout_constraintTop_toTopOf="@+id/img_item_photo"
+            card_view:layout_constraintHorizontal_bias="0.0"
+            card_view:layout_constraintStart_toEndOf="@+id/imgPhoto"
+            card_view:layout_constraintTop_toTopOf="parent"
             tools:text="@string/mhs_name" />
 
         <TextView
-            android:id="@+id/tv_item_description"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_marginTop="8dp"
+            android:id="@+id/tv_item_nim"
+            android:layout_width="308dp"
+            android:layout_height="27dp"
+            android:layout_marginTop="2dp"
             android:ellipsize="end"
             android:maxLines="5"
-            card_view:layout_constraintBottom_toBottomOf="@+id/img_item_photo"
-            card_view:layout_constraintEnd_toEndOf="@+id/tv_item_name"
-            card_view:layout_constraintStart_toStartOf="@+id/tv_item_name"
-            card_view:layout_constraintTop_toBottomOf="@+id/tv_item_name"
-            card_view:layout_constraintVertical_bias="0.0"
+            card_view:layout_constraintBottom_toBottomOf="@+id/imgPhoto"
+            card_view:layout_constraintEnd_toEndOf="@+id/MahasiswaName"
+            card_view:layout_constraintHorizontal_bias="0.0"
+            card_view:layout_constraintStart_toStartOf="@+id/MahasiswaName"
+            card_view:layout_constraintTop_toBottomOf="@+id/MahasiswaName"
+            card_view:layout_constraintVertical_bias="0.333"
             tools:text="@string/deskription" />
+
+        <TextView
+            android:id="@+id/tv_item_waktu"
+            android:layout_width="310dp"
+            android:layout_height="28dp"
+            android:text="Waktu"
+            card_view:layout_constraintEnd_toEndOf="@+id/tv_item_nim"
+            card_view:layout_constraintStart_toStartOf="@+id/tv_item_nim"
+            card_view:layout_constraintTop_toBottomOf="@+id/tv_item_nim" />
+
+        <TextView
+            android:id="@+id/tv_item_tempat"
+            android:layout_width="308dp"
+            android:layout_height="26dp"
+            android:text="Tempat"
+            card_view:layout_constraintEnd_toEndOf="@+id/tv_item_waktu"
+            card_view:layout_constraintStart_toStartOf="@+id/tv_item_waktu"
+            card_view:layout_constraintTop_toBottomOf="@+id/tv_item_waktu" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.cardview.widget.CardView>

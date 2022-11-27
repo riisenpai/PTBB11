@@ -3,60 +3,59 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/PTBB11/app/src/main/res/drawable/corner.xml" value="0.1845" />
         <entry key="..\:/PTBB11/app/src/main/res/drawable/home.xml" value="0.188" />
+        <entry key="..\:/PTBB11/app/src/main/res/drawable/ic_baseline_arrow_back_24.xml" value="0.188" />
+        <entry key="..\:/PTBB11/app/src/main/res/drawable/ic_baseline_calendar_month_24.xml" value="0.188" />
+        <entry key="..\:/PTBB11/app/src/main/res/drawable/ic_baseline_check_box_24.xml" value="0.188" />
+        <entry key="..\:/PTBB11/app/src/main/res/drawable/ic_baseline_check_circle_outline_24.xml" value="0.188" />
+        <entry key="..\:/PTBB11/app/src/main/res/drawable/ic_baseline_more_horiz_24.xml" value="0.188" />
+        <entry key="..\:/PTBB11/app/src/main/res/drawable/ic_checkbox.xml" value="0.188" />
         <entry key="..\:/PTBB11/app/src/main/res/drawable/icon1.xml" value="0.188" />
         <entry key="..\:/PTBB11/app/src/main/res/drawable/lock.xml" value="0.188" />
         <entry key="..\:/PTBB11/app/src/main/res/drawable/mahasiswa.xml" value="0.188" />
+        <entry key="..\:/PTBB11/app/src/main/res/drawable/people.xml" value="0.165" />
         <entry key="..\:/PTBB11/app/src/main/res/drawable/person.xml" value="0.188" />
         <entry key="..\:/PTBB11/app/src/main/res/drawable/profile.xml" value="0.188" />
         <entry key="..\:/PTBB11/app/src/main/res/drawable/seminar.xml" value="0.188" />
         <entry key="..\:/PTBB11/app/src/main/res/drawable/tugas_akhir.xml" value="0.188" />
-        <entry key="..\:/PTBB11/app/src/main/res/layout/activity_detail.xml" value="0.22" />
+        <entry key="..\:/PTBB11/app/src/main/res/layout/activity_detail.xml" value="0.16666666666666666" />
+        <entry key="..\:/PTBB11/app/src/main/res/layout/activity_detailseminar.xml" value="0.1597222222222222" />
         <entry key="..\:/PTBB11/app/src/main/res/layout/activity_formpembimbing.xml" value="0.1597222222222222" />
-        <entry key="..\:/PTBB11/app/src/main/res/layout/activity_home.xml" value="0.22" />
+        <entry key="..\:/PTBB11/app/src/main/res/layout/activity_home.xml" value="0.16666666666666666" />
         <entry key="..\:/PTBB11/app/src/main/res/layout/activity_listpermintaan.xml" value="0.1597222222222222" />
-        <entry key="..\:/PTBB11/app/src/main/res/layout/activity_logbook.xml" value="0.1587962962962963" />
+        <entry key="..\:/PTBB11/app/src/main/res/layout/activity_logbook.xml" value="0.13333333333333333" />
         <entry key="..\:/PTBB11/app/src/main/res/layout/activity_login.xml" value="0.16666666666666666" />
         <entry key="..\:/PTBB11/app/src/main/res/layout/activity_mahasiswa.xml" value="0.16666666666666666" />
-        <entry key="..\:/PTBB11/app/src/main/res/layout/activity_mahasiswata.xml" value="0.151268115942029" />
+        <entry key="..\:/PTBB11/app/src/main/res/layout/activity_mahasiswata.xml" value="0.22" />
         <entry key="..\:/PTBB11/app/src/main/res/layout/activity_main.xml" value="0.1796875" />
-        <entry key="..\:/PTBB11/app/src/main/res/layout/activity_pembimbing.xml" value="0.1587962962962963" />
-        <entry key="..\:/PTBB11/app/src/main/res/layout/activity_permintaan.xml" value="0.1" />
+        <entry key="..\:/PTBB11/app/src/main/res/layout/activity_pembimbing.xml" value="0.16666666666666666" />
+        <entry key="..\:/PTBB11/app/src/main/res/layout/activity_permintaan.xml" value="0.16666666666666666" />
         <entry key="..\:/PTBB11/app/src/main/res/layout/activity_peserta.xml" value="0.1587962962962963" />
-        <entry key="..\:/PTBB11/app/src/main/res/layout/activity_profile.xml" value="0.14583333333333334" />
+        <entry key="..\:/PTBB11/app/src/main/res/layout/activity_profile.xml" value="0.16666666666666666" />
         <entry key="..\:/PTBB11/app/src/main/res/layout/activity_search.xml" value="0.1597222222222222" />
-        <entry key="..\:/PTBB11/app/src/main/res/layout/activity_semdang.xml" value="0.25" />
+        <entry key="..\:/PTBB11/app/src/main/res/layout/activity_semdang.xml" value="0.16666666666666666" />
         <entry key="..\:/PTBB11/app/src/main/res/layout/activity_seminar.xml" value="0.14666666666666667" />
-        <entry key="..\:/PTBB11/app/src/main/res/layout/activity_seminarpenguji.xml" value="0.22" />
+        <entry key="..\:/PTBB11/app/src/main/res/layout/activity_seminarpenguji.xml" value="0.16666666666666666" />
         <entry key="..\:/PTBB11/app/src/main/res/layout/activity_seminarschedule.xml" value="0.16666666666666666" />
-        <entry key="..\:/PTBB11/app/src/main/res/layout/activity_sidang.xml" value="0.3333333333333333" />
-        <entry key="..\:/PTBB11/app/src/main/res/layout/activity_sidangpenguji.xml" value="0.1587962962962963" />
+        <entry key="..\:/PTBB11/app/src/main/res/layout/activity_sidang.xml" value="0.1" />
+        <entry key="..\:/PTBB11/app/src/main/res/layout/activity_sidangpenguji.xml" value="0.22" />
         <entry key="..\:/PTBB11/app/src/main/res/layout/activity_sidangscehdule.xml" value="0.16666666666666666" />
         <entry key="..\:/PTBB11/app/src/main/res/layout/activity_sidangschedule.xml" value="0.16666666666666666" />
         <entry key="..\:/PTBB11/app/src/main/res/layout/activity_splash.xml" value="0.1597222222222222" />
+        <entry key="..\:/PTBB11/app/src/main/res/layout/item_listpermintaan.xml" value="0.35053763440860214" />
+        <entry key="..\:/PTBB11/app/src/main/res/layout/item_mahasiswata.xml" value="0.22" />
         <entry key="..\:/PTBB11/app/src/main/res/layout/item_row_hero.xml" value="0.1587962962962963" />
-        <entry key="..\:/PTBB11/app/src/main/res/layout/item_row_mahasiswa.xml" value="0.22" />
+        <entry key="..\:/PTBB11/app/src/main/res/layout/item_row_logbook.xml" value="0.22364217252396165" />
+        <entry key="..\:/PTBB11/app/src/main/res/layout/item_row_mahasiswa.xml" value="0.16666666666666666" />
         <entry key="..\:/PTBB11/app/src/main/res/layout/item_row_permintaan.xml" value="0.1587962962962963" />
-        <entry key="..\:/PTBB11/app/src/main/res/layout/item_row_semdang.xml" value="0.1597222222222222" />
-        <entry key="..\:/PTBB11/app/src/main/res/layout/item_row_seminar.xml" value="0.1587962962962963" />
-        <entry key="..\:/PTBB11/app/src/main/res/layout/item_row_sidang.xml" value="0.22" />
+        <entry key="..\:/PTBB11/app/src/main/res/layout/item_row_peserta.xml" value="0.2017291066282421" />
+        <entry key="..\:/PTBB11/app/src/main/res/layout/item_row_semdang.xml" value="0.3333333333333333" />
+        <entry key="..\:/PTBB11/app/src/main/res/layout/item_row_seminar.xml" value="0.22" />
+        <entry key="..\:/PTBB11/app/src/main/res/layout/item_row_sidang.xml" value="0.16666666666666666" />
         <entry key="..\:/PTBB11/app/src/main/res/menu/navbar_bottom.xml" value="0.1597222222222222" />
         <entry key="..\:/PTBB11/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.12" />
         <entry key="..\:/PTBB11/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.12" />
-        <entry key="..\:/Users/acer/AndroidStudioProjects/PTBB11/app/src/main/res/layout/activity_detail.xml" value="0.12431693989071038" />
-        <entry key="..\:/Users/acer/AndroidStudioProjects/PTBB11/app/src/main/res/layout/activity_detailseminar.xml" value="0.12431693989071038" />
-        <entry key="..\:/Users/acer/AndroidStudioProjects/PTBB11/app/src/main/res/layout/activity_formpembimbing.xml" value="0.12431693989071038" />
-        <entry key="..\:/Users/acer/AndroidStudioProjects/PTBB11/app/src/main/res/layout/activity_listpermintaan.xml" value="0.12431693989071038" />
-        <entry key="..\:/Users/acer/AndroidStudioProjects/PTBB11/app/src/main/res/layout/activity_mahasiswata.xml" value="0.12431693989071038" />
-        <entry key="..\:/Users/acer/AndroidStudioProjects/PTBB11/app/src/main/res/layout/activity_pembimbing.xml" value="0.12431693989071038" />
-        <entry key="..\:/Users/acer/AndroidStudioProjects/PTBB11/app/src/main/res/layout/activity_permintaan.xml" value="0.1" />
-        <entry key="..\:/Users/acer/AndroidStudioProjects/PTBB11/app/src/main/res/layout/activity_search.xml" value="0.12431693989071038" />
-        <entry key="..\:/Users/acer/AndroidStudioProjects/PTBB11/app/src/main/res/layout/activity_splash.xml" value="0.16485507246376813" />
-        <entry key="..\:/Users/acer/AndroidStudioProjects/PTBB11/app/src/main/res/layout/item_listpermintaan.xml" value="0.25" />
-        <entry key="..\:/Users/acer/AndroidStudioProjects/PTBB11/app/src/main/res/layout/item_mahasiswata.xml" value="0.16" />
-        <entry key="..\:/Users/acer/AndroidStudioProjects/PTBB11/app/src/main/res/layout/item_row_mahasiswa.xml" value="0.12431693989071038" />
-        <entry key="..\:/Users/acer/AndroidStudioProjects/PTBB11/app/src/main/res/layout/item_row_permintaan.xml" value="0.16485507246376813" />
-        <entry key="..\:/Users/acer/AndroidStudioProjects/PTBB11/app/src/main/res/layout/item_row_semdang.xml" value="0.16485507246376813" />
       </map>
     </option>
   </component>

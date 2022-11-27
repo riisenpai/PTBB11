@@ -13,9 +13,18 @@ import java.util.ArrayList;
 
 public class ListSemdangAdapter extends RecyclerView.Adapter<ListSemdangAdapter.ListViewHolder> {
     private ArrayList<Semdang> listSemdang;
+
     public ListSemdangAdapter(ArrayList<Semdang> list) {
+
         this.listSemdang = list;
     }
+
+    private OnItemClickCallback onItemClickCallback;
+
+    public void setOnItemClickCallback(OnItemClickCallback onItemClickCallback) {
+        this.onItemClickCallback = onItemClickCallback;
+    }
+
     @NonNull
     @Override
     public ListViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -24,10 +33,14 @@ public class ListSemdangAdapter extends RecyclerView.Adapter<ListSemdangAdapter.
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ListViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull final ListViewHolder holder, int position) {
         Semdang semdang = listSemdang.get(position);
-        holder.imgPhoto.setImageResource(semdang .getPhoto());
-        holder.semdangName.setText(semdang .getName());
+        holder.imgPhoto.setImageResource(semdang.getPhoto());
+        holder.tvName.setText(semdang.getName());
+        holder.tvDescription.setText(semdang.getDescription());
+
+        holder.itemView.setOnClickListener(v -> onItemClickCallback.onItemClicked(listSemdang.get(holder.getAdapterPosition())));
+
     }
 
     @Override
@@ -35,14 +48,19 @@ public class ListSemdangAdapter extends RecyclerView.Adapter<ListSemdangAdapter.
         return listSemdang.size();
     }
 
-    class ListViewHolder extends RecyclerView.ViewHolder {
+    public class ListViewHolder  extends RecyclerView.ViewHolder{
         ImageView imgPhoto;
-        TextView semdangName;
+        TextView tvName, tvDescription,tvPilihan;
 
-        public ListViewHolder(@NonNull View itemView) {
+        ListViewHolder(View itemView) {
             super(itemView);
             imgPhoto = itemView.findViewById(R.id.img_item_photo);
-            semdangName = itemView.findViewById(R.id.tv_item_name);
+            tvName = itemView.findViewById(R.id.Semdangname);
+            tvDescription = itemView.findViewById(R.id.tv_item_description);
         }
+    }
+
+    public interface OnItemClickCallback {
+        void onItemClicked(Semdang data);
     }
 }

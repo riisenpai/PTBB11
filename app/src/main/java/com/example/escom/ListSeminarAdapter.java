@@ -5,6 +5,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -30,6 +31,12 @@ public class ListSeminarAdapter extends RecyclerView.Adapter<ListSeminarAdapter.
         holder.imgPhoto.setImageResource(seminar.getPhoto());
         holder.seminarName.setText(seminar.getName());
         holder.seminarDescription.setText(seminar.getDescription());
+        holder.seminarWaktu.setText(seminar.getWaktu());
+        holder.seminarTempat.setText(seminar.getTempat());
+
+        holder.itemView.setOnClickListener(v -> {
+            Toast.makeText(holder.itemView.getContext(), "Ini jadwal seminar " + listSeminar.get(holder.getAdapterPosition()).getName(), Toast.LENGTH_SHORT).show();
+        });
     }
 
     @Override
@@ -39,13 +46,15 @@ public class ListSeminarAdapter extends RecyclerView.Adapter<ListSeminarAdapter.
 
     class ListViewHolder extends RecyclerView.ViewHolder {
         ImageView imgPhoto;
-        TextView seminarName, seminarDescription;
+        TextView seminarName, seminarDescription, seminarWaktu, seminarTempat;
 
         public ListViewHolder(@NonNull View itemView) {
             super(itemView);
-            imgPhoto = itemView.findViewById(R.id.img_item_photo);
-            seminarName = itemView.findViewById(R.id.tv_item_name);
-            seminarDescription = itemView.findViewById(R.id.tv_item_description);
+            imgPhoto = itemView.findViewById(R.id.imgPhoto);
+            seminarName = itemView.findViewById(R.id.MahasiswaName);
+            seminarDescription = itemView.findViewById(R.id.tv_item_nim);
+            seminarWaktu = itemView.findViewById(R.id.tv_item_waktu);
+            seminarTempat = itemView.findViewById(R.id.tv_item_tempat);
         }
     }
 }

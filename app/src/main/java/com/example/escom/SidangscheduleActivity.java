@@ -14,7 +14,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 import java.util.ArrayList;
 
 public class SidangscheduleActivity extends AppCompatActivity {
-    private RecyclerView rvHeroes;
+    private RecyclerView rvSidschedule;
     private ArrayList<Sidang> list = new ArrayList<>();
     BottomNavigationView bottomNavigationView;
 
@@ -23,8 +23,8 @@ public class SidangscheduleActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sidangschedule);
 
-        rvHeroes = findViewById(R.id.rv_sidang);
-        rvHeroes.setHasFixedSize(true);
+        rvSidschedule = findViewById(R.id.rv_sidang);
+        rvSidschedule.setHasFixedSize(true);
 
         list.addAll(getlistSidang());
         showRecyclerList();
@@ -33,11 +33,15 @@ public class SidangscheduleActivity extends AppCompatActivity {
     public ArrayList<Sidang> getlistSidang() {
         String[] dataName = getResources().getStringArray(R.array.data_name);
         String[] dataDescription = getResources().getStringArray(R.array.data_description);
+        String[] dataWaktu = getResources().getStringArray(R.array.waktu);
+        String[] dataTempat = getResources().getStringArray(R.array.tempat);
         TypedArray dataPhoto = getResources().obtainTypedArray(R.array.data_photo);
         ArrayList<Sidang> listSidang = new ArrayList<>();
         for (int i = 0; i < dataName.length; i++) {
             Sidang sidang = new Sidang();
             sidang.setName(dataName[i]);
+            sidang.setWaktu(dataWaktu[i]);
+            sidang.setTempat(dataTempat[i]);
             sidang.setDescription(dataDescription[i]);
             sidang.setPhoto(dataPhoto.getResourceId(i, -1));
             listSidang.add(sidang);
@@ -46,9 +50,9 @@ public class SidangscheduleActivity extends AppCompatActivity {
     }
 
     private void showRecyclerList(){
-        rvHeroes.setLayoutManager(new LinearLayoutManager(this));
+        rvSidschedule.setLayoutManager(new LinearLayoutManager(this));
         ListSidangAdapter listSidangAdapter = new ListSidangAdapter(list);
-        rvHeroes.setAdapter(listSidangAdapter);
+        rvSidschedule.setAdapter(listSidangAdapter);
     }
 
     public void back(View view) {

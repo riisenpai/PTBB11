@@ -9,7 +9,7 @@
 
     <ImageView
         android:id="@+id/imageView2"
-        android:layout_width="99dp"
+        android:layout_width="93dp"
         android:layout_height="82dp"
         android:layout_marginStart="22dp"
         android:layout_marginTop="14dp"
@@ -22,7 +22,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="30dp"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="6dp"
         android:fontFamily="sans-serif-black"
         android:text="ESCOM"
         android:textColor="#FFFFFF"
@@ -42,7 +42,7 @@
         android:onClick="back"/>
 
     <TextView
-        android:id="@+id/textView6"
+        android:id="@+id/textProfile"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="30dp"
@@ -59,12 +59,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="99dp"
-        android:layout_marginTop="5dp"
+        android:layout_marginTop="12dp"
         android:layout_marginEnd="98dp"
         android:text="Kepala Departemen Sistem Informasi"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView6" />
+        app:layout_constraintTop_toBottomOf="@+id/textProfile" />
 
     <ImageView
         android:id="@+id/imageView6"
@@ -72,20 +73,10 @@
         android:layout_height="119dp"
         android:layout_marginTop="50dp"
         android:layout_marginBottom="9dp"
-        app:layout_constraintBottom_toTopOf="@+id/textView6"
+        app:layout_constraintBottom_toTopOf="@+id/textProfile"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView5"
         app:srcCompat="@drawable/profile" />
-
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/bottom_nav"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:labelVisibilityMode="labeled"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:menu="@menu/navbar_bottom"
-        tools:layout_editor_absoluteX="29dp"
-        />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

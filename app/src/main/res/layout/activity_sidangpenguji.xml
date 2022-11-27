@@ -14,7 +14,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="50dp"
         android:layout_marginEnd="82dp"
-        android:onClick="back"
+        android:onClick="kesemdang"
         android:src="@drawable/arrow_left"
         app:layout_constraintEnd_toStartOf="@+id/pembimbingTA"
         app:layout_constraintStart_toStartOf="parent"
@@ -27,7 +27,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="55dp"
         android:fontFamily="sans-serif"
-        android:text="Penguji Sidang"
+        android:text="Daftar Penguji"
         android:textColor="#FFFFFF"
         android:textColorHint="#FFFFFF"
         android:textSize="20sp"
@@ -37,230 +37,94 @@
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="MissingConstraints" />
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="84dp"
-        android:layout_height="94dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="124dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView8"
-        app:srcCompat="@drawable/profile"
-        tools:ignore="MissingConstraints" />
-
-    <TextView
-        android:id="@+id/namamhsa"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="84dp"
-        android:layout_marginEnd="240dp"
-        android:fontFamily="sans-serif-medium"
-        android:text="Nama"
-        android:textColor="#000000"
-        android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/pembimbingTA"
-        tools:ignore="MissingConstraints" />
-
-    <EditText
-        android:id="@+id/editTextTextPersonName"
-        android:layout_width="265dp"
-        android:layout_height="48dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="20dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:minHeight="48dp"
-        android:text="Amanda"
-        android:textColor="#A3A1A1"
-        android:textColorHint="#878686"
-        android:textSize="14sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/namamhsa"
-        tools:ignore="MissingConstraints" />
-
-    <TextView
-        android:id="@+id/nimmhs"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="252dp"
-        android:fontFamily="sans-serif-medium"
-        android:text="NIM"
-        android:textColor="#000000"
-        android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName"
-        tools:ignore="MissingConstraints" />
-
-    <EditText
-        android:id="@+id/editTextTextPersonName2"
-        android:layout_width="263dp"
-        android:layout_height="48dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="20dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="2011521001"
-        android:textColor="#A3A1A1"
-        android:textSize="14sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/nimmhs"
-        tools:ignore="MissingConstraints" />
-
-    <TextView
-        android:id="@+id/judulta"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="8dp"
-        android:fontFamily="sans-serif-medium"
-        android:text="Judul TA"
-        android:textColor="#000000"
-        android:textSize="16sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName2"
-        tools:ignore="MissingConstraints" />
-
-    <EditText
-        android:id="@+id/editTextTextPersonName3"
-        android:layout_width="365dp"
-        android:layout_height="48dp"
-        android:layout_marginTop="10dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Sistem Informasi Inventory FTI"
-        android:textColor="#A3A1A1"
-        android:textSize="14sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.4"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/judulta" />
-
-    <TextView
-        android:id="@+id/dospem"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="10dp"
-        android:fontFamily="sans-serif-medium"
-        android:text="Dosen Pembimbing"
-        android:textColor="#000000"
-        android:textSize="16sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName3"
-        tools:ignore="MissingConstraints" />
-
-    <EditText
-        android:id="@+id/editTextTextPersonName4"
-        android:layout_width="365dp"
-        android:layout_height="48dp"
-        android:layout_marginTop="10dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Husnil Kamil, MT"
-        android:textColor="#A3A1A1"
-        android:textSize="14sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.4"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/dospem" />
-
 
     <TextView
         android:id="@+id/tanggalmulaiTa"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="100dp"
         android:fontFamily="sans-serif-medium"
         android:text="Dosen Penguji 1"
         android:textColor="#000000"
         android:textSize="16sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName4"
+        app:layout_constraintTop_toBottomOf="@+id/imageView8"
         tools:ignore="MissingConstraints" />
 
-    <EditText
-        android:id="@+id/editTextDate"
-        android:layout_width="365dp"
-        android:layout_height="48dp"
+    <Spinner
+        android:id="@+id/spinner1"
+        android:layout_width="371dp"
+        android:layout_height="37dp"
+        android:layout_marginStart="16dp"
         android:layout_marginTop="10dp"
-        android:ems="10"
-        android:inputType="date"
-        android:text="Choose Penguji"
-        android:textColor="#A3A1A1"
-        android:textSize="14sp"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:backgroundTint="#FFFFFF"
+        android:entries="@array/daftar_dosen"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tanggalmulaiTa" />
+        app:layout_constraintTop_toBottomOf="@+id/tanggalmulaiTa"
+        tools:ignore="MissingConstraints" />
 
     <TextView
         android:id="@+id/status"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="28dp"
         android:fontFamily="sans-serif-medium"
         android:text="Dosen Penguji 2"
         android:textColor="#000000"
         android:textSize="16sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextDate"
+        app:layout_constraintTop_toBottomOf="@+id/spinner1"
         tools:ignore="MissingConstraints" />
 
-    <EditText
-        android:id="@+id/statuss"
-        android:layout_width="365dp"
-        android:layout_height="48dp"
-        android:layout_marginTop="10dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Choose Penguji"
-        android:textColor="#A3A1A1"
-        android:textSize="14sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.4"
+    <Spinner
+        android:id="@+id/spinner2"
+        android:layout_width="371dp"
+        android:layout_height="37dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:backgroundTint="#FFFFFF"
+        android:entries="@array/daftar_dosen"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/status" />
+        app:layout_constraintTop_toBottomOf="@+id/status"
+        tools:ignore="MissingConstraints" />
 
     <TextView
         android:id="@+id/status1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="24dp"
         android:fontFamily="sans-serif-medium"
         android:text="Dosen Penguji 3"
         android:textColor="#000000"
         android:textSize="16sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/statuss"
+        app:layout_constraintTop_toBottomOf="@+id/spinner2"
         tools:ignore="MissingConstraints" />
 
-    <EditText
-        android:id="@+id/status2"
-        android:layout_width="365dp"
-        android:layout_height="48dp"
-        android:layout_marginTop="10dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Choose Penguji"
-        android:textColor="#A3A1A1"
-        android:textSize="14sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.4"
+    <Spinner
+        android:id="@+id/spinner3"
+        android:layout_width="371dp"
+        android:layout_height="37dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="12dp"
+        android:backgroundTint="#FFFFFF"
+        android:entries="@array/daftar_dosen"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/status1" />
+        app:layout_constraintTop_toBottomOf="@+id/status1"
+        tools:ignore="MissingConstraints" />
 
     <Button
         android:layout_width="364dp"
         android:layout_height="54dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="18dp"
+        android:onClick="back"
         android:text="Submit"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.509"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/status2" />
+        app:layout_constraintTop_toBottomOf="@+id/spinner3" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

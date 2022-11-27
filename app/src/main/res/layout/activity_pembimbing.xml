@@ -19,10 +19,10 @@
         tools:ignore="MissingConstraints" />
 
     <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="40dp"
+        android:layout_height="36dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="40dp"
         android:minWidth="48dp"
         android:minHeight="48dp"
         android:onClick="back"
@@ -72,7 +72,7 @@
         tools:ignore="MissingConstraints" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName"
+        android:id="@+id/textNamaMahasiswaDetail"
         android:layout_width="263dp"
         android:layout_height="48dp"
         android:layout_marginTop="12dp"
@@ -80,7 +80,7 @@
         android:ems="10"
         android:inputType="textPersonName"
         android:minHeight="48dp"
-        android:text="Amanda"
+        android:text="Ahmad Dahlan"
         android:textColor="#A3A1A1"
         android:textColorHint="#878686"
         android:textSize="14sp"
@@ -99,18 +99,18 @@
         android:textColor="#000000"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName"
+        app:layout_constraintTop_toBottomOf="@+id/textNamaMahasiswaDetail"
         tools:ignore="MissingConstraints" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName2"
+        android:id="@+id/textNIM"
         android:layout_width="263dp"
         android:layout_height="48dp"
         android:layout_marginTop="10dp"
         android:layout_marginEnd="20dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="2011521001"
+        android:text="2011521002"
         android:textColor="#A3A1A1"
         android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -128,11 +128,11 @@
         android:textColor="#000000"
         android:textSize="16sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName2"
+        app:layout_constraintTop_toBottomOf="@+id/textNIM"
         tools:ignore="MissingConstraints" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName3"
+        android:id="@+id/textJudul"
         android:layout_width="365dp"
         android:layout_height="48dp"
         android:layout_marginTop="10dp"
@@ -154,21 +154,21 @@
         android:layout_marginStart="20dp"
         android:layout_marginTop="10dp"
         android:fontFamily="sans-serif-medium"
-        android:text="Tanggal Pengujian"
+        android:text="Tanggal Pengajuan"
         android:textColor="#000000"
         android:textSize="16sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName3"
+        app:layout_constraintTop_toBottomOf="@+id/textJudul"
         tools:ignore="MissingConstraints" />
 
     <EditText
-        android:id="@+id/editTextDate"
+        android:id="@+id/textTanggalMulai"
         android:layout_width="365dp"
         android:layout_height="48dp"
         android:layout_marginTop="10dp"
         android:ems="10"
         android:inputType="date"
-        android:text="19/09/2002"
+        android:text="19/09/2020"
         android:textColor="#A3A1A1"
         android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -187,31 +187,32 @@
         android:textColor="#000000"
         android:textSize="16sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextDate"
+        app:layout_constraintTop_toBottomOf="@+id/textTanggalMulai"
         tools:ignore="MissingConstraints" />
-
-    <AutoCompleteTextView
-        android:id="@+id/autoCompleteTextView"
-        android:layout_width="365dp"
-        android:layout_height="48dp"
-        android:layout_marginTop="10dp"
-        android:text="Choose Name"
-        android:textColor="#A3A1A1"
-        android:textSize="14sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/dospem" />
 
     <Button
         android:layout_width="359dp"
         android:layout_height="51dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="15dp"
         android:backgroundTint="#4535B7"
+        android:onClick="back"
         android:text="Submit"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.438"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/autoCompleteTextView"
+        app:layout_constraintTop_toBottomOf="@+id/spinner4"
         tools:ignore="MissingConstraints" />
 
+    <Spinner
+        android:id="@+id/spinner4"
+        android:layout_width="371dp"
+        android:layout_height="37dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="16dp"
+        android:backgroundTint="#FFFFFF"
+        android:entries="@array/daftar_dosen"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/dospem"
+        tools:ignore="MissingConstraints" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
