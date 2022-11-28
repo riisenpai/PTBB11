@@ -24,7 +24,9 @@ public class HomeActivity extends AppCompatActivity {
     BottomNavigationView bottomNavigationView;
     private ActivityHomeBinding binding;
     private NotificationManagerCompat notificationManagerMhsTA;
+    private NotificationManagerCompat notifPermintaanPembimbingTA;
     private Button buttonShow;
+    private Button buttonShow2;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,8 +37,11 @@ public class HomeActivity extends AppCompatActivity {
         notificationManagerMhsTA = NotificationManagerCompat.from(this);
         createNotificationChannel();
 
+        notifPermintaanPembimbingTA = NotificationManagerCompat.from(this);
+        createNotificationChannel2();
+
         buttonShow = findViewById(R.id.tambah_mahasiswata);
-        buttonShow.setOnClickListener(new View.OnClickListener(){
+        buttonShow.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent resultIntent = new Intent(HomeActivity.this, MahasiswaActivity.class);
@@ -52,11 +57,38 @@ public class HomeActivity extends AppCompatActivity {
                         .setStyle(new NotificationCompat.BigTextStyle()
                                 .bigText("Terjadi penambahan mahasiswa yang melaksanakan Tugas Akhir (TA)"))
                         .setContentIntent(resultPendingIntent)
-                        .addAction(R.drawable.mahasiswa,"Lihat",resultPendingIntent)
+                        .addAction(R.drawable.mahasiswa, "Lihat", resultPendingIntent)
                         .setPriority(NotificationCompat.PRIORITY_DEFAULT);
 
-                notificationManagerMhsTA.notify(111,builder.build());
+                notificationManagerMhsTA.notify(111, builder.build());
             }
+        });
+
+        buttonShow2 = findViewById(R.id.notif_permintaanPembimbing);
+        buttonShow2.setOnClickListener(new View.OnClickListener()
+
+        {
+            @Override
+            public void onClick (View v){
+                Intent resultIntent = new Intent(HomeActivity.this, PermintaanActivity.class);
+                TaskStackBuilder stackBuilder = TaskStackBuilder.create(HomeActivity.this);
+                stackBuilder.addNextIntentWithParentStack(resultIntent);
+                PendingIntent resultPendingIntent =
+                        stackBuilder.getPendingIntent(0,
+                                PendingIntent.FLAG_UPDATE_CURRENT | PendingIntent.FLAG_IMMUTABLE);
+
+                NotificationCompat.Builder builder = new NotificationCompat.Builder(HomeActivity.this, CHANNEL_ID)
+                        .setSmallIcon(R.drawable.mahasiswa)
+                        .setContentTitle("Info Dari Mahasiswa")
+                        .setStyle(new NotificationCompat.BigTextStyle()
+                                .bigText("Mahasiswa melakukan Permintaan Pembimbing TA"))
+                        .setContentIntent(resultPendingIntent)
+                        .addAction(R.drawable.mahasiswa, "Lihat", resultPendingIntent)
+                        .setPriority(NotificationCompat.PRIORITY_DEFAULT);
+
+                notificationManagerMhsTA.notify(112, builder.build());
+            }
+
         });
 
         Intent intent = getIntent();
@@ -112,6 +144,16 @@ public class HomeActivity extends AppCompatActivity {
             notificationManagerMhsTA.createNotificationChannel(channel);
         }
     }
+    private void createNotificationChannel2() {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            CharSequence name = "Notifikasi";
+            String description = "Notifikasi Mahasiswa Melakukan Permintaan Pembimbing TA";
+            int importance = NotificationManager.IMPORTANCE_DEFAULT;
+            NotificationChannel channel = new NotificationChannel(CHANNEL_ID, name, importance);
+            channel.setDescription(description);
+            notificationManagerMhsTA.createNotificationChannel(channel);
+        }
+    }
 
     public void sidang(View view) {
         Intent intent = new Intent(HomeActivity.this,SidangscheduleActivity.class);
@@ -138,3 +180,4 @@ public class HomeActivity extends AppCompatActivity {
         startActivity(intent);
     }
 }
+
