@@ -86,7 +86,7 @@ public class HomeActivity extends AppCompatActivity {
                         .addAction(R.drawable.mahasiswa, "Lihat", resultPendingIntent)
                         .setPriority(NotificationCompat.PRIORITY_DEFAULT);
 
-                notificationManagerMhsTA.notify(112, builder.build());
+                notifPermintaanPembimbingTA.notify(112, builder.build());
             }
 
         });
