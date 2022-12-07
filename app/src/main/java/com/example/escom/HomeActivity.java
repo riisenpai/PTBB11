@@ -25,39 +25,13 @@ public class HomeActivity extends AppCompatActivity {
     private ActivityHomeBinding binding;
     private NotificationManagerCompat notificationManagerMhsTA;
     private Button buttonShow;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding = ActivityHomeBinding.inflate(getLayoutInflater());
         View view = binding.getRoot();
         setContentView(view);
-
-        notificationManagerMhsTA = NotificationManagerCompat.from(this);
-        createNotificationChannel();
-
-        buttonShow = findViewById(R.id.tambah_mahasiswata);
-        buttonShow.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v) {
-                Intent resultIntent = new Intent(HomeActivity.this, MahasiswaActivity.class);
-                TaskStackBuilder stackBuilder = TaskStackBuilder.create(HomeActivity.this);
-                stackBuilder.addNextIntentWithParentStack(resultIntent);
-                PendingIntent resultPendingIntent =
-                        stackBuilder.getPendingIntent(0,
-                                PendingIntent.FLAG_UPDATE_CURRENT | PendingIntent.FLAG_IMMUTABLE);
-
-                NotificationCompat.Builder builder = new NotificationCompat.Builder(HomeActivity.this, CHANNEL_ID)
-                        .setSmallIcon(R.drawable.mahasiswa)
-                        .setContentTitle("Info Mahasiswa")
-                        .setStyle(new NotificationCompat.BigTextStyle()
-                                .bigText("Terjadi penambahan mahasiswa yang melaksanakan Tugas Akhir (TA)"))
-                        .setContentIntent(resultPendingIntent)
-                        .addAction(R.drawable.mahasiswa,"Lihat",resultPendingIntent)
-                        .setPriority(NotificationCompat.PRIORITY_DEFAULT);
-
-                notificationManagerMhsTA.notify(111,builder.build());
-            }
-        });
 
         Intent intent = getIntent();
         String username = "Husnil Kamil";
@@ -100,6 +74,36 @@ public class HomeActivity extends AppCompatActivity {
                 return false;
             }
         });
+
+        notificationManagerMhsTA = NotificationManagerCompat.from(this);
+        createNotificationChannel();
+
+        buttonShow = findViewById(R.id.tambah_mahasiswata);
+        buttonShow.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent resultIntent = new Intent(HomeActivity.this, MahasiswaActivity.class);
+                TaskStackBuilder stackBuilder = TaskStackBuilder.create(HomeActivity.this);
+                stackBuilder.addNextIntentWithParentStack(resultIntent);
+                PendingIntent resultPendingIntent =
+                        stackBuilder.getPendingIntent(0,
+                                PendingIntent.FLAG_UPDATE_CURRENT | PendingIntent.FLAG_IMMUTABLE);
+
+                NotificationCompat.Builder builder = new NotificationCompat.Builder(HomeActivity.this, CHANNEL_ID)
+                        .setSmallIcon(R.drawable.mahasiswa)
+                        .setContentTitle("Info Mahasiswa (Mahasiswa TA Bertambah)")
+                        .setStyle(new NotificationCompat.BigTextStyle()
+                                .bigText("Terdapat penambahan mahasiswa yang mengajukan permintaan Pembimbing"))
+                        .setContentIntent(resultPendingIntent)
+                        .addAction(R.drawable.mahasiswa, "Lihat", resultPendingIntent)
+                        .setPriority(NotificationCompat.PRIORITY_DEFAULT);
+
+                notificationManagerMhsTA.notify(111, builder.build());
+            }
+        });
+
+        notificationManagerMhsTA = NotificationManagerCompat.from(this);
+        createNotificationChannel();
     }
 
     private void createNotificationChannel() {
