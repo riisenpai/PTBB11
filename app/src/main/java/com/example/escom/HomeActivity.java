@@ -7,9 +7,11 @@ import android.app.TaskStackBuilder;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -17,15 +19,17 @@ import androidx.core.app.NotificationCompat;
 import androidx.core.app.NotificationManagerCompat;
 
 import com.example.escom.databinding.ActivityHomeBinding;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.firebase.messaging.FirebaseMessaging;
 
 public class HomeActivity extends AppCompatActivity {
     private static final String CHANNEL_ID = "test_kanal";
     BottomNavigationView bottomNavigationView;
     private ActivityHomeBinding binding;
-    private NotificationManagerCompat notificationManagerMhsTA;
-    private Button buttonShow;
-
+    private NotificationManagerCompat notificationManagerMhsTA, notificationToken;
+    private Button buttonShow, buttonShow2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -76,7 +80,9 @@ public class HomeActivity extends AppCompatActivity {
             }
         });
 
+        //Ambil notifikasi manager
         notificationManagerMhsTA = NotificationManagerCompat.from(this);
+        //Buat channel notifikasi
         createNotificationChannel();
 
         buttonShow = findViewById(R.id.tambah_mahasiswata);
@@ -90,23 +96,49 @@ public class HomeActivity extends AppCompatActivity {
                         stackBuilder.getPendingIntent(0,
                                 PendingIntent.FLAG_UPDATE_CURRENT | PendingIntent.FLAG_IMMUTABLE);
 
+                //Builder untuk notifikasi
                 NotificationCompat.Builder builder = new NotificationCompat.Builder(HomeActivity.this, CHANNEL_ID)
                         .setSmallIcon(R.drawable.mahasiswa)
                         .setContentTitle("Info Mahasiswa (Mahasiswa TA Bertambah)")
                         .setStyle(new NotificationCompat.BigTextStyle()
-                                .bigText("Terdapat penambahan mahasiswa yang mengajukan permintaan Pembimbing"))
+                                .bigText("Terdapat penambahan mahasiswa yang melakukan TA"))
                         .setContentIntent(resultPendingIntent)
                         .addAction(R.drawable.mahasiswa, "Lihat", resultPendingIntent)
                         .setPriority(NotificationCompat.PRIORITY_DEFAULT);
 
+                //Objek dan nampilkan notifikasi
                 notificationManagerMhsTA.notify(111, builder.build());
             }
         });
 
-        notificationManagerMhsTA = NotificationManagerCompat.from(this);
-        createNotificationChannel();
+        buttonShow2 = findViewById(R.id.get_token);
+        buttonShow2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //Ambil token
+                FirebaseMessaging.getInstance().getToken()
+                        .addOnCompleteListener(new OnCompleteListener<String>() {
+                            @Override
+                            public void onComplete(@NonNull Task<String> task) {
+                                if (!task.isSuccessful()) {
+                                    Log.w("FCM", "Fetching FCM registration token failed", task.getException());
+                                    return;
+                                }
+
+                                // Get new FCM registration token
+                                String token = task.getResult();
+
+                                // Log and toast
+                                Log.d("FCM", token);
+                                Toast.makeText(HomeActivity.this, token, Toast.LENGTH_SHORT).show();
+                            }
+                        });
+            }
+        });
+
     }
 
+    //Channel Notifikasi Manual Untuk Mahasiswa TA
     private void createNotificationChannel() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             CharSequence name = "Notifikasi";
