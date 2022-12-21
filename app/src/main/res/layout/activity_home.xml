@@ -14,7 +14,7 @@
         android:layout_marginStart="22dp"
         android:layout_marginTop="14dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView5"
+        app:layout_constraintTop_toBottomOf="@+id/logout"
         app:srcCompat="@drawable/logo2"
         android:onClick="notif"/>
 
@@ -33,15 +33,15 @@
 
 
     <ImageView
-        android:id="@+id/imageView5"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
+        android:id="@+id/logout"
+        android:layout_width="20dp"
+        android:layout_height="25dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
+        android:onClick="back"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/arrow_left"
-        android:onClick="back"/>
+        app:srcCompat="@drawable/arrow_left" />
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView"

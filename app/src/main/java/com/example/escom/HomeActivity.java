@@ -4,13 +4,16 @@ import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.app.TaskStackBuilder;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -29,7 +32,9 @@ public class HomeActivity extends AppCompatActivity {
     BottomNavigationView bottomNavigationView;
     private ActivityHomeBinding binding;
     private NotificationManagerCompat notificationManagerMhsTA, notificationToken;
-    private Button buttonShow, buttonShow2;
+    Button buttonShow, buttonShow2;
+    ImageView buttonLogout;
+    SharedPreferences sharedPref;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,10 +43,27 @@ public class HomeActivity extends AppCompatActivity {
         View view = binding.getRoot();
         setContentView(view);
 
-        Intent intent = getIntent();
-        String username = "Husnil Kamil";
+        buttonLogout = findViewById(R.id.logout);
 
+        SharedPreferences sharedPref = getSharedPreferences("prefs", Context.MODE_PRIVATE);
+        String token = sharedPref.getString("TOKEN", "");
+        String username = sharedPref.getString("USERNAME", "");
+        String password = sharedPref.getString("PASSWORD", "");
+        String name = sharedPref.getString("NAME", "");
+
+        Intent intent = getIntent();
         binding.textGreeting.setText("Hello " + username);
+
+        buttonLogout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                SharedPreferences.Editor editor = sharedPref.edit();
+                editor.clear();
+                editor.commit();
+                Toast.makeText(HomeActivity.this,"Successfully Log Out" ,Toast.LENGTH_SHORT).show();
+                finish();
+            }
+        });
 
         bottomNavigationView = findViewById(R.id.bottom_nav);
         bottomNavigationView.setSelectedItemId(R.id.hlmhome);
@@ -78,6 +100,8 @@ public class HomeActivity extends AppCompatActivity {
                 }
                 return false;
             }
+
+
         });
 
         //Ambil notifikasi manager
