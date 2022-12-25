@@ -35,6 +35,7 @@ public class ProfileActivity extends AppCompatActivity{
         String name = sharedPref.getString("NAME", "");
         String email = sharedPref.getString("EMAIL", "");
 
+
         Intent intent = getIntent();
         binding.profilName.setText(name);
         binding.profilUsername.setText(username);

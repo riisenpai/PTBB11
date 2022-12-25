@@ -92,6 +92,7 @@ public class LoginActivity extends AppCompatActivity {
                             editor.putString("EMAIL", response.body().getUser().getEmail());
                             editor.apply();
 
+
                             Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
                             startActivity(intent);
                         }

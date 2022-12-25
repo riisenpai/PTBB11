@@ -78,6 +78,7 @@ public class HomeActivity extends AppCompatActivity {
         Intent intent = getIntent();
         binding.textGreeting.setText("Hello " + name);
 
+
         buttonLogout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
