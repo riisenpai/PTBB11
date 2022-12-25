@@ -11,7 +11,6 @@
         android:theme="@style/Theme.Escom"
         android:usesCleartextTraffic="true"
         >
-
         <service
             android:name=".firebase.MyFirebaseMessagingService"
             android:exported="false">

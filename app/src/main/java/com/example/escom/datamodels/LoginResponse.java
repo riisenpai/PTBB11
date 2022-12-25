@@ -4,6 +4,7 @@ import com.google.gson.annotations.SerializedName;
 
 public class LoginResponse{
 
+
 	@SerializedName("authorisation")
 	private Authorisation authorisation;
 

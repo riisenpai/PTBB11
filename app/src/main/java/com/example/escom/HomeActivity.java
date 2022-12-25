@@ -36,6 +36,7 @@ public class HomeActivity extends AppCompatActivity {
     ImageView buttonLogout;
     SharedPreferences sharedPref;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -52,7 +53,7 @@ public class HomeActivity extends AppCompatActivity {
         String name = sharedPref.getString("NAME", "");
 
         Intent intent = getIntent();
-        binding.textGreeting.setText("Hello " + username);
+        binding.textGreeting.setText("Hello " + name);
 
         buttonLogout.setOnClickListener(new View.OnClickListener() {
             @Override

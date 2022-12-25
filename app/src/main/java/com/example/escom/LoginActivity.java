@@ -16,6 +16,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.escom.databinding.ActivityLoginBinding;
 import com.example.escom.datamodels.Authorisation;
 import com.example.escom.datamodels.LoginResponse;
+import com.example.escom.retrofit.APIClient;
 import com.example.escom.retrofit.TugasClient;
 import com.google.android.material.textfield.TextInputEditText;
 
@@ -57,7 +58,6 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     public void cekLogin(){
-
         buttonLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -82,13 +82,14 @@ public class LoginActivity extends AppCompatActivity {
                         if(loginResponse != null ) {
                             Toast.makeText(LoginActivity.this,"Berhasil login", Toast.LENGTH_SHORT).show();
 
-                            String token = loginResponse.getAuthorisation().getToken();
-                            SharedPreferences sharedPref = getSharedPreferences("prefs",Context. MODE_PRIVATE);
-                            SharedPreferences.Editor editor = sharedPref.edit();
-                            editor.putString("TOKEN",token);
-                            editor.putString("USERNAME",editUsername.getText().toString());
-                            editor.putString("PASSWORD",editPassword.getText().toString());
-                            editor.apply();
+//                            String token = loginResponse.getAuthorisation().getToken();
+//                            SharedPreferences sharedPref = getSharedPreferences("prefs",Context. MODE_PRIVATE);
+//                            SharedPreferences.Editor editor = sharedPref.edit();
+//                            editor.putString("TOKEN",token);
+//                            editor.putString("USERNAME",editUsername.getText().toString());
+//                            editor.putString("PASSWORD",editPassword.getText().toString());
+//                            editor.putString("NAME", response.body().getUser().getName());
+//                            editor.apply();
 
                             Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
                             startActivity(intent);

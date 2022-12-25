@@ -4,6 +4,7 @@ import com.google.gson.annotations.SerializedName;
 
 public class User{
 
+
 	@SerializedName("role")
 	private Object role;
 

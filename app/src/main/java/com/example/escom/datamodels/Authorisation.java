@@ -4,6 +4,7 @@ import com.google.gson.annotations.SerializedName;
 
 public class Authorisation{
 
+
 	@SerializedName("type")
 	private String type;
 
