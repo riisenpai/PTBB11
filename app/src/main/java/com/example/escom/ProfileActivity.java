@@ -1,6 +1,8 @@
 package com.example.escom;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
@@ -15,6 +17,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 public class ProfileActivity extends AppCompatActivity{
     BottomNavigationView bottomNavigationView;
     private ActivityProfileBinding binding;
+    SharedPreferences sharedPref;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,10 +28,17 @@ public class ProfileActivity extends AppCompatActivity{
         View view = binding.getRoot();
         setContentView(view);
 
-        Intent intent = getIntent();
-        String username = "Husnil Kamil";
+        SharedPreferences sharedPref = getSharedPreferences("prefs", Context.MODE_PRIVATE);
+        String token = sharedPref.getString("TOKEN", "");
+        String username = sharedPref.getString("USERNAME", "");
+        String password = sharedPref.getString("PASSWORD", "");
+        String name = sharedPref.getString("NAME", "");
+        String email = sharedPref.getString("EMAIL", "");
 
-        binding.nama.setText(username);
+        Intent intent = getIntent();
+        binding.profilName.setText(name);
+        binding.profilUsername.setText(username);
+        binding.profilEmail.setText(email);
     }
 
     public void back(View view) {

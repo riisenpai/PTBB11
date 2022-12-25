@@ -82,14 +82,15 @@ public class LoginActivity extends AppCompatActivity {
                         if(loginResponse != null ) {
                             Toast.makeText(LoginActivity.this,"Berhasil login", Toast.LENGTH_SHORT).show();
 
-//                            String token = loginResponse.getAuthorisation().getToken();
-//                            SharedPreferences sharedPref = getSharedPreferences("prefs",Context. MODE_PRIVATE);
-//                            SharedPreferences.Editor editor = sharedPref.edit();
-//                            editor.putString("TOKEN",token);
-//                            editor.putString("USERNAME",editUsername.getText().toString());
-//                            editor.putString("PASSWORD",editPassword.getText().toString());
-//                            editor.putString("NAME", response.body().getUser().getName());
-//                            editor.apply();
+                            String token = loginResponse.getAuthorisation().getToken();
+                            SharedPreferences sharedPref = getSharedPreferences("prefs",Context. MODE_PRIVATE);
+                            SharedPreferences.Editor editor = sharedPref.edit();
+                            editor.putString("TOKEN",token);
+                            editor.putString("USERNAME",editUsername.getText().toString());
+                            editor.putString("PASSWORD",editPassword.getText().toString());
+                            editor.putString("NAME", response.body().getUser().getName());
+                            editor.putString("EMAIL", response.body().getUser().getEmail());
+                            editor.apply();
 
                             Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
                             startActivity(intent);
