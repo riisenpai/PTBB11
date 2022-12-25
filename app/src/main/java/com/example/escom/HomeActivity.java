@@ -36,7 +36,6 @@ public class HomeActivity extends AppCompatActivity {
     ImageView buttonLogout;
     SharedPreferences sharedPref;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -51,6 +50,29 @@ public class HomeActivity extends AppCompatActivity {
         String username = sharedPref.getString("USERNAME", "");
         String password = sharedPref.getString("PASSWORD", "");
         String name = sharedPref.getString("NAME", "");
+        buttonShow = findViewById(R.id.tambah_mahasiswata);
+        buttonShow.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent resultIntent = new Intent(HomeActivity.this, MahasiswaActivity.class);
+                TaskStackBuilder stackBuilder = TaskStackBuilder.create(HomeActivity.this);
+                stackBuilder.addNextIntentWithParentStack(resultIntent);
+                PendingIntent resultPendingIntent =
+                        stackBuilder.getPendingIntent(0,
+                                PendingIntent.FLAG_UPDATE_CURRENT | PendingIntent.FLAG_IMMUTABLE);
+
+                NotificationCompat.Builder builder = new NotificationCompat.Builder(HomeActivity.this, CHANNEL_ID)
+                        .setSmallIcon(R.drawable.mahasiswa)
+                        .setContentTitle("Info Mahasiswa")
+                        .setStyle(new NotificationCompat.BigTextStyle()
+                                .bigText("Terjadi penambahan mahasiswa yang melaksanakan Tugas Akhir (TA)"))
+                        .setContentIntent(resultPendingIntent)
+                        .addAction(R.drawable.mahasiswa, "Lihat", resultPendingIntent)
+                        .setPriority(NotificationCompat.PRIORITY_DEFAULT);
+
+                notificationManagerMhsTA.notify(111, builder.build());
+            }
+        });
 
         Intent intent = getIntent();
         binding.textGreeting.setText("Hello " + name);
@@ -162,7 +184,6 @@ public class HomeActivity extends AppCompatActivity {
         });
 
     }
-
     //Channel Notifikasi Manual Untuk Mahasiswa TA
     private void createNotificationChannel() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
@@ -200,3 +221,4 @@ public class HomeActivity extends AppCompatActivity {
         startActivity(intent);
     }
 }
+
