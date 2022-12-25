@@ -1,15 +1,23 @@
 package com.example.escom;
 
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
+import android.app.PendingIntent;
+import android.app.TaskStackBuilder;
 import android.content.Intent;
 import android.content.res.Resources;
 import android.content.res.TypedArray;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.NotificationCompat;
+import androidx.core.app.NotificationManagerCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -20,9 +28,11 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 import java.util.ArrayList;
 
 public class SemdangActivity extends AppCompatActivity{
+    private static final String CHANNEL_ID = "test_kanal";
     private ActivitySemdangBinding binding;
-    BottomNavigationView bottomNavigationView;
     private RecyclerView rvSemdang;
+    private NotificationManagerCompat notificationSemdang;
+    private Button buttonShow3;
     private ArrayList<Semdang> list = new ArrayList<>();
 
     @Override
@@ -37,6 +47,47 @@ public class SemdangActivity extends AppCompatActivity{
 
         list.addAll(getlistSemdang());
         showRecyclerList();
+
+        notificationSemdang = NotificationManagerCompat.from(this);
+        createNotificationChannel3();
+
+        buttonShow3 = findViewById(R.id.tambah_mahasiswasemdang);
+        buttonShow3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent resultIntent = new Intent(SemdangActivity.this, SemdangActivity.class);
+                TaskStackBuilder stackBuilder = TaskStackBuilder.create(SemdangActivity.this);
+                stackBuilder.addNextIntentWithParentStack(resultIntent);
+                PendingIntent resultPendingIntent =
+                        stackBuilder.getPendingIntent(0,
+                                PendingIntent.FLAG_UPDATE_CURRENT | PendingIntent.FLAG_IMMUTABLE);
+
+                NotificationCompat.Builder builder = new NotificationCompat.Builder(SemdangActivity.this, CHANNEL_ID)
+                        .setSmallIcon(R.drawable.mahasiswa)
+                        .setContentTitle("Info Mahasiswa (Permintaan Seminar)")
+                        .setStyle(new NotificationCompat.BigTextStyle()
+                                .bigText("Terdapat penambahan mahasiswa yang mengajukan seminar"))
+                        .setContentIntent(resultPendingIntent)
+                        .addAction(R.drawable.mahasiswa, "Lihat", resultPendingIntent)
+                        .setPriority(NotificationCompat.PRIORITY_DEFAULT);
+
+                notificationSemdang.notify(113, builder.build());
+            }
+        });
+
+        notificationSemdang = NotificationManagerCompat.from(this);
+        createNotificationChannel3();
+    }
+
+    private void createNotificationChannel3() {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            CharSequence name = "Notifikasi";
+            String description = "Notifikasi List Seminar Sidang";
+            int importance = NotificationManager.IMPORTANCE_DEFAULT;
+            NotificationChannel channel3 = new NotificationChannel(CHANNEL_ID, name, importance);
+            channel3.setDescription(description);
+            notificationSemdang.createNotificationChannel(channel3);
+        }
     }
 
     public ArrayList<Semdang> getlistSemdang() {

@@ -1,14 +1,22 @@
 package com.example.escom;
 
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
+import android.app.PendingIntent;
+import android.app.TaskStackBuilder;
 import android.content.Intent;
 import android.content.res.TypedArray;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.NotificationCompat;
+import androidx.core.app.NotificationManagerCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -17,9 +25,11 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 import java.util.ArrayList;
 
 public class PermintaanActivity extends AppCompatActivity{
-       BottomNavigationView bottomNavigationView;
-       private RecyclerView rvPermintaan;
-       private ArrayList<Permintaan> list = new ArrayList<>();
+    private RecyclerView rvPermintaan;
+    private static final String CHANNEL_ID = "test_kanal";
+    private NotificationManagerCompat notificationPermintaan;
+    private Button buttonShow2;
+    private ArrayList<Permintaan> list = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +41,44 @@ public class PermintaanActivity extends AppCompatActivity{
 
         list.addAll(getListPermintaan());
         showRecyclerList();
+
+        buttonShow2 = findViewById(R.id.tambah_permintaan);
+        buttonShow2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent resultIntent = new Intent(PermintaanActivity.this, PermintaanActivity.class);
+                TaskStackBuilder stackBuilder = TaskStackBuilder.create(PermintaanActivity.this);
+                stackBuilder.addNextIntentWithParentStack(resultIntent);
+                PendingIntent resultPendingIntent =
+                        stackBuilder.getPendingIntent(0,
+                                PendingIntent.FLAG_UPDATE_CURRENT | PendingIntent.FLAG_IMMUTABLE);
+
+                NotificationCompat.Builder builder = new NotificationCompat.Builder(PermintaanActivity.this, CHANNEL_ID)
+                        .setSmallIcon(R.drawable.mahasiswa)
+                        .setContentTitle("Info Mahasiswa (Permintaan Pembimbing)")
+                        .setStyle(new NotificationCompat.BigTextStyle()
+                                .bigText("Terdapat penambahan mahasiswa yang mengajukan permintaan Pembimbing"))
+                        .setContentIntent(resultPendingIntent)
+                        .addAction(R.drawable.mahasiswa, "Lihat", resultPendingIntent)
+                        .setPriority(NotificationCompat.PRIORITY_DEFAULT);
+
+                notificationPermintaan.notify(112, builder.build());
+            }
+        });
+
+        notificationPermintaan = NotificationManagerCompat.from(this);
+        createNotificationChannel2();
+    }
+
+    private void createNotificationChannel2() {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            CharSequence name = "Notifikasi";
+            String description = "Notifikasi Permintaan Pembimbing";
+            int importance = NotificationManager.IMPORTANCE_DEFAULT;
+            NotificationChannel channel2 = new NotificationChannel(CHANNEL_ID, name, importance);
+            channel2.setDescription(description);
+            notificationPermintaan.createNotificationChannel(channel2);
+        }
     }
 
     public ArrayList<Permintaan> getListPermintaan() {
@@ -75,7 +123,5 @@ public class PermintaanActivity extends AppCompatActivity{
         detailIntent.putExtra("DOSEN", permintaan.getDosen());
         detailIntent.putExtra("NIM", permintaan.getDescription());
         startActivity(detailIntent);
-
-        //Toast.makeText(this, "Kamu memilih " + permintaan.getName(), Toast.LENGTH_SHORT).show();
     }
 }

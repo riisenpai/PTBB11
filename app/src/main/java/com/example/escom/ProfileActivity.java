@@ -28,7 +28,7 @@ public class ProfileActivity extends AppCompatActivity{
         Intent intent = getIntent();
         String username = "Husnil Kamil";
 
-        binding.textProfile.setText(username);
+        binding.nama.setText(username);
     }
 
     public void back(View view) {
