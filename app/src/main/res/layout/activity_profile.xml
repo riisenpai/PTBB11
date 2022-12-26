@@ -7,6 +7,7 @@
     android:background="@drawable/bg_home"
     tools:context=".ProfileActivity">
 
+
     <ImageView
         android:id="@+id/imageView2"
         android:layout_width="93dp"
@@ -41,52 +42,86 @@
         app:srcCompat="@drawable/arrow_left"
         android:onClick="back"/>
 
-    <TextView
-        android:id="@+id/nama"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="30dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="30dp"
-        android:text="Husnil Kamil, MT"
-        android:textSize="17sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView6" />
-
-    <TextView
-        android:id="@+id/username"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="99dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="98dp"
-        android:text="Kepala Departemen Sistem Informasi"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/nama" />
-
     <ImageView
         android:id="@+id/imageView6"
         android:layout_width="147dp"
         android:layout_height="119dp"
-        android:layout_marginTop="50dp"
-        android:layout_marginBottom="9dp"
-        app:layout_constraintBottom_toTopOf="@+id/nama"
+        android:layout_marginTop="68dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.501"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView5"
         app:srcCompat="@drawable/profile" />
 
+    <EditText
+        android:id="@+id/profil_username"
+        android:layout_width="291dp"
+        android:layout_height="45dp"
+        android:layout_marginEnd="81dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Name"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/textView7"
+        app:layout_constraintTop_toBottomOf="@+id/textView7" />
+
+    <EditText
+        android:id="@+id/profil_name"
+        android:layout_width="291dp"
+        android:layout_height="53dp"
+        android:layout_marginEnd="81dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Name"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/textView19"
+        app:layout_constraintTop_toBottomOf="@+id/textView19" />
+
+    <EditText
+        android:id="@+id/profil_email"
+        android:layout_width="286dp"
+        android:layout_height="54dp"
+        android:layout_marginEnd="84dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Name"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/textView20"
+        app:layout_constraintTop_toBottomOf="@+id/textView20" />
+
     <TextView
-        android:id="@+id/email"
-        android:layout_width="234dp"
-        android:layout_height="24dp"
-        android:layout_marginStart="100dp"
-        android:layout_marginTop="24dp"
-        android:text="email"
+        android:id="@+id/textView7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="224dp"
+        android:text="Username"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textSize="16sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/username" />
+        app:layout_constraintTop_toBottomOf="@+id/textView5" />
+
+    <TextView
+        android:id="@+id/textView19"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="21dp"
+        android:text="Name"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="@+id/profil_username"
+        app:layout_constraintTop_toBottomOf="@+id/profil_username" />
+
+    <TextView
+        android:id="@+id/textView20"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="2dp"
+        android:layout_marginTop="22dp"
+        android:text="Email"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="@+id/profil_name"
+        app:layout_constraintTop_toBottomOf="@+id/profil_name" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

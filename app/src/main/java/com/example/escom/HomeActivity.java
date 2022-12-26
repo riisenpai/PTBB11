@@ -50,6 +50,7 @@ public class HomeActivity extends AppCompatActivity {
         String username = sharedPref.getString("USERNAME", "");
         String password = sharedPref.getString("PASSWORD", "");
         String name = sharedPref.getString("NAME", "");
+
         buttonShow = findViewById(R.id.tambah_mahasiswata);
         buttonShow.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -77,6 +78,7 @@ public class HomeActivity extends AppCompatActivity {
         Intent intent = getIntent();
         binding.textGreeting.setText("Hello " + name);
 
+
         buttonLogout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -85,6 +87,8 @@ public class HomeActivity extends AppCompatActivity {
                 editor.commit();
                 Toast.makeText(HomeActivity.this,"Successfully Log Out" ,Toast.LENGTH_SHORT).show();
                 finish();
+                Intent intent = new Intent(HomeActivity.this, LoginActivity.class);
+                startActivity(intent);
             }
         });
 
