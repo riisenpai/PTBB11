@@ -22,10 +22,20 @@ import androidx.core.app.NotificationCompat;
 import androidx.core.app.NotificationManagerCompat;
 
 import com.example.escom.databinding.ActivityHomeBinding;
+import com.example.escom.datamodels.LoginResponse;
+import com.example.escom.datamodels.LogoutResponse;
+import com.example.escom.retrofit.TugasClient;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.messaging.FirebaseMessaging;
+
+import okhttp3.OkHttpClient;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
 
 public class HomeActivity extends AppCompatActivity {
     private static final String CHANNEL_ID = "test_kanal";
@@ -78,17 +88,52 @@ public class HomeActivity extends AppCompatActivity {
         Intent intent = getIntent();
         binding.textGreeting.setText("Hello " + name);
 
-
         buttonLogout.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                SharedPreferences.Editor editor = sharedPref.edit();
+//                editor.clear();
+//                editor.commit();
+//                Toast.makeText(HomeActivity.this,"Successfully Log Out" ,Toast.LENGTH_SHORT).show();
+//                finish();
+//                Intent intent = new Intent(HomeActivity.this, LoginActivity.class);
+//                startActivity(intent);
+//            }
             @Override
             public void onClick(View v) {
-                SharedPreferences.Editor editor = sharedPref.edit();
-                editor.clear();
-                editor.commit();
-                Toast.makeText(HomeActivity.this,"Successfully Log Out" ,Toast.LENGTH_SHORT).show();
-                finish();
-                Intent intent = new Intent(HomeActivity.this, LoginActivity.class);
-                startActivity(intent);
+                Log.d("LoginAct-Debug", username + ": " + password);
+
+                Retrofit retrofit = new Retrofit.Builder()
+                        .baseUrl("http://ptb-api.husnilkamil.my.id/")
+                        .addConverterFactory(GsonConverterFactory.create())
+                        .client(new OkHttpClient.Builder().build())
+                        .build();
+
+                TugasClient client = retrofit.create(TugasClient.class);
+
+                Call<LogoutResponse> call = client.logout("Bearer " + token);
+
+                call.enqueue(new Callback<LogoutResponse>() {
+                    @Override
+                    public void onResponse(Call<LogoutResponse> call, Response<LogoutResponse> response) {
+                        LogoutResponse logoutResponse = response.body();
+                        SharedPreferences sharedPref = getSharedPreferences("prefs",Context. MODE_PRIVATE);
+                        SharedPreferences.Editor editor = sharedPref.edit();
+                        editor.clear();
+                        editor.apply();
+
+                        Toast.makeText(HomeActivity.this,"Berhasil logout", Toast.LENGTH_SHORT).show();
+
+                        Intent intent = new Intent(HomeActivity.this, LoginActivity.class);
+                        startActivity(intent);
+                        finish();
+                    }
+
+                    @Override
+                    public void onFailure(Call<LogoutResponse> call, Throwable t) {
+
+                    }
+                });
             }
         });
 
