@@ -18,7 +18,7 @@ public interface TugasClient {
     @POST("api/login")
     Call<LoginResponse> login(@Field("username") String username, @Field("password") String password);
 
-    @GET("api/logout")
+    @POST("api/logout")
     Call<LogoutResponse> logout(@Header("token") String token);
 
     @GET("api/me")
