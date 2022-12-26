@@ -22,6 +22,6 @@ public interface TugasClient {
     Call<LogoutResponse> logout(@Header("token") String token);
 
     @GET("api/me")
-    Call<ProfilResponse> profile(@Header("token") String token);
+    Call<ProfilResponse> profil(@Header("token") String token);
 
 }

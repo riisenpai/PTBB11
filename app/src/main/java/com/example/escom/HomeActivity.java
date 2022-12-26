@@ -89,16 +89,6 @@ public class HomeActivity extends AppCompatActivity {
         binding.textGreeting.setText("Hello " + name);
 
         buttonLogout.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                SharedPreferences.Editor editor = sharedPref.edit();
-//                editor.clear();
-//                editor.commit();
-//                Toast.makeText(HomeActivity.this,"Successfully Log Out" ,Toast.LENGTH_SHORT).show();
-//                finish();
-//                Intent intent = new Intent(HomeActivity.this, LoginActivity.class);
-//                startActivity(intent);
-//            }
             @Override
             public void onClick(View v) {
                 Log.d("LoginAct-Debug", username + ": " + password);
@@ -119,14 +109,14 @@ public class HomeActivity extends AppCompatActivity {
                         LogoutResponse logoutResponse = response.body();
                         SharedPreferences sharedPref = getSharedPreferences("prefs",Context. MODE_PRIVATE);
                         SharedPreferences.Editor editor = sharedPref.edit();
+                        editor.putString("TOKEN",null);
                         editor.clear();
                         editor.apply();
 
-                        Toast.makeText(HomeActivity.this,"Berhasil logout", Toast.LENGTH_SHORT).show();
-
+                        Toast.makeText(HomeActivity.this,"Successfully Log Out", Toast.LENGTH_SHORT).show();
+                        finish();
                         Intent intent = new Intent(HomeActivity.this, LoginActivity.class);
                         startActivity(intent);
-                        finish();
                     }
 
                     @Override
