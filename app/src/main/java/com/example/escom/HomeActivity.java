@@ -196,32 +196,6 @@ public class HomeActivity extends AppCompatActivity {
                 notificationManagerMhsTA.notify(111, builder.build());
             }
         });
-
-        buttonShow2 = findViewById(R.id.get_token);
-        buttonShow2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                //Ambil token
-                FirebaseMessaging.getInstance().getToken()
-                        .addOnCompleteListener(new OnCompleteListener<String>() {
-                            @Override
-                            public void onComplete(@NonNull Task<String> task) {
-                                if (!task.isSuccessful()) {
-                                    Log.w("FCM", "Fetching FCM registration token failed", task.getException());
-                                    return;
-                                }
-
-                                // Get new FCM registration token
-                                String token = task.getResult();
-
-                                // Log and toast
-                                Log.d("FCM", token);
-                                Toast.makeText(HomeActivity.this, token, Toast.LENGTH_SHORT).show();
-                            }
-                        });
-            }
-        });
-
     }
     //Channel Notifikasi Manual Untuk Mahasiswa TA
     private void createNotificationChannel() {
