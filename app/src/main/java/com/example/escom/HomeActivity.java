@@ -61,6 +61,9 @@ public class HomeActivity extends AppCompatActivity {
         String password = sharedPref.getString("PASSWORD", "");
         String name = sharedPref.getString("NAME", "");
 
+        Intent intent = getIntent();
+        binding.textGreeting.setText("Hello " + name);
+
         buttonShow = findViewById(R.id.tambah_mahasiswata);
         buttonShow.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -84,9 +87,6 @@ public class HomeActivity extends AppCompatActivity {
                 notificationManagerMhsTA.notify(111, builder.build());
             }
         });
-
-        Intent intent = getIntent();
-        binding.textGreeting.setText("Hello " + name);
 
         buttonLogout.setOnClickListener(new View.OnClickListener() {
             @Override
