@@ -14,6 +14,7 @@ import androidx.annotation.NonNull;
 import androidx.core.app.NotificationCompat;
 
 import com.example.escom.HomeActivity;
+import com.example.escom.MahasiswaActivity;
 import com.example.escom.MainActivity;
 import com.example.escom.R;
 import com.google.firebase.messaging.FirebaseMessagingService;
@@ -41,7 +42,7 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
 
     //Menampilkan notifikasi
     private void sendNotification(String messageBody) {
-        Intent intent = new Intent(this, HomeActivity.class);
+        Intent intent = new Intent(this, MahasiswaActivity.class);
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         PendingIntent pendingIntent = PendingIntent.getActivity(this, 0 /* Request code */, intent,
                 PendingIntent.FLAG_IMMUTABLE);
