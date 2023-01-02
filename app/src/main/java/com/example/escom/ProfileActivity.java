@@ -30,6 +30,7 @@ public class ProfileActivity extends AppCompatActivity{
     private ActivityProfileBinding binding;
     SharedPreferences sharedPref;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
