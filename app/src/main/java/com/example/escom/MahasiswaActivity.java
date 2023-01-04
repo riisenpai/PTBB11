@@ -1,36 +1,87 @@
 package com.example.escom;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.res.TypedArray;
 import android.os.Bundle;
-import android.view.MenuItem;
+import android.util.Log;
 import android.view.View;
-import android.widget.Toast;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.escom.datamodels.ThesesItem;
+import com.example.escom.datamodels.ThesesResponse;
+import com.example.escom.retrofit.TugasClient;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import java.util.ArrayList;
+import java.util.List;
 
-public class MahasiswaActivity extends AppCompatActivity{
+import okhttp3.OkHttpClient;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
+
+public class MahasiswaActivity<MahasiswaActivityAdapter> extends AppCompatActivity{
     BottomNavigationView bottomNavigationView;
     private RecyclerView rvMahasiswa;
     private ArrayList<Mahasiswa> list = new ArrayList<>();
+    SharedPreferences sharedPref;
+    private ListMahasiswaAdapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mahasiswata);
 
+        SharedPreferences sharedPref = getSharedPreferences("prefs", Context.MODE_PRIVATE);
+        String token = sharedPref.getString("TOKEN", "");
+        //Toast.makeText(MahasiswaActivity.this, token, Toast.LENGTH_SHORT).show();
+
         rvMahasiswa = findViewById(R.id.rv_mhsTA);
         rvMahasiswa.setHasFixedSize(true);
 
         list.addAll(getlistMahasiswa());
-        showRecyclerList();
+        rvMahasiswa.setLayoutManager(new LinearLayoutManager(this));
+
+        adapter = new ListMahasiswaAdapter();
+        rvMahasiswa.setAdapter(adapter);
+
+        Retrofit retrofit = new Retrofit.Builder()
+                .baseUrl("http://ptb-api.husnilkamil.my.id/")
+                .addConverterFactory(GsonConverterFactory.create())
+                .client(new OkHttpClient.Builder().build())
+                .build();
+
+        TugasClient client = retrofit.create(TugasClient.class);
+
+        Call<ThesesResponse> call = client.getTheses("Bearer " + token);
+
+        call.enqueue(new Callback<ThesesResponse>() {
+            @Override
+            public void onResponse(Call<ThesesResponse> call, Response<ThesesResponse> response) {
+                Log.d("MahasiswaDebug", response.toString());
+
+                ThesesResponse thesesResponse = response.body();
+                if(thesesResponse!= null){
+                        List<ThesesItem> theses = thesesResponse.getTheses();
+                        Log.d("MahasiswaDebug2", String.valueOf(theses.size()));
+                        adapter.setItemList(theses);
+
+                }
+            }
+
+            @Override
+            public void onFailure(Call<ThesesResponse> call, Throwable t) {
+
+            }
+        });
+
     }
 
     public ArrayList<Mahasiswa> getlistMahasiswa() {
@@ -54,13 +105,6 @@ public class MahasiswaActivity extends AppCompatActivity{
             listMahasiswa.add(mahasiswa);
         }
         return listMahasiswa;
-    }
-
-    private void showRecyclerList(){
-        rvMahasiswa.setLayoutManager(new LinearLayoutManager(this));
-        ListMahasiswaAdapter listMahasiswaAdapter = new ListMahasiswaAdapter(list);
-        rvMahasiswa.setAdapter(listMahasiswaAdapter);
-        listMahasiswaAdapter.setOnItemClickCallback(data -> showSelectedMahasiswa(data));
     }
 
     public void back(View view) {

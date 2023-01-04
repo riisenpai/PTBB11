@@ -137,7 +137,7 @@ public class HomeActivity extends AppCompatActivity {
                 switch (item.getItemId())
                 {
                     case R.id.hlmprofile:
-                        startActivity(new Intent(getApplicationContext(),ProfileActivity.class));
+                        startActivity(new Intent(getApplicationContext(),DetailActivity.class));
                         overridePendingTransition(0,0);
                         return true;
 
