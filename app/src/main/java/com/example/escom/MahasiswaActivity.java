@@ -12,6 +12,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.escom.datamodels.DetailResponse;
 import com.example.escom.datamodels.ThesesItem;
 import com.example.escom.datamodels.ThesesResponse;
 import com.example.escom.retrofit.TugasClient;

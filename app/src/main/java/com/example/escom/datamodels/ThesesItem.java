@@ -3,7 +3,6 @@ package com.example.escom.datamodels;
 import com.google.gson.annotations.SerializedName;
 
 public class ThesesItem{
-
 	@SerializedName("student_name")
 	private String studentName;
 
