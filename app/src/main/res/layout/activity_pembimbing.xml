@@ -52,7 +52,10 @@
         android:layout_width="96dp"
         android:layout_height="89dp"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="224dp"
+        android:layout_marginTop="140dp"
+        android:layout_marginEnd="2dp"
+        app:layout_constraintEnd_toStartOf="@+id/textNamaMahasiswaDetail"
+        app:layout_constraintHorizontal_bias="0.041"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/latarkuning2"
         app:srcCompat="@drawable/profile" />
@@ -61,74 +64,45 @@
         android:id="@+id/namamhsa"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="184dp"
-        android:layout_marginEnd="240dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="27dp"
         android:fontFamily="sans-serif-medium"
-        android:text="Nama"
+        android:text="Lecturer_ID"
         android:textColor="#000000"
         android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/latarkuning2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView"
         tools:ignore="MissingConstraints" />
 
     <EditText
         android:id="@+id/textNamaMahasiswaDetail"
-        android:layout_width="263dp"
-        android:layout_height="48dp"
+        android:layout_width="370dp"
+        android:layout_height="44dp"
         android:layout_marginTop="12dp"
-        android:layout_marginEnd="20dp"
         android:ems="10"
         android:inputType="textPersonName"
         android:minHeight="48dp"
-        android:text="Ahmad Dahlan"
+        android:text="0"
         android:textColor="#A3A1A1"
         android:textColorHint="#878686"
         android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/namamhsa"
-        tools:ignore="MissingConstraints" />
-
-    <TextView
-        android:id="@+id/nimmhs"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="252dp"
-        android:fontFamily="sans-serif-medium"
-        android:text="NIM"
-        android:textColor="#000000"
-        android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textNamaMahasiswaDetail"
-        tools:ignore="MissingConstraints" />
-
-    <EditText
-        android:id="@+id/textNIM"
-        android:layout_width="263dp"
-        android:layout_height="48dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="20dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="2011521002"
-        android:textColor="#A3A1A1"
-        android:textSize="14sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/nimmhs"
         tools:ignore="MissingConstraints" />
 
     <TextView
         android:id="@+id/judulta"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="24dp"
         android:fontFamily="sans-serif-medium"
-        android:text="Judul TA"
+        android:text="Position"
         android:textColor="#000000"
         android:textSize="16sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textNIM"
+        app:layout_constraintTop_toBottomOf="@+id/textNamaMahasiswaDetail"
         tools:ignore="MissingConstraints" />
 
     <EditText
@@ -138,7 +112,7 @@
         android:layout_marginTop="10dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Sistem Informasi Inventory FTI"
+        android:text="0"
         android:textColor="#A3A1A1"
         android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -148,49 +122,21 @@
 
 
     <TextView
-        android:id="@+id/tanggal"
+        android:id="@+id/dospem"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="12dp"
         android:fontFamily="sans-serif-medium"
-        android:text="Tanggal Pengajuan"
+        android:text="Dosen Pembimbing"
         android:textColor="#000000"
         android:textSize="16sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textJudul"
         tools:ignore="MissingConstraints" />
 
-    <EditText
-        android:id="@+id/textTanggalMulai"
-        android:layout_width="365dp"
-        android:layout_height="48dp"
-        android:layout_marginTop="10dp"
-        android:ems="10"
-        android:inputType="date"
-        android:text="19/09/2020"
-        android:textColor="#A3A1A1"
-        android:textSize="14sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tanggal" />
-
-
-    <TextView
-        android:id="@+id/dospem"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="10dp"
-        android:fontFamily="sans-serif-medium"
-        android:text="Dosen Pembimbing"
-        android:textColor="#000000"
-        android:textSize="16sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textTanggalMulai"
-        tools:ignore="MissingConstraints" />
-
     <Button
+        android:id="@+id/submit"
         android:layout_width="359dp"
         android:layout_height="51dp"
         android:layout_marginTop="15dp"

@@ -1,5 +1,7 @@
 package com.example.escom;
 
+import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,15 +11,27 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
+import com.example.escom.datamodels.PembimbingResponse;
+import com.example.escom.datamodels.PermintaanItem;
+
 import java.util.ArrayList;
+import java.util.List;
 
 public class ListPermintaanAdapter extends RecyclerView.Adapter<ListPermintaanAdapter.ListViewHolder>{
 
-    private ArrayList<Permintaan> listPermintaan;
+    private List<PermintaanItem> listPermintaan = new ArrayList<>();
 
-    public ListPermintaanAdapter(ArrayList<Permintaan> list) {
-        this.listPermintaan = list;
+    public void setListPermintaan(List<PermintaanItem> listPermintaan){
+        this.listPermintaan = listPermintaan;
+        notifyDataSetChanged();
+
     }
+
+    public ListPermintaanAdapter(){
+        this.listPermintaan = listPermintaan;
+    }
+
 
     private OnItemClickCallback onItemClickCallback;
     public void setOnItemClickCallback(OnItemClickCallback onItemClickCallback) {
@@ -31,14 +45,26 @@ public class ListPermintaanAdapter extends RecyclerView.Adapter<ListPermintaanAd
         return new ListViewHolder(view);
     }
 
+    public List<PembimbingResponse> list = new ArrayList<>();
+
     @Override
     public void onBindViewHolder(@NonNull final ListViewHolder holder, int position) {
-        Permintaan permintaan = listPermintaan.get(position);
-        holder.imgPhoto.setImageResource(permintaan.getPhoto());
-        holder.tvName.setText(permintaan.getName());
-        holder.tvDescription.setText(permintaan.getDescription());
+        PermintaanItem permintaan = listPermintaan.get(position);
+        holder.tvName.setText(permintaan.getStudent().getName());
+        holder.tvDescription.setText(permintaan.getStudent().getNim());
+        Glide.with(holder.imgPhoto)
+                .load(permintaan.getStudent().getPhoto())
+                .into(holder.imgPhoto);
 
-        holder.itemView.setOnClickListener(v -> onItemClickCallback.onItemClicked(listPermintaan.get(holder.getAdapterPosition())));
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Context context = holder.itemView.getContext();
+                Intent intent = new Intent(context, PembimbingActivity.class);
+
+                context.startActivity(intent);
+            }
+        });
     }
 
     @Override
@@ -59,7 +85,8 @@ public class ListPermintaanAdapter extends RecyclerView.Adapter<ListPermintaanAd
     }
 
     public interface OnItemClickCallback {
-        void onItemClicked(Permintaan data);
+        void onItemClicked(PermintaanItem data);
+
     }
 
 }
