@@ -8,13 +8,17 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.escom.datamodels.AudiencesItem;
+
 import java.util.ArrayList;
+import java.util.List;
 
 public class ListPesertaAdapter  extends RecyclerView.Adapter<ListPesertaAdapter.ListViewHolder>{
-    private ArrayList<Peserta> listPeserta;
+    private List<AudiencesItem> itemList = new ArrayList<>();
 
-    public ListPesertaAdapter(ArrayList<Peserta> list) {
-        this.listPeserta = list;
+    public void setItemList(List<AudiencesItem> itemList) {
+        this.itemList = itemList;
+        notifyDataSetChanged();
     }
 
     public class ListViewHolder extends RecyclerView.ViewHolder{
@@ -35,12 +39,12 @@ public class ListPesertaAdapter  extends RecyclerView.Adapter<ListPesertaAdapter
 
     @Override
     public void onBindViewHolder(@NonNull ListViewHolder holder, int position) {
-        Peserta peserta = listPeserta.get(position);
-        holder.tvPeserta.setText(peserta.getPeserta());
+        AudiencesItem peserta = itemList.get(position);
+        holder.tvPeserta.setText(peserta.getName());
     }
 
     @Override
     public int getItemCount() {
-        return listPeserta.size();
+        return itemList.size();
     }
 }
