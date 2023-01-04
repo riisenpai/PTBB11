@@ -14,6 +14,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.escom.datamodels.DetailResponse;
+import com.example.escom.datamodels.SeminarsItem;
 import com.example.escom.datamodels.ThesesItem;
 
 import java.util.ArrayList;

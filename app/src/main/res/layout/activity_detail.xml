@@ -122,20 +122,20 @@
         app:layout_constraintTop_toBottomOf="@+id/textNIM"
         tools:ignore="MissingConstraints" />
 
-    <EditText
-        android:id="@+id/textJudul"
-        android:layout_width="365dp"
-        android:layout_height="48dp"
-        android:layout_marginTop="10dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Sistem Informasi Inventory FTI"
-        android:textColor="#A3A1A1"
-        android:textSize="14sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.4"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/judulta" />
+<!--    <EditText-->
+<!--        android:id="@+id/textJudul"-->
+<!--        android:layout_width="365dp"-->
+<!--        android:layout_height="48dp"-->
+<!--        android:layout_marginTop="10dp"-->
+<!--        android:ems="10"-->
+<!--        android:inputType="textPersonName"-->
+<!--        android:text="Sistem Informasi Inventory FTI"-->
+<!--        android:textColor="#A3A1A1"-->
+<!--        android:textSize="14sp"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintHorizontal_bias="0.4"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/judulta" />-->
 
 
     <TextView
@@ -229,6 +229,18 @@
         android:layout_marginEnd="20dp"
         android:layout_marginBottom="20dp"
         tools:ignore="DuplicateIds,MissingConstraints" />
+
+    <TextView
+        android:id="@+id/textJudul"
+        android:layout_width="383dp"
+        android:layout_height="65dp"
+        android:layout_marginStart="29dp"
+        android:layout_marginTop="11dp"
+        android:layout_marginEnd="23dp"
+        android:text="TextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/judulta" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

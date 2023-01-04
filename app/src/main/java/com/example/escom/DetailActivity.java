@@ -11,7 +11,10 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.escom.databinding.ActivityDetailBinding;
 import com.example.escom.datamodels.DetailResponse;
+import com.example.escom.datamodels.SeminarsItem;
 import com.example.escom.retrofit.TugasClient;
+
+import java.util.List;
 
 import okhttp3.OkHttpClient;
 import retrofit2.Call;

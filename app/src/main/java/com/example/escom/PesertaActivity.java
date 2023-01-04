@@ -39,11 +39,6 @@ public class PesertaActivity extends AppCompatActivity {
 
         SharedPreferences sharedPref = getSharedPreferences("prefs", Context.MODE_PRIVATE);
         String token = sharedPref.getString("TOKEN", "");
-
-        Intent intent = getIntent();
-        if (intent != null) {
-            idTheses = intent.getIntExtra("ID",0);
-        }
         
         rvPeserta = findViewById(R.id.rv_peserta);
         rvPeserta.setHasFixedSize(true);
@@ -62,7 +57,7 @@ public class PesertaActivity extends AppCompatActivity {
 
         TugasClient client = retrofit.create(TugasClient.class);
 
-        Call<PesertaResponse> call = client.getPeserta(idTheses, "Bearer " + token);
+        Call<PesertaResponse> call = client.getPeserta(309,"Bearer " + token);
 
         call.enqueue(new Callback<PesertaResponse>() {
             @Override
@@ -95,7 +90,7 @@ public class PesertaActivity extends AppCompatActivity {
     }
 
     public void back(View view) {
-        Intent intent = new Intent(PesertaActivity.this,DetailActivity.class);
+        Intent intent = new Intent(PesertaActivity.this,MahasiswaActivity.class);
         startActivity(intent);
     }
 }
