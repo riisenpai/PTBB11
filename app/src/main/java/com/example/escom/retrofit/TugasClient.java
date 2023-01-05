@@ -1,7 +1,10 @@
 package com.example.escom.retrofit;
 
+import com.example.escom.datamodels.ListPermintaanTAResponse;
+import com.example.escom.datamodels.LogbookResponse;
 import com.example.escom.datamodels.LoginResponse;
 import com.example.escom.datamodels.LogoutResponse;
+import com.example.escom.datamodels.PembimbingResponse;
 import com.example.escom.datamodels.ProfilResponse;
 
 import retrofit2.Call;
@@ -23,5 +26,21 @@ public interface TugasClient {
 
     @GET("api/me")
     Call<ProfilResponse> profil(@Header("token") String token);
+
+    @GET("api/admin/thesis-submissions")
+    Call<ListPermintaanTAResponse> listPermintaan(@Header("Authorization") String token);
+
+    @GET("api/theses/309/logbooks")
+    Call<LogbookResponse> logbook(@Header("Authorization") String token);
+
+    @FormUrlEncoded
+    @POST("api/admin/theses/369/supervisors")
+    Call<PembimbingResponse> pembimbing(
+            @Header("Authorization") String token,
+            @Field("lecturer_id") String lecturer_id,
+            @Field("position") String position);
+
+
+
 
 }
