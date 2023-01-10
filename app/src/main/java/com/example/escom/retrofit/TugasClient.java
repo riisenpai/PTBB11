@@ -6,6 +6,9 @@ import com.example.escom.datamodels.LoginResponse;
 import com.example.escom.datamodels.LogoutResponse;
 import com.example.escom.datamodels.PembimbingResponse;
 import com.example.escom.datamodels.ProfilResponse;
+import com.example.escom.datamodels.ReviewerResponse;
+import com.example.escom.datamodels.SemhasResponse;
+import com.example.escom.datamodels.SeminarResponse;
 
 import retrofit2.Call;
 import retrofit2.http.Field;
@@ -13,6 +16,7 @@ import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
 import retrofit2.http.Header;
 import retrofit2.http.POST;
+import retrofit2.http.Path;
 
 public interface TugasClient {
 
@@ -40,7 +44,20 @@ public interface TugasClient {
             @Field("lecturer_id") String lecturer_id,
             @Field("position") String position);
 
+    @GET("/api/admin/thesis/seminar-submissions/")
+    Call<SemhasResponse> listSemhas(@Header("Authorization") String token);
 
+    @FormUrlEncoded
+    @POST("/api/admin/thesis/seminars/67/reviewers")
+    Call<ReviewerResponse> reviewer(
+            @Header("Authorization") String token,
+            @Field("reviewer_id") String reviewer_id,
+            @Field("position") String position);
+
+    @GET("api/admin/thesis/seminar-submissions/{id}")
+    Call<SeminarResponse> semDetail(
+            @Path("id") Integer idTheses,
+            @Header("Authorization") String token);
 
 
 }

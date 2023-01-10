@@ -4,11 +4,14 @@ import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.app.TaskStackBuilder;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.res.Resources;
 import android.content.res.TypedArray;
 import android.os.Build;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
@@ -23,30 +26,76 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.escom.databinding.ActivityLoginBinding;
 import com.example.escom.databinding.ActivitySemdangBinding;
+import com.example.escom.datamodels.ListPermintaanTAResponse;
+import com.example.escom.datamodels.PermintaanItem;
+import com.example.escom.datamodels.SemhasResponse;
+import com.example.escom.datamodels.SeminarsItem;
+import com.example.escom.retrofit.TugasClient;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import java.util.ArrayList;
+import java.util.List;
+
+import okhttp3.OkHttpClient;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
 
 public class SemdangActivity extends AppCompatActivity{
+    private RecyclerView rvSemdang;
     private static final String CHANNEL_ID = "test_kanal";
     private ActivitySemdangBinding binding;
-    private RecyclerView rvSemdang;
     private NotificationManagerCompat notificationSemdang;
     private Button buttonShow3;
-    private ArrayList<Semdang> list = new ArrayList<>();
+    private ArrayList<Semdang> listSemdang = new ArrayList<>();
+    private ListSemdangAdapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        binding = ActivitySemdangBinding.inflate(getLayoutInflater());
-        View view = binding.getRoot();
-        setContentView(view);
+        setContentView(R.layout.activity_semdang);
+
+        SharedPreferences sharedPref = getSharedPreferences("prefs", Context.MODE_PRIVATE);
+        String token = sharedPref.getString("TOKEN", "");
 
         rvSemdang = findViewById(R.id.rv_semdang);
-        rvSemdang.setHasFixedSize(true);
+        rvSemdang.setLayoutManager(new LinearLayoutManager(this));
 
-        list.addAll(getlistSemdang());
-        showRecyclerList();
+        adapter = new ListSemdangAdapter();
+        rvSemdang.setAdapter(adapter);
+//        list.addAll(getlistSemdang());
+//        showRecyclerList();
+
+        Retrofit retrofit = new Retrofit.Builder()
+                .baseUrl("http://ptb-api.husnilkamil.my.id/")
+                .addConverterFactory(GsonConverterFactory.create())
+                .client(new OkHttpClient.Builder().build())
+                .build();
+
+        TugasClient client = retrofit.create(TugasClient.class);
+
+        Call<SemhasResponse> call = client.listSemhas("Bearer " + token);
+
+        call.enqueue(new Callback<SemhasResponse>() {
+
+            @Override
+            public void onResponse(Call<SemhasResponse> call, Response<SemhasResponse> response) {
+                Log.d("debug-act", response.toString());
+
+                SemhasResponse SemResponse = response.body();
+                if (SemResponse != null) {
+                    List<SeminarsItem> seminars = SemResponse.getSeminars();
+                    adapter.setListSemdang(seminars);
+                }
+            }
+
+            @Override
+            public void onFailure(Call<SemhasResponse> call, Throwable t) {
+
+            }
+        });
 
         notificationSemdang = NotificationManagerCompat.from(this);
         createNotificationChannel3();
@@ -90,16 +139,16 @@ public class SemdangActivity extends AppCompatActivity{
         }
     }
 
-    public ArrayList<Semdang> getlistSemdang() {
+    public List<Semdang> getListSemdang() {
         String[] dataName = getResources().getStringArray(R.array.data_name);
         String[] dataDescription = getResources().getStringArray(R.array.data_nim);
         String[] dataJudul = getResources().getStringArray(R.array.judul);
         String[] dataDosen = getResources().getStringArray(R.array.dosen);
         String[] dataTempat = getResources().getStringArray(R.array.tempat);
         String[] dataTanggal = getResources().getStringArray(R.array.tgluji);
-        String[] dataPilihan = getResources().getStringArray(R.array.pilihan);
-        TypedArray dataPhoto = getResources().obtainTypedArray(R.array.data_photo);
-        ArrayList<Semdang> listSemdang = new ArrayList<>();
+//        String[] dataPilihan = getResources().getStringArray(R.array.pilihan);
+//        TypedArray dataPhoto = getResources().obtainTypedArray(R.array.data_photo);
+        List<Semdang> listSemdang = new ArrayList<>();
         for (int i = 0; i < dataName.length; i++) {
             Semdang semdang = new Semdang();
             semdang.setName(dataName[i]);
@@ -108,34 +157,34 @@ public class SemdangActivity extends AppCompatActivity{
             semdang.setDosen(dataDosen[i]);
             semdang.setTanggaluji(dataTanggal[i]);
             semdang.setTempat(dataTempat[i]);
-            semdang.setPilihan(dataPilihan[i]);
-            semdang.setPhoto(dataPhoto.getResourceId(i, -1));
+//            semdang.setPilihan(dataPilihan[i]);
+//            semdang.setPhoto(dataPhoto.getResourceId(i, -1));
             listSemdang.add(semdang);
         }
         return listSemdang;
     }
 
-    private void showRecyclerList(){
-        rvSemdang.setLayoutManager(new LinearLayoutManager(this));
-        ListSemdangAdapter listSemdangAdapter = new ListSemdangAdapter(list);
-        rvSemdang.setAdapter(listSemdangAdapter);
-
-        listSemdangAdapter.setOnItemClickCallback(data -> showSelectedSemdang(data));
-    }
+//    private void showRecyclerList(){
+//        rvSemdang.setLayoutManager(new LinearLayoutManager(this));
+//        ListSemdangAdapter listSemdangAdapter = new ListSemdangAdapter(list);
+//        rvSemdang.setAdapter(listSemdangAdapter);
+//
+//        listSemdangAdapter.setOnItemClickCallback(data -> showSelectedSemdang(data));
+//    }
 
     private void showSelectedSemdang(Semdang semdang) {
-        String pilih="1";
-
-            if (pilih.equals("1")) {
-                Intent detailIntent = new Intent(this, SidangActivity.class);
-                detailIntent.putExtra("NAMA_AGENDA", semdang.getName());
-                detailIntent.putExtra("NIM", semdang.getDescription());
-                detailIntent.putExtra("JUDUL", semdang.getJudul());
-                detailIntent.putExtra("DOSEN", semdang.getDosen());
-                detailIntent.putExtra("TEMPAT", semdang.getTempat());
-                detailIntent.putExtra("TANGGAL", semdang.getTanggaluji());
-                startActivity(detailIntent);
-            } else {
+//        String pilih="1";
+//
+//            if (pilih.equals("1")) {
+//                Intent detailIntent = new Intent(this, SidangActivity.class);
+//                detailIntent.putExtra("NAMA_AGENDA", semdang.getName());
+//                detailIntent.putExtra("NIM", semdang.getDescription());
+//                detailIntent.putExtra("JUDUL", semdang.getJudul());
+//                detailIntent.putExtra("DOSEN", semdang.getDosen());
+//                detailIntent.putExtra("TEMPAT", semdang.getTempat());
+//                detailIntent.putExtra("TANGGAL", semdang.getTanggaluji());
+//                startActivity(detailIntent);
+//            } else {
                 Intent detailIntent = new Intent(this, SeminarActivity.class);
                 detailIntent.putExtra("NAMA_AGENDA", semdang.getName());
                 detailIntent.putExtra("NIM", semdang.getDescription());
@@ -144,7 +193,7 @@ public class SemdangActivity extends AppCompatActivity{
                 detailIntent.putExtra("TEMPAT", semdang.getTempat());
                 detailIntent.putExtra("TANGGAL", semdang.getTanggaluji());
                 startActivity(detailIntent);
-            }
+//            }
 
         //Toast.makeText(this, "Kamu memilih " + semdang.getName(), Toast.LENGTH_SHORT).show();
     }

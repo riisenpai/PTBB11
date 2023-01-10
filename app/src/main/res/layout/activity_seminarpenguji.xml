@@ -7,6 +7,76 @@
     android:background="@drawable/bg_schedule"
     tools:context=".SeminarpengujiActivity">
 
+    <EditText
+        android:id="@+id/textJudul3"
+        android:layout_width="365dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="12dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="0"
+        android:textColor="#A3A1A1"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/textNamaMahasiswaDetail3"
+        app:layout_constraintTop_toBottomOf="@+id/judulta3" />
+
+    <TextView
+        android:id="@+id/judulta3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:fontFamily="sans-serif-medium"
+        android:text="Position"
+        android:textColor="#000000"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="@+id/namamhsa3"
+        app:layout_constraintTop_toBottomOf="@+id/textNamaMahasiswaDetail3"
+        tools:ignore="MissingConstraints" />
+
+    <EditText
+        android:id="@+id/textNamaMahasiswaDetail3"
+        android:layout_width="370dp"
+        android:layout_height="44dp"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:minHeight="48dp"
+        android:text="0"
+        android:textColor="#A3A1A1"
+        android:textColorHint="#878686"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.487"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/namamhsa3"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/namamhsa3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="20dp"
+        android:fontFamily="sans-serif-medium"
+        android:text="Lecturer_ID"
+        android:textColor="#000000"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView15"
+        tools:ignore="MissingConstraints" />
+
+    <ImageView
+        android:id="@+id/imageView15"
+        android:layout_width="96dp"
+        android:layout_height="89dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="80dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView8"
+        app:srcCompat="@drawable/profile" />
+
     <ImageView
         android:id="@+id/imageView8"
         android:layout_width="wrap_content"
@@ -27,7 +97,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="55dp"
         android:fontFamily="sans-serif"
-        android:text="Daftar Penguji"
+        android:text="Dosen Penguji"
         android:textColor="#FFFFFF"
         android:textColorHint="#FFFFFF"
         android:textSize="20sp"
@@ -42,88 +112,36 @@
         android:id="@+id/tanggalmulaiTa"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="20dp"
         android:fontFamily="sans-serif-medium"
         android:text="Dosen Penguji 1"
         android:textColor="#000000"
         android:textSize="16sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView8"
+        app:layout_constraintStart_toStartOf="@+id/judulta3"
+        app:layout_constraintTop_toBottomOf="@+id/textJudul3"
         tools:ignore="MissingConstraints" />
 
     <Spinner
         android:id="@+id/spinner1"
         android:layout_width="371dp"
         android:layout_height="37dp"
-        android:layout_marginStart="16dp"
+        android:layout_marginTop="12dp"
         android:backgroundTint="#FFFFFF"
         android:entries="@array/daftar_dosen"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/textNamaMahasiswaDetail3"
         app:layout_constraintTop_toBottomOf="@+id/tanggalmulaiTa"
         tools:ignore="MissingConstraints" />
 
-    <TextView
-        android:id="@+id/status"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="31dp"
-        android:fontFamily="sans-serif-medium"
-        android:text="Dosen Penguji 2"
-        android:textColor="#000000"
-        android:textSize="16sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/spinner1"
-        tools:ignore="MissingConstraints" />
-
-    <Spinner
-        android:id="@+id/spinner2"
-        android:layout_width="371dp"
-        android:layout_height="37dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="20dp"
-        android:backgroundTint="#FFFFFF"
-        android:entries="@array/daftar_dosen"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/status"
-        tools:ignore="MissingConstraints" />
-
-    <TextView
-        android:id="@+id/status1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="20dp"
-        android:fontFamily="sans-serif-medium"
-        android:text="Dosen Penguji 3"
-        android:textColor="#000000"
-        android:textSize="16sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/spinner2"
-        tools:ignore="MissingConstraints" />
-
-    <Spinner
-        android:id="@+id/spinner3"
-        android:layout_width="371dp"
-        android:layout_height="37dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="8dp"
-        android:backgroundTint="#FFFFFF"
-        android:entries="@array/daftar_dosen"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/status1"
-        tools:ignore="MissingConstraints" />
-
     <Button
+        android:id="@+id/button4"
         android:layout_width="364dp"
         android:layout_height="54dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="20dp"
         android:onClick="back"
         android:text="Submit"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.294"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/spinner3" />
+        app:layout_constraintHorizontal_bias="0.046"
+        app:layout_constraintStart_toStartOf="@+id/spinner1"
+        app:layout_constraintTop_toBottomOf="@+id/spinner1" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

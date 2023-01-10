@@ -26,13 +26,13 @@ public class Student{
     private Object createdAt;
 
     @SerializedName("religion")
-    private Object religion;
+    private int religion;
 
     @SerializedName("nik")
     private String nik;
 
     @SerializedName("marital_status")
-    private Object maritalStatus;
+    private int maritalStatus;
 
     @SerializedName("nim")
     private String nim;
@@ -41,7 +41,7 @@ public class Student{
     private String birthplace;
 
     @SerializedName("updated_at")
-    private Object updatedAt;
+    private String updatedAt;
 
     @SerializedName("phone")
     private String phone;
@@ -83,7 +83,7 @@ public class Student{
         return createdAt;
     }
 
-    public Object getReligion(){
+    public int getReligion(){
         return religion;
     }
 
@@ -91,7 +91,7 @@ public class Student{
         return nik;
     }
 
-    public Object getMaritalStatus(){
+    public int getMaritalStatus(){
         return maritalStatus;
     }
 
@@ -103,7 +103,7 @@ public class Student{
         return birthplace;
     }
 
-    public Object getUpdatedAt(){
+    public String getUpdatedAt(){
         return updatedAt;
     }
 

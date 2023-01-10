@@ -19,11 +19,11 @@ public class SidangpengujiActivity extends AppCompatActivity {
         spinnerName1 = (Spinner) findViewById(R.id.spinner1);
         spinnerName1.setOnItemSelectedListener(new ItemSelectedListener1());
 
-        spinnerName2 = (Spinner) findViewById(R.id.spinner2);
-        spinnerName2.setOnItemSelectedListener(new ItemSelectedListener2());
-
-        spinnerName3 = (Spinner) findViewById(R.id.spinner3);
-        spinnerName3.setOnItemSelectedListener(new ItemSelectedListener3());
+//        spinnerName2 = (Spinner) findViewById(R.id.spinner2);
+//        spinnerName2.setOnItemSelectedListener(new ItemSelectedListener2());
+//
+//        spinnerName3 = (Spinner) findViewById(R.id.spinner3);
+//        spinnerName3.setOnItemSelectedListener(new ItemSelectedListener3());
     }
 
     public void back(View view) {

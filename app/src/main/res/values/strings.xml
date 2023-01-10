@@ -6,34 +6,42 @@
         <string name="nim">NIM</string>
 
         <string-array name="data_name">
-            <item>Ahmad Dahlan</item>
-            <item>Ahmad Yani</item>
-            <item>Sutomo</item>
-            <item>Gatot Soebroto</item>
-            <item>Ki Hadjar Dewantara</item>
-            <item>Mohammad Hatta</item>
-            <item>Soedirman</item>
-            <item>Soekarno</item>
-            <item>Soepomo</item>
+            <item>NADYA AULIA PUTRI</item>
+            <item>MEYSA PUTRI</item>
+            <item>MEYSA PUTRI</item>
+            <item>LEONI ZAHRA IREVIANA</item>
+            <item>VICKY ARIGA ELSAYRAFL</item>
+            <item>MUHAMMAD HASBILLAH</item>
+            <item>ANNISA MIFTAHURRAHMI</item>
+            <item>YUNITA ERA REFSI</item>
+            <item>VIRA PRAHMADITA</item>
+            <item>ILMA SULISTIA</item>
+            <item>ANNISA WISTIA RIZALMI</item>
+            <item>MARWAN AZIZ</item>
+            <item>WAHYU FEBRIAN PRATAMA</item>
         </string-array>
 
         <string-array name="data_nim">
-            <item>1811521001</item>
-            <item>1811521002</item>
-            <item>1811521003</item>
-            <item>1811521004</item>
-            <item>1811521005</item>
-            <item>1811521006</item>
-            <item>1811521007</item>
-            <item>1811521008</item>
-            <item>1811521009</item>
+            <item>1711521007</item>
+            <item>1611522013</item>
+            <item>1611522013</item>
+            <item>1611523007</item>
+            <item>1611521010</item>
+            <item>1711522015</item>
+            <item>1711523002</item>
+            <item>1711523001</item>
+            <item>1711523003</item>
+            <item>1711521010</item>
+            <item>1611521009</item>
+            <item>1711521006</item>
+            <item>1711521004</item>
         </string-array>
 
         <string-array name="data_description">
-            <item>21/10/2022</item>
-            <item>21/10/2022</item>
-            <item>21/10/2022</item>
-            <item>21/10/2022</item>
+            <item>2021-02-01T17:00:00</item>
+            <item>2021-04-26T17:00:00</item>
+            <item>2021-04-26T17:00:00</item>
+            <item>2021-04-26T17:00:00</item>
             <item>21/10/2022</item>
             <item>21/10/2022</item>
             <item>21/10/2022</item>
@@ -54,15 +62,15 @@
         </string-array>
 
         <string-array name="tempat">
-            <item>Seminar SI</item>
-            <item>Seminar TK</item>
-            <item>Seminar IF</item>
-            <item>Seminar SI</item>
-            <item>Seminar TK</item>
-            <item>Seminar IF</item>
-            <item>Seminar TK</item>
-            <item>Seminar SI</item>
-            <item>Seminar SI</item>
+            <item>2</item>
+            <item>2</item>
+            <item>2</item>
+            <item>3</item>
+            <item>3</item>
+            <item>2</item>
+            <item>2</item>
+            <item>2</item>
+            <item>3</item>
         </string-array>
 
         <integer-array name="data_photo">
@@ -111,12 +119,12 @@
     </string-array>
 
     <string-array name="judul">
-        <item>Sistem Informasi Inventory FTI</item>
-        <item>Sistem Informasi Inventory FT</item>
-        <item>Sistem Informasi Inventory FE</item>
-        <item>Sistem Informasi Inventory FIB</item>
-        <item>Sistem Informasi Inventory FISIP</item>
-        <item>Sistem Informasi Inventory FH</item>
+        <item>Pembangunan Aplikasi Pengelolaan Distribusi Air Minum AMIA pada PT. Amanah Insanillahia</item>
+        <item>Penerapan Teks Mining dalam Penentuan Trending Topic Jurnal Tekini Kategori Komputer</item>
+        <item>Penerapan Teks Mining dalam Penentuan Trending Topic Jurnal Tekini Kategori Komputer</item>
+        <item>Penerapan Deep Learning Untuk Klasifikasi Tanda Tangan Menggunakan Metode Convolution Neural Network (CNN) Pada Aplikasi Web</item>
+        <item>Komparasi Metode SAW dan WP Dalam Pembangunan Sistem Pendukung Keputusan Pemilihan Guru SMA Berprestasi ( Studi Kasus : Dinas Pendidikan Provinsi Sumatera Barat)</item>
+        <item>Pembangunan Aplikasi Sistem Pendukung Keputusan Dalam Menentukan Prioritas Pengaduan Perbaikan Kerusakan Jalan Menggunakan Metode Topsis Pada Dinas Bina Marga Kota Padang</item>
         <item>Sistem Informasi Inventory FKM</item>
         <item>Sistem Informasi Inventory FK</item>
         <item>Sistem Informasi Inventory FKG</item>

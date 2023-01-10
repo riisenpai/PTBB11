@@ -70,7 +70,7 @@ public class Semdang {
         this.tanggaluji = tanggaluji;
     }
 
-    public void setPilihan(String pilihan) {
-        this.pilihan = pilihan;
-    }
+//    public void setPilihan(String pilihan) {
+//        this.pilihan = pilihan;
+//    }
 }

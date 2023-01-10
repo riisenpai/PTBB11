@@ -1,5 +1,7 @@
 package com.example.escom;
 
+import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,14 +11,25 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.escom.datamodels.PembimbingResponse;
+import com.example.escom.datamodels.ReviewerResponse;
+import com.example.escom.datamodels.SeminarsItem;
+
 import java.util.ArrayList;
+import java.util.List;
 
 public class ListSemdangAdapter extends RecyclerView.Adapter<ListSemdangAdapter.ListViewHolder> {
-    private ArrayList<Semdang> listSemdang;
+    //    private ArrayList<Semdang> listSemdang;
+    private List<SeminarsItem> listSemdang = new ArrayList<>();
 
-    public ListSemdangAdapter(ArrayList<Semdang> list) {
+    public void setListSemdang(List<SeminarsItem> listSemdang) {
+        this.listSemdang = listSemdang;
+        notifyDataSetChanged();
+    }
 
-        this.listSemdang = list;
+    public ListSemdangAdapter() {
+
+        this.listSemdang = listSemdang;
     }
 
     private OnItemClickCallback onItemClickCallback;
@@ -32,14 +45,24 @@ public class ListSemdangAdapter extends RecyclerView.Adapter<ListSemdangAdapter.
         return new ListViewHolder(view);
     }
 
+    public List<ReviewerResponse> list = new ArrayList<>();
+
     @Override
     public void onBindViewHolder(@NonNull final ListViewHolder holder, int position) {
-        Semdang semdang = listSemdang.get(position);
-        holder.imgPhoto.setImageResource(semdang.getPhoto());
-        holder.tvName.setText(semdang.getName());
-        holder.tvDescription.setText(semdang.getDescription());
+        SeminarsItem semdang = listSemdang.get(position);
 
-        holder.itemView.setOnClickListener(v -> onItemClickCallback.onItemClicked(listSemdang.get(holder.getAdapterPosition())));
+        holder.tvName.setText(semdang.getThesis().getStudent().getName());
+        holder.tvDescription.setText(semdang.getThesis().getStudent().getNim());
+
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Context context = holder.itemView.getContext();
+                Intent intent = new Intent(context, SeminarActivity.class);
+
+                context.startActivity(intent);
+            }
+        });
 
     }
 
@@ -48,13 +71,15 @@ public class ListSemdangAdapter extends RecyclerView.Adapter<ListSemdangAdapter.
         return listSemdang.size();
     }
 
+
+
     public class ListViewHolder  extends RecyclerView.ViewHolder{
-        ImageView imgPhoto;
+        //        ImageView imgPhoto;
         TextView tvName, tvDescription,tvPilihan;
 
         ListViewHolder(View itemView) {
             super(itemView);
-            imgPhoto = itemView.findViewById(R.id.img_item_photo);
+//            imgPhoto = itemView.findViewById(R.id.img_item_photo);
             tvName = itemView.findViewById(R.id.Semdangname);
             tvDescription = itemView.findViewById(R.id.tv_item_description);
         }
